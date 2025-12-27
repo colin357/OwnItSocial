@@ -92,7 +92,7 @@ export default function Home() {
             <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
             <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/hero-business.jpg"
+                src="/images/hero-business.png"
                 alt="Marketing team collaboration and success"
                 fill
                 className="object-cover"
@@ -123,7 +123,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4">
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105">
               <Image
-                src="/images/video-production.jpg"
+                src="/images/video-production.webp"
                 alt="Video content creation"
                 fill
                 className="object-cover"
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105">
               <Image
-                src="/images/chatgpt-phone.jpg"
+                src="/images/chatgpt-phone.webp"
                 alt="AI-powered marketing"
                 fill
                 className="object-cover"
@@ -139,7 +139,7 @@ export default function Home() {
             </div>
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105 col-span-2">
               <Image
-                src="/images/success-team.jpg"
+                src="/images/success-team.webp"
                 alt="Marketing success and growth"
                 fill
                 className="object-cover"
@@ -440,7 +440,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-30 blur-2xl"></div>
               <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/colin-portrait.jpg"
+                  src="/images/colin-portrait.webp"
                   alt="Colin Hickmon - Founder of Own It Social"
                   fill
                   className="object-cover"
