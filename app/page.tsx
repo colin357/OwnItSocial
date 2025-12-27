@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -89,15 +90,14 @@ export default function Home() {
 
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
-            <div className="relative bg-gradient-to-br from-purple-100 to-blue-100 h-[500px] rounded-3xl overflow-hidden flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div className="text-gray-600 text-lg font-medium">Marketing That Works</div>
-              </div>
+            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/hero-business.jpg"
+                alt="Marketing team collaboration and success"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -121,23 +121,29 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gradient-to-br from-purple-200 to-purple-100 h-48 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition transform hover:scale-105">
-              <div className="text-center">
-                <div className="text-4xl mb-2">📱</div>
-                <div className="text-sm font-semibold text-purple-900">Social Media</div>
-              </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105">
+              <Image
+                src="/images/video-production.jpg"
+                alt="Video content creation"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="bg-gradient-to-br from-blue-200 to-blue-100 h-48 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition transform hover:scale-105">
-              <div className="text-center">
-                <div className="text-4xl mb-2">📧</div>
-                <div className="text-sm font-semibold text-blue-900">Email Marketing</div>
-              </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105">
+              <Image
+                src="/images/chatgpt-phone.jpg"
+                alt="AI-powered marketing"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="bg-gradient-to-br from-indigo-200 to-indigo-100 h-48 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition transform hover:scale-105 col-span-2">
-              <div className="text-center">
-                <div className="text-4xl mb-2">🎯</div>
-                <div className="text-sm font-semibold text-indigo-900">Lead Generation</div>
-              </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105 col-span-2">
+              <Image
+                src="/images/success-team.jpg"
+                alt="Marketing success and growth"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
           <div>
@@ -432,15 +438,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-30 blur-2xl"></div>
-              <div className="relative bg-gradient-to-br from-purple-900/50 to-blue-900/50 h-96 rounded-3xl flex items-center justify-center backdrop-blur-sm border border-purple-500/20">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-                    <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <div className="text-gray-300">Colin Hickmon</div>
-                </div>
+              <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/colin-portrait.jpg"
+                  alt="Colin Hickmon - Founder of Own It Social"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
 
