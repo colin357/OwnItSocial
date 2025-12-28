@@ -7,8 +7,14 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="font-black text-2xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            OWN IT SOCIAL
+          <div className="relative h-8 w-48">
+            <Image
+              src="/OWN IT SOCIAL.png"
+              alt="Own It Social"
+              fill
+              className="object-contain object-left"
+              priority
+            />
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#services" className="text-gray-600 hover:text-gray-900 font-medium transition">Services</a>
@@ -32,12 +38,9 @@ export default function Home() {
               🚀 Full-Service Marketing Agency
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              Own Your{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Market
-              </span>
+              <span className="text-gray-600">Own Your Market</span>
               <br />
-              <span className="relative">
+              <span className="relative bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Dominate Online
                 <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
                   <path d="M2 10C100 2 200 2 298 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
@@ -278,7 +281,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
           {/* Social Media Content & Strategy */}
           <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
@@ -443,7 +446,7 @@ export default function Home() {
                   src="/images/colin-portrait.webp"
                   alt="Colin Hickmon - Founder of Own It Social"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
