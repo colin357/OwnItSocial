@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export default function Home() {
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
@@ -364,7 +366,7 @@ export default function Home() {
           </div>
 
           {/* Paid Advertising & Lead Generation */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
+          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 lg:col-start-2">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -391,7 +393,7 @@ export default function Home() {
           </div>
 
           {/* Brand Systems & Client Portals */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 md:col-span-2 lg:col-span-1">
+          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -490,7 +492,7 @@ export default function Home() {
           <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
             Join the businesses already dominating their local markets. Book your free consultation today and discover how we can transform your marketing.
           </p>
-          <Link
+          <a
             href="#contact"
             className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
           >
@@ -498,7 +500,38 @@ export default function Home() {
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </Link>
+          </a>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            Let&apos;s <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Connect</span>
+          </h2>
+          <p className="text-xl text-gray-600">
+            Ready to dominate your market? Fill out the form below and we&apos;ll be in touch.
+          </p>
+        </div>
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+          <iframe
+            src="https://links.ownitsocial.com/widget/form/4yr6BnwxXsUbggVUhexB"
+            style={{width: '100%', height: '500px', border: 'none', borderRadius: '12px'}}
+            id="inline-4yr6BnwxXsUbggVUhexB"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Contact Form-prebuilt"
+            data-height="500"
+            data-layout-iframe-id="inline-4yr6BnwxXsUbggVUhexB"
+            data-form-id="4yr6BnwxXsUbggVUhexB"
+            title="Contact Form"
+          />
         </div>
       </section>
 
@@ -538,5 +571,7 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    <Script src="https://links.ownitsocial.com/js/form_embed.js" strategy="lazyOnload" />
+    </>
   );
 }
