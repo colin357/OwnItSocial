@@ -1,15 +1,57 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script';
+import { useState } from 'react';
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    phone: '',
+    email: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitMessage('Thanks for reaching out! We\'ll be in touch soon.');
+        setFormData({ name: '', company: '', phone: '', email: '' });
+      } else {
+        setSubmitMessage('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitMessage('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="relative h-8 w-48">
+          <div className="relative h-10 w-56">
             <Image
               src="/OWN IT SOCIAL.png"
               alt="Own It Social"
@@ -55,7 +97,7 @@ export default function Home() {
                 </svg>
               </span>
             </h1>
-            <p className="text-xl mb-8 text-gray-600 leading-relaxed">
+            <p className="text-xl mb-8 text-gray-700 leading-relaxed">
               We handle your social media, email marketing, paid ads, and online visibility—so you can focus on closing deals and growing your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -80,20 +122,20 @@ export default function Home() {
             <div className="mt-12 grid grid-cols-3 gap-6">
               <div>
                 <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">24/7</div>
-                <div className="text-sm text-gray-600 mt-1">Marketing Engine</div>
+                <div className="text-sm text-gray-700 mt-1">Marketing Engine</div>
               </div>
               <div>
                 <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">10x</div>
-                <div className="text-sm text-gray-600 mt-1">More Visibility</div>
+                <div className="text-sm text-gray-700 mt-1">More Visibility</div>
               </div>
               <div>
                 <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">100%</div>
-                <div className="text-sm text-gray-600 mt-1">Done For You</div>
+                <div className="text-sm text-gray-700 mt-1">Done For You</div>
               </div>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative hidden md:block">
             <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
             <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
@@ -159,7 +201,7 @@ export default function Home() {
                 Marketing System
               </span>
             </h2>
-            <p className="text-lg mb-6 text-gray-600 leading-relaxed">
+            <p className="text-lg mb-6 text-gray-700 leading-relaxed">
               Stop juggling multiple agencies and freelancers. We provide everything you need to grow your business in one place—from content creation to lead generation.
             </p>
             <div className="space-y-4 mb-8">
@@ -171,7 +213,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Consistent Content</div>
-                  <div className="text-gray-600">Professional social media that positions you as the expert</div>
+                  <div className="text-gray-700">Professional social media that positions you as the expert</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -182,7 +224,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Automated Nurture</div>
-                  <div className="text-gray-600">Email sequences that turn leads into clients</div>
+                  <div className="text-gray-700">Email sequences that turn leads into clients</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -193,7 +235,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Quality Leads</div>
-                  <div className="text-gray-600">Targeted ads that drive real business results</div>
+                  <div className="text-gray-700">Targeted ads that drive real business results</div>
                 </div>
               </div>
             </div>
@@ -214,7 +256,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-black mb-4">
               How It <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Works</span>
             </h2>
-            <p className="text-xl text-gray-600">Three simple steps to consistent growth</p>
+            <p className="text-xl text-gray-700">Three simple steps to consistent growth</p>
           </div>
 
           <div className="space-y-8">
@@ -225,7 +267,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black mb-3 text-gray-900">Discovery & Strategy</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     We analyze your business, target audience, and goals to create a custom marketing strategy. We&apos;ll identify exactly what you need to dominate your local market.
                   </p>
                 </div>
@@ -239,7 +281,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black mb-3 text-gray-900">Setup & Launch</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     We build your marketing engine from the ground up—content calendars, email sequences, ad campaigns, and automated systems. Everything is ready to go within 2 weeks.
                   </p>
                 </div>
@@ -253,7 +295,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-black mb-3 text-gray-900">Optimize & Scale</h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     We continuously monitor performance, optimize campaigns, and scale what works. You get monthly reports and have full visibility into every aspect of your marketing through our client portal.
                   </p>
                 </div>
@@ -278,7 +320,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             Our <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Everything you need to dominate your market—all managed by our expert team
           </p>
         </div>
@@ -292,10 +334,10 @@ export default function Home() {
               </svg>
             </div>
             <h3 className="text-2xl font-black mb-4 text-gray-900">Social Media Content & Strategy</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-700 mb-4 leading-relaxed">
               We plan, script, edit, and post short and long form content that positions you as the local expert.
             </p>
-            <ul className="text-sm text-gray-600 space-y-2">
+            <ul className="text-sm text-gray-700 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 mt-1">•</span>
                 <span>Content ideas & filming guidance</span>
@@ -319,10 +361,10 @@ export default function Home() {
               </svg>
             </div>
             <h3 className="text-2xl font-black mb-4 text-gray-900">CRM & Email Marketing</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-700 mb-4 leading-relaxed">
               We build and manage automated email and follow up campaigns that turn leads into conversations.
             </p>
-            <ul className="text-sm text-gray-600 space-y-2">
+            <ul className="text-sm text-gray-700 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 mt-1">•</span>
                 <span>Database segmentation</span>
@@ -346,10 +388,10 @@ export default function Home() {
               </svg>
             </div>
             <h3 className="text-2xl font-black mb-4 text-gray-900">AI Optimization (AIO)</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-700 mb-4 leading-relaxed">
               We help your brand show up in AI driven search results like ChatGPT, Google AI, and voice search.
             </p>
-            <ul className="text-sm text-gray-600 space-y-2">
+            <ul className="text-sm text-gray-700 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 mt-1">•</span>
                 <span>AI-optimized content</span>
@@ -366,17 +408,17 @@ export default function Home() {
           </div>
 
           {/* Paid Advertising & Lead Generation */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 lg:col-start-2">
+          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
             </div>
             <h3 className="text-2xl font-black mb-4 text-gray-900">Paid Advertising & Lead Gen</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-700 mb-4 leading-relaxed">
               We run targeted ad campaigns designed to generate high quality leads, not vanity metrics.
             </p>
-            <ul className="text-sm text-gray-600 space-y-2">
+            <ul className="text-sm text-gray-700 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 mt-1">•</span>
                 <span>Funnel setup & landing pages</span>
@@ -393,17 +435,17 @@ export default function Home() {
           </div>
 
           {/* Brand Systems & Client Portals */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
+          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 md:col-span-2 lg:col-span-1">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
             <h3 className="text-2xl font-black mb-4 text-gray-900">Brand Systems & Client Portals</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-700 mb-4 leading-relaxed">
               Our revolutionary client portal gives you complete visibility and control over your marketing.
             </p>
-            <ul className="text-sm text-gray-600 space-y-2">
+            <ul className="text-sm text-gray-700 space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 mt-1">•</span>
                 <span>Content approval workflows</span>
@@ -510,28 +552,90 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             Let&apos;s <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Connect</span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-700">
             Ready to dominate your market? Fill out the form below and we&apos;ll be in touch.
           </p>
         </div>
         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-          <iframe
-            src="https://links.ownitsocial.com/widget/form/4yr6BnwxXsUbggVUhexB"
-            style={{width: '100%', height: '500px', border: 'none', borderRadius: '12px'}}
-            id="inline-4yr6BnwxXsUbggVUhexB"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Contact Form-prebuilt"
-            data-height="500"
-            data-layout-iframe-id="inline-4yr6BnwxXsUbggVUhexB"
-            data-form-id="4yr6BnwxXsUbggVUhexB"
-            title="Contact Form"
-          />
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+                Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900"
+                placeholder="Your full name"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
+                Company *
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900"
+                placeholder="Your company name"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900"
+                placeholder="(555) 123-4567"
+              />
+            </div>
+
+            {submitMessage && (
+              <div className={`p-4 rounded-lg ${submitMessage.includes('Thanks') ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+                {submitMessage}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? 'Sending...' : 'Book Free Consultation'}
+            </button>
+          </form>
         </div>
       </section>
 
@@ -571,7 +675,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
-    <Script src="https://links.ownitsocial.com/js/form_embed.js" strategy="lazyOnload" />
     </>
   );
 }
