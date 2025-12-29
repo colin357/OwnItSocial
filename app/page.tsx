@@ -9,7 +9,7 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="relative h-11 w-63">
+          <div className="relative h-8 w-48">
             <Image
               src="/OWN IT SOCIAL.png"
               alt="Own It Social"
@@ -152,7 +152,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <h2 className="text-gray-600">
+            <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">
               Your Complete
               <br />
               <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
