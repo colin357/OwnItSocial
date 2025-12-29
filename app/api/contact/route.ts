@@ -13,78 +13,73 @@ export async function POST(request: Request) {
       );
     }
 
-    // Go High Level API integration
-    const GHL_API_KEY = process.env.GHL_API_KEY;
-    const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
+    // Twilio SMS integration
+    const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
+    const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
+    const TWILIO_PHONE_NUMBER = process.env.TWILIO_PHONE_NUMBER;
+    const RECIPIENT_PHONE_NUMBER = process.env.RECIPIENT_PHONE_NUMBER;
 
-    if (!GHL_API_KEY || !GHL_LOCATION_ID) {
-      console.error('GHL credentials not configured');
-      console.error('GHL_API_KEY exists:', !!GHL_API_KEY);
-      console.error('GHL_LOCATION_ID exists:', !!GHL_LOCATION_ID);
+    if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER || !RECIPIENT_PHONE_NUMBER) {
+      console.error('Twilio credentials not configured');
+      console.error('Missing credentials:', {
+        hasSID: !!TWILIO_ACCOUNT_SID,
+        hasToken: !!TWILIO_AUTH_TOKEN,
+        hasFromNumber: !!TWILIO_PHONE_NUMBER,
+        hasToNumber: !!RECIPIENT_PHONE_NUMBER
+      });
       // Still return success to user, but log the error
       return NextResponse.json({ success: true });
     }
 
-    // Split name into first and last
-    const nameParts = name.trim().split(' ');
-    const firstName = nameParts[0] || '';
-    const lastName = nameParts.slice(1).join(' ') || '';
+    // Create SMS message with lead info
+    const message = `🚀 New Lead from OwnItSocial.com!\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}`;
 
-    // Prepare payload for GHL API
-    const ghlPayload = {
-      firstName,
-      lastName,
-      email,
-      phone,
-      companyName: company,
-      locationId: GHL_LOCATION_ID,
-      source: 'Website Contact Form',
-      tags: ['website-lead'],
-    };
+    console.log('Sending SMS via Twilio...');
 
-    console.log('Sending to GHL:', {
-      endpoint: 'https://rest.gohighlevel.com/v1/contacts/',
-      hasApiKey: !!GHL_API_KEY,
-      locationId: GHL_LOCATION_ID,
-      payload: { ...ghlPayload, email: '***', phone: '***' } // Log sanitized version
-    });
-
-    // Create contact in Go High Level
-    const ghlResponse = await fetch(
-      `https://rest.gohighlevel.com/v1/contacts/`,
+    // Send SMS using Twilio API
+    const twilioResponse = await fetch(
+      `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`,
       {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${GHL_API_KEY}`,
-          'Content-Type': 'application/json',
-          'Version': '2021-07-28', // GHL API version header
+          'Authorization': 'Basic ' + Buffer.from(`${TWILIO_ACCOUNT_SID}:${TWILIO_AUTH_TOKEN}`).toString('base64'),
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(ghlPayload),
+        body: new URLSearchParams({
+          To: RECIPIENT_PHONE_NUMBER,
+          From: TWILIO_PHONE_NUMBER,
+          Body: message,
+        }).toString(),
       }
     );
 
-    const responseText = await ghlResponse.text();
+    const responseText = await twilioResponse.text();
 
-    if (!ghlResponse.ok) {
-      console.error('GHL API error response:', {
-        status: ghlResponse.status,
-        statusText: ghlResponse.statusText,
+    if (!twilioResponse.ok) {
+      console.error('Twilio API error response:', {
+        status: twilioResponse.status,
+        statusText: twilioResponse.statusText,
         body: responseText,
-        headers: Object.fromEntries(ghlResponse.headers.entries())
       });
 
       // Try to parse error message
       try {
         const errorData = JSON.parse(responseText);
-        console.error('GHL error details:', errorData);
+        console.error('Twilio error details:', errorData);
       } catch (e) {
-        console.error('Could not parse GHL error response');
+        console.error('Could not parse Twilio error response');
       }
     } else {
-      console.log('GHL API success:', {
-        status: ghlResponse.status,
-        response: responseText
-      });
+      console.log('SMS sent successfully!');
+      try {
+        const successData = JSON.parse(responseText);
+        console.log('Twilio response:', {
+          sid: successData.sid,
+          status: successData.status
+        });
+      } catch (e) {
+        console.log('Twilio raw response:', responseText);
+      }
     }
 
     return NextResponse.json({ success: true });
