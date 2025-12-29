@@ -1,16 +1,16 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { miamiCompetitors, ownItSocial } from '@/app/data/competitors';
+import { dallasCompetitors, ownItSocial } from '@/app/data/competitors';
 
 export const metadata: Metadata = {
-  title: 'Best Marketing Agencies in Miami 2025 | Independent Comparison',
-  description: 'Unbiased comparison of the top marketing agencies in Miami, FL. Compare pricing, services, and reviews to find the perfect fit for your business.',
-  keywords: 'best marketing agencies miami, top marketing agencies miami, miami marketing companies, marketing firms miami',
+  title: 'Best Marketing Agencies in Dallas 2025 | Independent Comparison',
+  description: 'Unbiased comparison of the top marketing agencies in Dallas, TX. Compare pricing, services, and reviews to find the perfect fit for your business.',
+  keywords: 'best marketing agencies dallas, top marketing agencies dallas, dallas marketing companies, marketing firms dallas',
 };
 
-export default function BestMarketingAgenciesMiamiPage() {
-  const allAgencies = [ownItSocial, ...miamiCompetitors];
+export default function BestMarketingAgenciesDallasPage() {
+  const allAgencies = [ownItSocial, ...dallasCompetitors];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
@@ -45,11 +45,11 @@ export default function BestMarketingAgenciesMiamiPage() {
             <span className="text-black">Best Marketing Agencies</span>
             <br />
             <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              in Miami, FL
+              in Dallas, TX
             </span>
           </h1>
           <p className="text-xl mb-8 text-gray-700 leading-relaxed">
-            An honest, unbiased comparison of Miami&apos;s top marketing agencies to help you make the right choice for your business.
+            An honest, unbiased comparison of Dallas&apos; top marketing agencies to help you make the right choice for your business.
           </p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function BestMarketingAgenciesMiamiPage() {
         <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-100">
           <h2 className="text-2xl font-black mb-4 text-gray-900">How We Evaluated These Agencies</h2>
           <p className="text-gray-700 mb-4">
-            We&apos;ve researched Miami&apos;s most prominent marketing agencies based on:
+            We&apos;ve researched Dallas&apos; most prominent marketing agencies based on:
           </p>
           <ul className="space-y-2 text-gray-700">
             <li className="flex items-start gap-3">
@@ -273,7 +273,7 @@ export default function BestMarketingAgenciesMiamiPage() {
           <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
             <h3 className="text-xl font-black mb-3 text-gray-900">1. Define Your Budget</h3>
             <p className="text-gray-700">
-              Marketing agencies in Miami range from $2,000/month to $20,000+/month. Know your budget before you start shopping.
+              Marketing agencies in Dallas range from $2,000/month to $15,000+/month. Know your budget before you start shopping.
             </p>
           </div>
 
@@ -330,7 +330,7 @@ export default function BestMarketingAgenciesMiamiPage() {
                 OWN IT SOCIAL
               </div>
               <p className="text-gray-500 mb-4">
-                Miami marketing agency specializing in real estate and finance marketing.
+                Marketing agency specializing in real estate and finance marketing, serving Dallas and beyond.
               </p>
             </div>
             <div>
@@ -348,12 +348,13 @@ export default function BestMarketingAgenciesMiamiPage() {
                 <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
                 <li><Link href="/marketing-agency-miami" className="hover:text-white transition">Marketing Agency Miami</Link></li>
                 <li><Link href="/best-marketing-agencies-miami" className="hover:text-white transition">Best Agencies Miami</Link></li>
+                <li><Link href="/best-marketing-agencies-dallas" className="hover:text-white transition">Best Agencies Dallas</Link></li>
                 <li><Link href="/locations" className="hover:text-white transition">All Locations</Link></li>
               </ul>
             </div>
           </div>
           <div className="text-center text-sm border-t border-gray-800 pt-8">
-            <p>© 2025 OwnItSocial.com | Serving Miami, FL | All rights reserved.</p>
+            <p>© 2025 OwnItSocial.com | Serving Dallas, TX | All rights reserved.</p>
           </div>
         </div>
       </footer>

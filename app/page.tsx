@@ -663,6 +663,7 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white mb-4">Specializations</h4>
               <ul className="space-y-2">
+                <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
                 <li><Link href="/locations" className="hover:text-white transition">Service Areas</Link></li>
                 <li><Link href="/real-estate-marketing/miami" className="hover:text-white transition">Real Estate Marketing</Link></li>
                 <li><Link href="/loan-officer-marketing/miami" className="hover:text-white transition">Loan Officer Marketing</Link></li>

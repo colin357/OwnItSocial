@@ -292,11 +292,12 @@ export default function MarketingAgencyMiamiPage() {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-white mb-4">Miami Services</h4>
+              <h4 className="font-bold text-white mb-4">Resources</h4>
               <ul className="space-y-2">
+                <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
                 <li><Link href="/marketing-agency-miami" className="hover:text-white transition">Marketing Agency</Link></li>
                 <li><Link href="/digital-marketing-miami" className="hover:text-white transition">Digital Marketing</Link></li>
-                <li><Link href="/real-estate-marketing/miami" className="hover:text-white transition">Real Estate Marketing</Link></li>
+                <li><Link href="/best-marketing-agencies-miami" className="hover:text-white transition">Best Agencies Miami</Link></li>
               </ul>
             </div>
           </div>
