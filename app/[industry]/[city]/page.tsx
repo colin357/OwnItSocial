@@ -4,6 +4,11 @@ import Image from 'next/image';
 import { getCityBySlug, getAllCitySlugs } from '@/app/data/cities';
 import { getIndustryBySlug, getAllIndustrySlugs } from '@/app/data/industries';
 import { notFound } from 'next/navigation';
+import {
+  generateLocalBusinessSchema,
+  generateBreadcrumbSchema,
+  getStructuredDataScript
+} from '@/lib/seo/structured-data';
 
 interface PageProps {
   params: Promise<{
@@ -71,9 +76,36 @@ export default async function IndustryCityPage({ params }: PageProps) {
     notFound();
   }
 
+  const localBusinessSchema = generateLocalBusinessSchema({
+    name: `Own It Social - ${industry.title} in ${city.name}`,
+    address: {
+      street: '',
+      city: city.name,
+      state: city.state,
+      postalCode: '',
+      country: 'US',
+    },
+    priceRange: '$$',
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: industry.title, url: `/${industrySlug}` },
+    { name: `${city.name}, ${city.state}`, url: `/${industrySlug}/${citySlug}` },
+  ]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
-      {/* Header */}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: getStructuredDataScript(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: getStructuredDataScript(breadcrumbSchema) }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+        {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="relative h-10 w-56">
@@ -363,5 +395,6 @@ export default async function IndustryCityPage({ params }: PageProps) {
         </div>
       </footer>
     </div>
+    </>
   );
 }

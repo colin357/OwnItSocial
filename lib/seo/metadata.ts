@@ -37,6 +37,9 @@ export function generateSEOMetadata({
     description,
     keywords: keywords.join(', '),
     authors: authors?.map((name) => ({ name })),
+    alternates: {
+      canonical: fullUrl,
+    },
     openGraph: {
       title: fullTitle,
       description,

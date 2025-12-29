@@ -2,6 +2,10 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { miamiCompetitors, ownItSocial } from '@/app/data/competitors';
+import {
+  generateBreadcrumbSchema,
+  getStructuredDataScript
+} from '@/lib/seo/structured-data';
 
 export const metadata: Metadata = {
   title: 'Best Marketing Agencies in Miami 2025 | Independent Comparison',
@@ -12,9 +16,19 @@ export const metadata: Metadata = {
 export default function BestMarketingAgenciesMiamiPage() {
   const allAgencies = [ownItSocial, ...miamiCompetitors];
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Best Marketing Agencies in Miami', url: '/best-marketing-agencies-miami' },
+  ]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
-      {/* Header */}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: getStructuredDataScript(breadcrumbSchema) }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+        {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="relative h-10 w-56">
@@ -358,5 +372,6 @@ export default function BestMarketingAgenciesMiamiPage() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
