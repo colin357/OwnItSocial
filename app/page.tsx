@@ -82,7 +82,7 @@ export default function Home() {
               🚀 Full-Service Marketing Agency
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              <span className="text-gray-600">Own Your Market</span>
+              <span className="text-gray-900">Own Your Market</span>
               <br />
               <span className="relative bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Dominate Online
