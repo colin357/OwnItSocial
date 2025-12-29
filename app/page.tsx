@@ -82,7 +82,7 @@ export default function Home() {
               🚀 Full-Service Marketing Agency
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              <span className="text-gray-1000">Own Your Market</span>
+              <span className="text-black">Own Your Market</span>
               <br />
               <span className="relative bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Dominate Online
@@ -155,11 +155,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center font-bold text-sm text-gray-500 mb-8 tracking-wider">TRUSTED BY LEADING BRANDS</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="text-2xl font-black text-gray-300 hover:text-gray-1000 transition">FAIRWAY</div>
-            <div className="text-2xl font-black text-gray-300 hover:text-gray-1000 transition">COMPASS</div>
-            <div className="text-2xl font-black text-gray-300 hover:text-gray-1000 transition">KW</div>
-            <div className="text-2xl font-black text-gray-300 hover:text-gray-1000 transition">BAIRD & WARNER</div>
-            <div className="text-2xl font-black text-gray-300 hover:text-gray-1000 transition">THE BROKERAGE</div>
+            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">FAIRWAY</div>
+            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">COMPASS</div>
+            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">KW</div>
+            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">BAIRD & WARNER</div>
+            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">THE BROKERAGE</div>
           </div>
         </div>
       </section>
