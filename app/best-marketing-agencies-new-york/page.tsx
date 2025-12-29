@@ -345,6 +345,7 @@ export default function BestMarketingAgenciesNewYorkPage() {
             <div>
               <h4 className="font-bold text-white mb-4">Resources</h4>
               <ul className="space-y-2">
+                <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
                 <li><Link href="/marketing-agency-miami" className="hover:text-white transition">Marketing Agency Miami</Link></li>
                 <li><Link href="/best-marketing-agencies-miami" className="hover:text-white transition">Best Agencies Miami</Link></li>
                 <li><Link href="/best-marketing-agencies-new-york" className="hover:text-white transition">Best Agencies New York</Link></li>
