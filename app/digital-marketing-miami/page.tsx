@@ -234,6 +234,7 @@ export default function DigitalMarketingMiamiPage() {
             <div>
               <h4 className="font-bold text-white mb-4">Resources</h4>
               <ul className="space-y-2">
+                <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
                 <li><Link href="/best-marketing-agencies-miami" className="hover:text-white transition">Best Agencies</Link></li>
                 <li><Link href="/#contact" className="hover:text-white transition">Contact</Link></li>
               </ul>

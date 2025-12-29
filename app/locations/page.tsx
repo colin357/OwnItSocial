@@ -163,7 +163,7 @@ export default function LocationsPage() {
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
             <div className="md:col-span-2">
               <div className="font-black text-2xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
                 OWN IT SOCIAL
@@ -179,6 +179,14 @@ export default function LocationsPage() {
                 <li><Link href="/#how-it-works" className="hover:text-white transition">How It Works</Link></li>
                 <li><Link href="/#about" className="hover:text-white transition">About</Link></li>
                 <li><Link href="/#contact" className="hover:text-white transition">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Resources</h4>
+              <ul className="space-y-2">
+                <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
+                <li><Link href="/marketing-agency-miami" className="hover:text-white transition">Marketing Agency Miami</Link></li>
+                <li><Link href="/best-marketing-agencies-miami" className="hover:text-white transition">Best Agencies Miami</Link></li>
               </ul>
             </div>
             <div>
