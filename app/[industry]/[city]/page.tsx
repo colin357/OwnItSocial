@@ -6,10 +6,10 @@ import { getIndustryBySlug, getAllIndustrySlugs } from '@/app/data/industries';
 import { notFound } from 'next/navigation';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     industry: string;
     city: string;
-  };
+  }>;
 }
 
 // Generate all possible paths at build time
@@ -32,8 +32,9 @@ export async function generateStaticParams() {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const city = getCityBySlug(params.city);
-  const industry = getIndustryBySlug(params.industry);
+  const { industry: industrySlug, city: citySlug } = await params;
+  const city = getCityBySlug(citySlug);
+  const industry = getIndustryBySlug(industrySlug);
 
   if (!city || !industry) {
     return {
@@ -61,9 +62,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function IndustryCityPage({ params }: PageProps) {
-  const city = getCityBySlug(params.city);
-  const industry = getIndustryBySlug(params.industry);
+export default async function IndustryCityPage({ params }: PageProps) {
+  const { industry: industrySlug, city: citySlug } = await params;
+  const city = getCityBySlug(citySlug);
+  const industry = getIndustryBySlug(industrySlug);
 
   if (!city || !industry) {
     notFound();
