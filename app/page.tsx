@@ -195,7 +195,7 @@ export default function Home() {
           </div>
           <div>
             <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">
-              Your Complete
+              <span className="text-gray-900">Your Complete</span>
               <br />
               <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Marketing System
@@ -254,7 +254,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4">
-              How It <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Works</span>
+              <span className="text-gray-900">How It</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Works</span>
             </h2>
             <p className="text-xl text-gray-700">Three simple steps to consistent growth</p>
           </div>
@@ -318,7 +318,7 @@ export default function Home() {
       <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-4">
-            Our <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Services</span>
+            <span className="text-gray-900">Our</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
             Everything you need to dominate your market—all managed by our expert team
@@ -550,7 +550,7 @@ export default function Home() {
       <section id="contact" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black mb-4">
-            Let&apos;s <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Connect</span>
+            <span className="text-gray-900">Let&apos;s</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Connect</span>
           </h2>
           <p className="text-xl text-gray-700">
             Ready to dominate your market? Fill out the form below and we&apos;ll be in touch.
