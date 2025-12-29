@@ -61,9 +61,9 @@ export default function Home() {
             />
           </div>
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-gray-1000 hover:text-gray-900 font-medium transition">Services</a>
-            <a href="#how-it-works" className="text-gray-1000 hover:text-gray-900 font-medium transition">How It Works</a>
-            <a href="#about" className="text-gray-1000 hover:text-gray-900 font-medium transition">About</a>
+            <a href="#services" className="text-gray-800 hover:text-gray-900 font-medium transition">Services</a>
+            <a href="#how-it-works" className="text-gray-800 hover:text-gray-900 font-medium transition">How It Works</a>
+            <a href="#about" className="text-gray-800 hover:text-gray-900 font-medium transition">About</a>
           </nav>
           <Link
             href="#contact"
