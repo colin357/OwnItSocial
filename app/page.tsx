@@ -178,10 +178,10 @@ export default function Home() {
             </div>
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105 col-span-2">
               <Image
-                src="/images/success-team.webp"
+                src="/images/success-team.jpg"
                 alt="Marketing success and growth"
                 fill
-                className="object-cover center-top"
+                className="object-cover"
               />
             </div>
           </div>
