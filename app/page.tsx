@@ -482,7 +482,7 @@ export default function Home() {
                   src="/images/colin-portrait.webp"
                   alt="Colin Hickmon - Founder of Own It Social"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover"
                 />
               </div>
             </div>
