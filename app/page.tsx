@@ -181,7 +181,7 @@ export default function Home() {
                 src="/images/success-team.webp"
                 alt="Marketing success and growth"
                 fill
-                className="object-cover"
+                className="object-cover center-top"
               />
             </div>
           </div>
