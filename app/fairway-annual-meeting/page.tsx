@@ -180,12 +180,39 @@ export default function FairwayAnnualMeetingPage() {
         <section className="bg-white border-y border-gray-100 py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-center font-bold text-sm text-gray-500 mb-8 tracking-wider">TRUSTED BY LOAN OFFICERS AT</h3>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">FAIRWAY</div>
-              <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">COMPASS</div>
-              <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">KW</div>
-              <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">WILLIAM RAVEIS</div>
-              <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">GUARANTEED RATE</div>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+              <div className="relative h-12 w-32 grayscale hover:grayscale-0 transition opacity-70 hover:opacity-100">
+                <Image
+                  src="/images/Fairway.webp"
+                  alt="Fairway Independent Mortgage"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative h-12 w-32 grayscale hover:grayscale-0 transition opacity-70 hover:opacity-100">
+                <Image
+                  src="/images/Compass Logo.png"
+                  alt="Compass"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative h-12 w-32 grayscale hover:grayscale-0 transition opacity-70 hover:opacity-100">
+                <Image
+                  src="/images/Keller Williams.png"
+                  alt="Keller Williams"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative h-12 w-32 grayscale hover:grayscale-0 transition opacity-70 hover:opacity-100">
+                <Image
+                  src="/images/William Raveis.png"
+                  alt="William Raveis"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -272,9 +299,9 @@ export default function FairwayAnnualMeetingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-black mb-3 text-gray-900">Short-Form Scripts & Posting Plan</h3>
+                <h3 className="text-xl font-black mb-3 text-gray-900">We Script, Edit & Post For You</h3>
                 <p className="text-gray-700">
-                  Built for loan officer conversions. Instagram Reels, TikTok, and LinkedIn content that drives engagement.
+                  You just film—we handle everything else. Or we can create content entirely for you so you always have something going up. Instagram Reels, TikTok, and LinkedIn ready to convert.
                 </p>
               </div>
 
