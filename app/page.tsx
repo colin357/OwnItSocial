@@ -148,11 +148,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center font-bold text-sm text-gray-500 mb-8 tracking-wider">TRUSTED BY TEAMS AT</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">FAIRWAY</div>
+            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">FAIRWAY HOME MORTGAGE</div>
             <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">COMPASS</div>
-            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">KW</div>
+            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">KELLER WILLIAMS</div>
             <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">WILLIAM RAVEIS</div>
-            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">THE LEADPIN MARKETING</div>
           </div>
         </div>
       </section>
@@ -179,7 +178,7 @@ export default function Home() {
             </div>
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105 col-span-2">
               <Image
-                src="/images/success-team.webp"
+                src="/images/success-team.jpg"
                 alt="Marketing success and growth"
                 fill
                 className="object-cover"
@@ -483,7 +482,7 @@ export default function Home() {
                   src="/images/colin-portrait.webp"
                   alt="Colin Hickmon - Founder of Own It Social"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover"
                 />
               </div>
             </div>
