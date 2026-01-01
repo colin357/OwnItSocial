@@ -215,54 +215,6 @@ export default function FairwayAnnualMeetingPage() {
           </div>
         </section>
 
-        {/* VSL Section */}
-        <section id="vsl" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">
-              <span className="text-gray-900">Watch the</span>{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                2-Minute Walkthrough
-              </span>
-            </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              See exactly what you get each month and how it turns into more conversations, more referrals, and more closings.
-            </p>
-          </div>
-
-          {/* Video Container */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8" style={{ paddingBottom: '56.25%' }}>
-            <iframe
-              src={VSL_URL}
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              title="Own It Social - Fairway Annual Meeting Offer"
-            ></iframe>
-          </div>
-
-          {/* CTA Row */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={STRIPE_CHECKOUT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-            >
-              Get Started Now
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-            <Link
-              href="#contact"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold text-sm hover:border-purple-600 hover:text-purple-600 transition-all duration-200 rounded-full"
-            >
-              Book a Call
-            </Link>
-          </div>
-        </section>
-
         {/* What You Get Section */}
         <section id="what-you-get" className="bg-gradient-to-br from-purple-50 to-blue-50 py-20 md:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
