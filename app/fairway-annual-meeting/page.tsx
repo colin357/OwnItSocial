@@ -93,16 +93,32 @@ export default function FairwayAnnualMeetingPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               {/* VSL Video */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8" style={{ paddingBottom: '56.25%' }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-8" style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
-                  src={VSL_URL}
-                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://player.vimeo.com/video/1143153212?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
                   frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title="Own It Social - Fairway Annual Meeting Offer"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  title="Aqualane - December"
                 ></iframe>
               </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+                <span className="text-black">Stop Posting.</span>
+                <br />
+                <span className="relative bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  Start Closing More Loans.
+                  <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
+                    <path d="M2 10C100 2 200 2 298 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#9333ea" />
+                        <stop offset="100%" stopColor="#2563eb" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </span>
+              </h1>
               <p className="text-xl mb-6 text-gray-700 leading-relaxed">
                 Own It Social builds your content plan, CRM follow-ups, and lead flow so you stay top of mind and close more purchase business in 2025.
               </p>
