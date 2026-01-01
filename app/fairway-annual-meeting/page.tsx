@@ -177,7 +177,7 @@ export default function FairwayAnnualMeetingPage() {
         {/* Trusted By Section */}
         <section className="bg-white border-y border-gray-100 py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-center font-bold text-sm text-gray-500 mb-8 tracking-wider">TRUSTED BY LOAN OFFICERS AT</h3>
+            <h3 className="text-center font-bold text-sm text-gray-500 mb-8 tracking-wider">TRUSTED BY TEAMS AT</h3>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
               <div className="relative h-12 w-32 grayscale hover:grayscale-0 transition opacity-70 hover:opacity-100">
                 <Image
