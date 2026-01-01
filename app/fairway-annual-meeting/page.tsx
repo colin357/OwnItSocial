@@ -92,8 +92,6 @@ export default function FairwayAnnualMeetingPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block mb-4 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-                🎯 Fairway Annual Meeting Exclusive
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
                 <span className="text-black">Stop Posting.</span>
@@ -111,19 +109,6 @@ export default function FairwayAnnualMeetingPage() {
                   </svg>
                 </span>
               </h1>
-              <p className="text-xl mb-6 text-gray-700 leading-relaxed">
-                Own It Social builds your content plan, CRM follow-ups, and lead flow so you stay top of mind and close more purchase business in 2025.
-              </p>
-              <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-6 mb-8 border border-purple-200">
-                <p className="text-lg font-bold text-gray-900 mb-2">
-                  Fairway Annual Meeting Special:
-                </p>
-                <p className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  $995/mo
-                </p>
-                <p className="text-sm text-gray-600 line-through">Normally $1,500/mo</p>
-                <p className="text-sm text-purple-700 font-semibold mt-2">⏰ Limited spots available</p>
-              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="#contact"
