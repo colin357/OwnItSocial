@@ -92,9 +92,6 @@ export default function FairwayAnnualMeetingPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block mb-4 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-                🎯 Fairway Annual Meeting Exclusive
-              </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
                 <span className="text-black">Stop Posting.</span>
                 <br />
@@ -143,34 +140,19 @@ export default function FairwayAnnualMeetingPage() {
                   Get Started Now
                 </a>
               </div>
-
-              {/* Stats */}
-              <div className="mt-12 grid grid-cols-3 gap-6">
-                <div>
-                  <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">30+</div>
-                  <div className="text-sm text-gray-700 mt-1">Posts Per Month</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">100%</div>
-                  <div className="text-sm text-gray-700 mt-1">Done For You</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">24/7</div>
-                  <div className="text-sm text-gray-700 mt-1">CRM Follow-ups</div>
-                </div>
-              </div>
             </div>
 
             <div className="relative hidden md:block">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
-              <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/hero-business.png"
-                  alt="Loan officer success with marketing automation"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src={VSL_URL}
+                  className="absolute top-0 left-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Own It Social - Fairway Annual Meeting Offer"
+                ></iframe>
               </div>
             </div>
           </div>
