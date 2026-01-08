@@ -164,7 +164,7 @@ export default function FairwayAnnualMeetingPage() {
               </div>
             </div>
 
-            <div className="relative hidden md:block">
+            <div className="md:block">
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
               {/* VSL Video */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
