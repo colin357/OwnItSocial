@@ -76,6 +76,7 @@ export default function FairwayAnnualMeetingPage() {
           `,
         }}
       />
+      <script src="https://player.vimeo.com/api/player.js"></script>
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
         {/* Header */}
@@ -169,12 +170,12 @@ export default function FairwayAnnualMeetingPage() {
               {/* VSL Video */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
-                  src="https://player.vimeo.com/video/1143153212?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                  src="https://player.vimeo.com/video/1152603930?badge=0&autopause=0&player_id=0&app_id=58479"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  title="Aqualane - December"
+                  title="Fairway Annual Meeting"
                 ></iframe>
               </div>
             </div>
