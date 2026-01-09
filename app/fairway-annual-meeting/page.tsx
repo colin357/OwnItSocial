@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
+import ScrollToTop from './ScrollToTop';
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
@@ -60,22 +61,7 @@ export default function FairwayAnnualMeetingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: getStructuredDataScript(localBusinessSchema) }}
       />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              if (typeof window !== 'undefined') {
-                window.history.scrollRestoration = 'manual';
-                window.scrollTo(0, 0);
-                setTimeout(() => window.scrollTo(0, 0), 0);
-                document.addEventListener('DOMContentLoaded', () => {
-                  window.scrollTo(0, 0);
-                });
-              }
-            })();
-          `,
-        }}
-      />
+      <ScrollToTop />
 
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
         {/* Header */}
