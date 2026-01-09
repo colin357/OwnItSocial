@@ -107,7 +107,22 @@ export default function FairwayAnnualMeetingPage() {
         {/* Hero Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="relative mt-10 order-1 md:order-2 md:mt-0">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
+              {/* VSL Video */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+                <iframe
+                  src="https://player.vimeo.com/video/1152804772?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  title="Fairway Annual Meeting"
+                ></iframe>
+              </div>
+            </div>
+
+            <div className="order-2 md:order-1">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
                 <span className="text-black">Stop Posting.</span>
                 <br />
@@ -164,20 +179,6 @@ export default function FairwayAnnualMeetingPage() {
               </div>
             </div>
 
-            <div className="relative hidden md:block">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
-              {/* VSL Video */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
-                <iframe
-                  src="https://player.vimeo.com/video/1152804772?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  title="Fairway Annual Meeting"
-                ></iframe>
-              </div>
-            </div>
           </div>
         </section>
 
