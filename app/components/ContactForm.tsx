@@ -2,6 +2,10 @@
 
 import { useState } from 'react';
 
+declare global {
+  function gtag(...args: unknown[]): void;
+}
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -27,6 +31,9 @@ export default function ContactForm() {
       });
 
       if (response.ok) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', { send_to: 'AW-11353830288/2anpCMuBkekYEJDn9qUq' });
+        }
         setSubmitMessage('Thanks for reaching out! We\'ll be in touch soon.');
         setFormData({ name: '', company: '', phone: '', email: '' });
       } else {
