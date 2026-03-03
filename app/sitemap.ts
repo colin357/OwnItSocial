@@ -32,6 +32,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/best-marketing-agencies-dallas', priority: 0.8, changeFrequency: 'weekly' as const },
     { url: '/marketing-agency-miami', priority: 0.8, changeFrequency: 'weekly' as const },
     { url: '/digital-marketing-miami', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/top-marketing-agencies', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/ppc-digital-marketing-agency', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/seo-optimization-miami-fl', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/orlando-seo-company', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/social-media-marketing-agency-near-me', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/social-media-marketing-dallas-tx', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/lead-generation-for-real-estate-agents', priority: 0.8, changeFrequency: 'weekly' as const },
   ];
 
   for (const page of staticPages) {
