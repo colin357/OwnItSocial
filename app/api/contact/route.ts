@@ -3,10 +3,10 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, company, phone, email } = body;
+    const { name, company, phone, email, revenue } = body;
 
     // Validate required fields
-    if (!name || !company || !phone || !email) {
+    if (!name || !company || !phone || !email || !revenue) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
     }
 
     // Create SMS message with lead info
-    const message = `🚀 New Lead from OwnItSocial.com!\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}`;
+    const message = `🚀 New Lead from OwnItSocial.com!\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nRevenue: ${revenue}`;
 
     console.log('Sending SMS via Twilio...');
 
