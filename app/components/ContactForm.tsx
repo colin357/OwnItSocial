@@ -11,7 +11,8 @@ export default function ContactForm() {
     name: '',
     company: '',
     phone: '',
-    email: ''
+    email: '',
+    revenue: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
@@ -35,7 +36,7 @@ export default function ContactForm() {
           gtag('event', 'conversion', { send_to: 'AW-11353830288/2anpCMuBkekYEJDn9qUq' });
         }
         setSubmitMessage('Thanks for reaching out! We\'ll be in touch soon.');
-        setFormData({ name: '', company: '', phone: '', email: '' });
+        setFormData({ name: '', company: '', phone: '', email: '', revenue: '' });
       } else {
         setSubmitMessage('Something went wrong. Please try again.');
       }
@@ -46,7 +47,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -115,6 +116,27 @@ export default function ContactForm() {
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900"
             placeholder="(555) 123-4567"
           />
+        </div>
+
+        <div>
+          <label htmlFor="revenue" className="block text-sm font-semibold text-gray-900 mb-2">
+            Annual Business Revenue *
+          </label>
+          <select
+            id="revenue"
+            name="revenue"
+            value={formData.revenue}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900 bg-white"
+          >
+            <option value="" disabled>Select your annual revenue</option>
+            <option value="Under $250K">Under $250K</option>
+            <option value="$250K - $500K">$250K – $500K</option>
+            <option value="$500K - $1M">$500K – $1M</option>
+            <option value="$1M - $5M">$1M – $5M</option>
+            <option value="$5M+">$5M+</option>
+          </select>
         </div>
 
         {submitMessage && (
