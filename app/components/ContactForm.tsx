@@ -131,11 +131,11 @@ export default function ContactForm() {
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900 bg-white"
           >
             <option value="" disabled>Select your annual revenue</option>
-            <option value="Under $500K">Under $500K</option>
+            <option value="Under $250K">Under $250K</option>
+            <option value="$250K - $500K">$250K – $500K</option>
             <option value="$500K - $1M">$500K – $1M</option>
             <option value="$1M - $5M">$1M – $5M</option>
-            <option value="$5M - $10M">$5M – $10M</option>
-            <option value="$10M+">$10M+</option>
+            <option value="$5M+">$5M+</option>
           </select>
         </div>
 
