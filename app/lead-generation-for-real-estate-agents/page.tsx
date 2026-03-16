@@ -134,6 +134,16 @@ const leadSources = [
     strategy: 'Use digital sign-in (Spacio, Curb Hero, or Open Home Pro) to capture phone and email. Follow up within 2 hours. Ask qualifying questions at the event: timeline, financing status, working with an agent. Promote open houses on social media to drive traffic beyond just MLS exposure.',
     bestFor: 'Agents who hold 2+ open houses per month and have listings in high-traffic areas.',
   },
+  {
+    source: 'Social Media Organic (Instagram, TikTok, Facebook)',
+    costPerLead: '$0 (time investment)',
+    conversionRate: 'Indirect / 1-3%',
+    intent: 'Low',
+    volume: 'Varies',
+    description: 'Reels, TikTok, Stories, and community-focused content build brand awareness and keep you top-of-mind with your sphere. Organic social rarely produces direct leads but dramatically improves conversion rates on every other channel because prospects already know and trust you.',
+    strategy: 'Post 3-5 times per week mixing market tips, behind-the-scenes content, client wins, and local community content. Use DMs to build relationships. Reply to every comment. Use Stories for daily visibility. Think of organic social as the trust layer that makes your paid campaigns and referrals convert at higher rates.',
+    bestFor: 'Every agent. Organic social is a force multiplier for all other lead gen activities.',
+  },
 ];
 
 export default function LeadGenerationForRealEstateAgentsPage() {
@@ -328,6 +338,145 @@ export default function LeadGenerationForRealEstateAgentsPage() {
           </div>
         </section>
 
+        {/* Conversion Optimization */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Conversion Optimization: Lead to Appointment to Closing</h2>
+          <p className="text-gray-700 mb-8 max-w-3xl">More leads will not fix a broken conversion process. These frameworks help you turn more of your existing pipeline into appointments and closings.</p>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Qualification Scripts */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Lead Qualification Framework (TFMR)</h3>
+              <p className="text-gray-700 text-sm mb-4">Every lead conversation should uncover four things within the first two minutes:</p>
+              <div className="space-y-3">
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <span className="font-bold text-purple-800 text-sm">T - Timeline:</span>
+                  <span className="text-purple-700 text-sm"> &quot;When are you hoping to be moved in by?&quot; or &quot;When do you need to sell by?&quot;</span>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <span className="font-bold text-purple-800 text-sm">F - Financing:</span>
+                  <span className="text-purple-700 text-sm"> &quot;Have you spoken with a lender about what you qualify for?&quot; or &quot;Do you have a price range in mind?&quot;</span>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <span className="font-bold text-purple-800 text-sm">M - Motivation:</span>
+                  <span className="text-purple-700 text-sm"> &quot;What is driving the move?&quot; (Job change, family growth, lifestyle, investment)</span>
+                </div>
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <span className="font-bold text-purple-800 text-sm">R - Representation:</span>
+                  <span className="text-purple-700 text-sm"> &quot;Are you currently working with another agent?&quot;</span>
+                </div>
+              </div>
+              <p className="text-gray-500 text-xs mt-4">Hot leads: timeline under 90 days + financing in place + clear motivation. Warm: 3-6 month timeline. Long-term nurture: 6+ months or missing financing.</p>
+            </div>
+
+            {/* Appointment Setting */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Appointment Setting Techniques</h3>
+              <p className="text-gray-700 text-sm mb-4">The goal of every lead interaction is a specific, confirmed appointment. Not &quot;call me when you are ready.&quot;</p>
+              <div className="space-y-3 text-sm text-gray-700">
+                <div className="flex items-start gap-2">
+                  <span className="text-purple-600 font-bold mt-0.5">1.</span>
+                  <div><strong>Assumptive close:</strong> &quot;I have Tuesday at 4 PM and Thursday at 10 AM open. Which works better for you?&quot;</div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-purple-600 font-bold mt-0.5">2.</span>
+                  <div><strong>Value-first offer:</strong> Offer a free CMA, buyer consultation, or neighborhood tour as the reason to meet.</div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-purple-600 font-bold mt-0.5">3.</span>
+                  <div><strong>Reduce friction:</strong> Offer Zoom or phone for initial consultations, especially for leads early in their timeline.</div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-purple-600 font-bold mt-0.5">4.</span>
+                  <div><strong>Confirm twice:</strong> Send a calendar invite immediately, then a confirmation text the morning of the appointment.</div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-purple-600 font-bold mt-0.5">5.</span>
+                  <div><strong>No-show protocol:</strong> If they miss, text within 5 minutes: &quot;I am here! Want to reschedule for later today or tomorrow?&quot;</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Objection Handling */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Objection Handling Scripts</h3>
+              <div className="space-y-3">
+                <div className="border-l-4 border-purple-600 pl-4">
+                  <p className="font-semibold text-gray-900 text-sm">&quot;I am just looking.&quot;</p>
+                  <p className="text-gray-600 text-sm">&quot;Most of my clients started by browsing online 6-12 months before buying. Would it help if I set up a custom search so you see new listings before they hit the portals?&quot;</p>
+                </div>
+                <div className="border-l-4 border-purple-600 pl-4">
+                  <p className="font-semibold text-gray-900 text-sm">&quot;I already have an agent.&quot;</p>
+                  <p className="text-gray-600 text-sm">&quot;Great, glad you are working with someone. If anything changes or you want a second opinion on a property, feel free to reach out.&quot;</p>
+                </div>
+                <div className="border-l-4 border-purple-600 pl-4">
+                  <p className="font-semibold text-gray-900 text-sm">&quot;I am not ready yet.&quot;</p>
+                  <p className="text-gray-600 text-sm">&quot;Totally understand. Would it be helpful to know what your home is worth in today&apos;s market so you can plan? No obligation.&quot;</p>
+                </div>
+                <div className="border-l-4 border-purple-600 pl-4">
+                  <p className="font-semibold text-gray-900 text-sm">&quot;Just send me listings.&quot;</p>
+                  <p className="text-gray-600 text-sm">&quot;Happy to. So I send the right ones, can I ask a few quick questions? Bedrooms, neighborhood, price range, and any must-haves?&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pipeline Management */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Pipeline Management &amp; Review Cadence</h3>
+              <p className="text-gray-700 text-sm mb-4">Every lead should live in a defined stage. Review weekly (solo agents) or daily (teams).</p>
+              <div className="space-y-2 text-sm">
+                {[
+                  ['New Lead', 'Immediate speed-to-lead response required'],
+                  ['Attempting Contact', 'In Day 1-14 sequence, not yet reached'],
+                  ['Contacted', 'Conversation started, qualifying in progress'],
+                  ['Appointment Set', 'Meeting confirmed, prep and confirm day-of'],
+                  ['Active Client', 'Showing homes or listing prep in progress'],
+                  ['Under Contract', 'Deal in escrow, manage to closing'],
+                  ['Long-Term Nurture', 'Not ready within 90 days, monthly drip'],
+                ].map(([stage, desc]) => (
+                  <div key={stage} className="flex items-start gap-2 bg-gray-50 rounded-lg p-2">
+                    <span className="text-xs font-bold text-purple-600 bg-purple-100 rounded px-2 py-0.5 whitespace-nowrap">{stage}</span>
+                    <span className="text-gray-600 text-xs">{desc}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 bg-green-50 rounded-lg p-3 border border-green-100">
+                <p className="text-sm text-gray-700"><strong>Conversion benchmarks by source:</strong> Google Ads: 3-8% to closing. Meta: 1-4%. Portals: 1-3%. Referrals: 15-25%. Open houses: 5-15%. SEO: 3-5%.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CRM and Automation */}
+          <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">CRM Setup &amp; Automation vs. Personal Touch</h3>
+            <p className="text-gray-700 text-sm mb-4">Your CRM is the operating system for your lead generation business. It needs to handle both automated sequences and personal follow-up without letting leads slip through the cracks.</p>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                <p className="font-bold text-gray-900 mb-2">Automate These:</p>
+                <ul className="list-disc ml-5 space-y-1 text-gray-700">
+                  <li>Instant text acknowledgment when a new lead comes in</li>
+                  <li>Property alerts and saved searches via IDX</li>
+                  <li>Monthly market update emails to your entire database</li>
+                  <li>Birthday and home anniversary messages</li>
+                  <li>Retargeting pixel placement and audience building</li>
+                  <li>Lead routing and assignment to agents or ISAs</li>
+                </ul>
+              </div>
+              <div className="bg-green-50 rounded-lg p-4 border border-green-100">
+                <p className="font-bold text-gray-900 mb-2">Keep These Personal:</p>
+                <ul className="list-disc ml-5 space-y-1 text-gray-700">
+                  <li>First phone conversation and qualification call</li>
+                  <li>Appointment confirmation and prep messages</li>
+                  <li>Quarterly check-in calls with long-term leads</li>
+                  <li>Referral asks after closings</li>
+                  <li>Price negotiation updates and contract milestones</li>
+                  <li>Post-closing follow-up and review requests</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-gray-500 text-xs mt-4">The rule of thumb: automate the first touch and ongoing drips, but keep every high-stakes and relationship-building interaction personal. Leads can tell the difference, and trust is built through real conversations, not autoresponders.</p>
+          </div>
+        </section>
+
         {/* Lead Gen Math */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">The Lead Generation Math</h2>
@@ -425,6 +574,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
                 { category: 'Email & Text Automation', tools: 'Built into most CRMs above. Standalone: Mailchimp ($13+/mo), ActiveCampaign ($49+/mo)', priority: 'Essential - Automate follow-up' },
                 { category: 'Call Tracking', tools: 'CallRail ($45+/mo), CallAction ($199+/mo), built into Follow Up Boss', priority: 'Important for attribution' },
                 { category: 'Social Scheduling', tools: 'Later ($25+/mo), Hootsuite ($99+/mo), Buffer ($6+/mo per channel)', priority: 'Important for consistency' },
+                { category: 'Retargeting & Pixels', tools: 'Meta Pixel (free), Google Ads Remarketing (free to install), combined with ad spend of $200-$500/mo for retargeting campaigns', priority: 'Essential - 2-3x conversion rate vs cold traffic' },
                 { category: 'Video Production', tools: 'iPhone (free), CapCut (free), Descript ($24+/mo) for editing. Canva Pro ($13/mo) for thumbnails', priority: 'Important for brand building' },
               ].map((item) => (
                 <div key={item.category} className="bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-gray-200 p-6">
