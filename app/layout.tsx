@@ -92,6 +92,8 @@ export default function RootLayout({
             gtag('config', 'AW-11353830288');
           `}
         </Script>
+      </head>
+      <body>
         <script dangerouslySetInnerHTML={{__html: `
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -104,8 +106,6 @@ export default function RootLayout({
           fbq('init', '5180983065461089');
           fbq('track', 'PageView');
         `}} />
-      </head>
-      <body>
         <noscript>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img height="1" width="1" style={{display: 'none'}}
