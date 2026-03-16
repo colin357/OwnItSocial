@@ -20,27 +20,27 @@ const faqs = [
   {
     question: 'How much does a social media marketing agency cost per month?',
     answer:
-      'Most social media marketing agencies charge between $2,000 and $15,000 per month depending on scope. A basic package covering 3–4 platforms with 12–16 posts per month, light community management, and monthly reporting typically runs $2,000–$4,000. Mid-tier packages that add paid social management, influencer coordination, and video content creation fall in the $5,000–$10,000 range. Full-service engagements with dedicated creative teams, daily community management, and multi-platform paid campaigns can exceed $10,000–$15,000 per month. Ad spend is almost always billed separately.',
+      'Most social media marketing agencies charge between $2,000 and $15,000 per month depending on scope. A basic package covering 3–4 platforms with 12–16 posts per month, light community management, and monthly reporting typically runs $2,000–$4,000.',
   },
   {
     question: 'Do I need a local social media marketing agency or can I hire remotely?',
     answer:
-      'It depends on your business model. If you need on-site content creation (product photography, event coverage, location-based Reels), a local agency has clear advantages. If your business is primarily digital and your content can be created remotely — think B2B SaaS, e-commerce, or professional services — geography matters less than expertise. Many businesses use a hybrid approach: a remote strategic partner with a local freelance photographer for in-person shoots.',
+      'It depends on your business model. If you need on-site content creation (product photography, event coverage, location-based Reels), a local agency has clear advantages.',
   },
   {
     question: 'What should I look for in a social media company portfolio?',
     answer:
-      'Look beyond follower counts. Examine whether their content style matches your brand voice. Check if they have experience in your industry or with your target audience. Ask for engagement rate data, not just vanity metrics. Review the consistency of posting cadence. Look at how they handle comments and community interaction. Ask whether the portfolio work was strategic (tied to business goals) or purely creative.',
+      'Look beyond follower counts. Examine whether their content style matches your brand voice. Check if they have experience in your industry or with your target audience. Ask for engagement rate data, not just vanity metrics. Review the consistency of posting cadence.',
   },
   {
     question: 'How long does it take to see results from social media marketing?',
     answer:
-      'Organic social media is a long game. Expect 3–6 months before you see consistent engagement growth and audience building. Paid social can deliver measurable results (traffic, leads, sales) within the first 2–4 weeks, though optimization improves performance over 60–90 days. Brand awareness metrics like reach and impressions improve almost immediately, but translating that into revenue takes sustained effort. Any agency promising overnight results is selling something unreliable.',
+      'Organic social media is a long game. Expect 3–6 months before you see consistent engagement growth and audience building. Paid social can deliver measurable results (traffic, leads, sales) within the first 2–4 weeks, though optimization improves performance over 60–90 days.',
   },
   {
     question: 'What is the difference between a social media manager and a social media marketing agency?',
     answer:
-      'A social media manager is typically one person who handles content creation and posting, sometimes community management. An agency provides a team: strategist, content creators (designers, videographers, copywriters), a community manager, a paid media specialist, and an account manager. Agencies also bring process infrastructure — content calendars, approval workflows, reporting dashboards, and strategic planning. For businesses spending under $2,000/month, a skilled freelance social media manager may be the better fit. Above that threshold, an agency structure usually delivers more consistent and scalable output.',
+      'A social media manager is typically one person who handles content creation and posting, sometimes community management. An agency provides a team: strategist, content creators (designers, videographers, copywriters), a community manager, a paid media specialist, and an account manager.',
   },
   {
     question: 'How do I measure the ROI of social media marketing?',
@@ -51,22 +51,7 @@ const faqs = [
     question: 'Should I manage social media in-house or outsource to an agency?',
     answer:
       'In-house works well when you have a dedicated team member (not someone doing it "on the side"), your content needs are highly specialized or time-sensitive, and you have the tools and training budget to support them. Outsourcing makes sense when you need expertise across multiple platforms, you want to scale content production quickly, or you lack internal creative resources. Many successful companies run a hybrid model: in-house for real-time engagement and brand voice, agency for strategy, paid media, and content production.',
-  },
-  {
-    question: 'What platforms should my business be on?',
-    answer:
-      'Go where your customers are, not everywhere at once. B2B companies should prioritize LinkedIn and YouTube. B2C brands targeting consumers under 35 should focus on Instagram and TikTok. Local businesses benefit most from Facebook and Instagram. E-commerce brands should add Pinterest. Start with 2–3 platforms, execute well, and expand only when you can maintain quality across each channel. Being mediocre on six platforms is worse than being excellent on two.',
-  },
-  {
-    question: 'What are red flags when hiring a social media marketing firm?',
-    answer:
-      'Watch for these: guaranteed follower growth (often means bots or purchased followers), no case studies or portfolio to share, generic content that is not customized to your brand, long-term contracts with no performance clauses, no clear reporting cadence or KPI framework, unwillingness to share ad account access, and pricing that seems too good to be true. Also be wary of firms that never push back on your ideas — a good agency should challenge you with data-backed recommendations, not just execute orders.',
-  },
-  {
-    question: 'How often should a social media agency post for my business?',
-    answer:
-      'Quality beats quantity, but consistency matters. A reasonable baseline: Instagram 4–5 feed posts per week plus daily Stories, Facebook 3–5 posts per week, TikTok 3–7 videos per week (the algorithm rewards volume here), LinkedIn 3–5 posts per week for B2B, and YouTube 1–2 videos per week or per month depending on production value. Your agency should recommend a cadence based on your goals, resources, and platform-specific algorithm behavior — not a one-size-fits-all number.',
-  },
+  }
 ];
 
 export default function SocialMediaMarketingAgencyNearMePage() {
@@ -146,7 +131,7 @@ export default function SocialMediaMarketingAgencyNearMePage() {
         </section>
 
         {/* Why "Near Me" Matters */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <section className="bg-gray-50/50 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             Does &quot;Near Me&quot; Actually Matter for Social Media Marketing?
           </h2>
@@ -236,7 +221,7 @@ export default function SocialMediaMarketingAgencyNearMePage() {
         </section>
 
         {/* Social Media Services Breakdown */}
-        <section id="services" className="bg-white border-y border-gray-100 py-20">
+        <section id="services" className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               What a Social Media Company Should Actually Provide
@@ -538,7 +523,7 @@ export default function SocialMediaMarketingAgencyNearMePage() {
         </section>
 
         {/* How to Choose an Agency */}
-        <section className="bg-white border-y border-gray-100 py-20">
+        <section className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               How to Evaluate and Choose a Social Media Marketing Agency
@@ -669,7 +654,7 @@ export default function SocialMediaMarketingAgencyNearMePage() {
         </section>
 
         {/* Social Media ROI Framework */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <section className="bg-gray-50/50 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             How to Actually Measure Social Media ROI
           </h2>
@@ -762,7 +747,7 @@ export default function SocialMediaMarketingAgencyNearMePage() {
         </section>
 
         {/* Content Calendar Template */}
-        <section className="bg-white border-y border-gray-100 py-20">
+        <section className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               Monthly Content Calendar Framework

@@ -26,53 +26,38 @@ const faqs = [
   {
     question: 'What does a PPC digital marketing agency actually do?',
     answer:
-      'A PPC digital marketing agency manages paid advertising across platforms like Google Ads, Meta, LinkedIn, and TikTok. Core responsibilities include keyword and audience research, campaign architecture design, bid strategy selection, ad creative production and testing, landing page optimization, conversion tracking setup, and ongoing performance optimization. A strong agency ties every metric back to revenue, not just clicks or impressions.',
+      'A PPC digital marketing agency manages paid advertising across platforms like Google Ads, Meta, LinkedIn, and TikTok. Core responsibilities include keyword and audience research, campaign architecture design, bid strategy selection, ad creative production and testing,',
   },
   {
     question: 'How much should I budget for a paid media agency?',
     answer:
-      'Most agencies charge a management fee of 10-20% of ad spend or a flat monthly retainer between $2,500 and $15,000 depending on scope. On top of that, you need actual media budget. For lead generation, plan a minimum of $3,000-5,000 per month in ad spend per channel to generate statistically meaningful data. For ecommerce, $5,000-10,000 per month minimum. Total investment (management + media) typically starts at $5,000-7,000 per month for meaningful results.',
+      'Most agencies charge a management fee of 10-20% of ad spend or a flat monthly retainer between $2,500 and $15,000 depending on scope. On top of that, you need actual media budget.',
   },
   {
     question: 'How long before PPC campaigns become profitable?',
     answer:
-      'Most campaigns need 60-90 days to reach stable performance. The first 30 days are for data collection, conversion tracking validation, and initial audience testing. Days 30-60 focus on bid optimization and creative iteration. By day 90, you should have clear unit economics: cost per acquisition, return on ad spend, and lead quality data. Some campaigns hit profitability in week two; others take a full quarter. The key variable is your sales cycle length and conversion tracking maturity.',
+      'Most campaigns need 60-90 days to reach stable performance. The first 30 days are for data collection, conversion tracking validation, and initial audience testing. Days 30-60 focus on bid optimization and creative iteration.',
   },
   {
     question: 'What is the difference between a PPC agency and a paid media agency?',
     answer:
-      'PPC (pay-per-click) traditionally refers to search advertising where you pay per click, primarily Google and Bing. Paid media is a broader term that includes PPC search, paid social (Meta, LinkedIn, TikTok), display advertising, programmatic, connected TV, and sponsored content. Most modern agencies operate across all paid channels, so the terms are increasingly interchangeable. When evaluating agencies, focus on which specific channels they have proven depth in rather than what they call themselves.',
+      'PPC (pay-per-click) traditionally refers to search advertising where you pay per click, primarily Google and Bing. Paid media is a broader term that includes PPC search, paid social (Meta, LinkedIn, TikTok), display advertising, programmatic, connected TV, and sponsored content.',
   },
   {
     question: 'How do I know if my PPC agency is doing a good job?',
     answer:
-      'Evaluate on three levels. First, activity: are they making weekly optimizations, testing new creatives, and adjusting bids? Second, leading indicators: are click-through rates improving, cost per click stable or declining, and quality scores increasing? Third, business outcomes: is cost per qualified lead going down, is ROAS improving, and is pipeline value increasing? If an agency only reports on impressions and clicks but cannot tie performance to revenue, that is a red flag.',
+      'Evaluate on three levels. First, activity: are they making weekly optimizations, testing new creatives, and adjusting bids? Second, leading indicators: are click-through rates improving, cost per click stable or declining, and quality scores increasing? Third,',
   },
   {
     question: 'Should I hire an in-house PPC specialist or use an agency?',
     answer:
-      'If your monthly ad spend is under $30,000, an agency typically offers better value because you get a team (strategist, media buyer, creative, analyst) for less than one full-time salary. Above $50,000 per month, a hybrid model works well: in-house strategist for institutional knowledge plus an agency for execution and cross-client benchmarks. Above $150,000 per month, building an internal team often makes sense, potentially with an agency retained for specific channels or strategic oversight.',
+      'If your monthly ad spend is under $30,000, an agency typically offers better value because you get a team (strategist, media buyer, creative, analyst) for less than one full-time salary.',
   },
   {
     question: 'What reporting should I expect from a paid media advertising agency?',
     answer:
-      'At minimum: weekly performance snapshots covering spend, conversions, CPA, and ROAS by channel. Monthly strategic reports should include funnel analysis (impressions to clicks to leads to qualified leads to revenue), creative performance rankings, audience segment analysis, competitive landscape changes, and a clear action plan for the next period. The best agencies also provide quarterly business reviews connecting media performance to overall revenue goals and customer lifetime value.',
-  },
-  {
-    question: 'What platforms should a paid media agency run ads on for my business?',
-    answer:
-      'It depends on your buyer. B2B companies typically start with Google Search and LinkedIn. B2C ecommerce performs well on Meta (Facebook/Instagram), Google Shopping, and TikTok. Local service businesses should prioritize Google Search and Local Services Ads. The right agency will recommend starting with one to two channels where your audience has the highest purchase intent, prove profitability there, then expand to awareness and remarketing channels.',
-  },
-  {
-    question: 'How much creative testing should a PPC agency be doing?',
-    answer:
-      'A serious paid media agency tests at minimum three to five new ad variations per campaign per month. On Meta, this means new hooks, visuals, and copy angles weekly. On Google Search, it means ongoing responsive search ad pin testing and new headline variations. Testing should follow a structured framework: one variable at a time (headline, image, CTA, offer), statistical significance thresholds before declaring winners, and a clear process for scaling winners and killing losers.',
-  },
-  {
-    question: 'What questions should I ask before hiring a PPC agency?',
-    answer:
-      'Ask these ten questions: (1) What is your campaign structure methodology? (2) How do you handle conversion tracking and attribution disagreements between platforms and your CRM? (3) What is your creative testing cadence? (4) Who will be my day-to-day contact and what is their experience level? (5) How do you define and measure lead quality, not just volume? (6) What is your minimum contract term? (7) Do you own the ad accounts or do I? (8) What happens if performance drops—what is your escalation process? (9) Can you share anonymized case studies with actual numbers? (10) How do you stay current with platform changes and beta features?',
-  },
+      'At minimum: weekly performance snapshots covering spend, conversions, CPA, and ROAS by channel. Monthly strategic reports should include funnel analysis (impressions to clicks to leads to qualified leads to revenue), creative performance rankings, audience segment analysis, competitive landscape changes,',
+  }
 ];
 
 export default function PPCDigitalMarketingAgencyPage() {
@@ -155,7 +140,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* What a PPC Agency Actually Does */}
-        <section id="what-ppc-agency-does" className="bg-white border-y border-gray-100 py-16 md:py-24">
+        <section id="what-ppc-agency-does" className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20 md:py-28">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               What a PPC Digital Marketing Agency Actually Does
@@ -201,7 +186,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* Channel-by-Channel Strategy Guide */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-28">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               Channel-by-Channel Paid Media Strategy Guide
@@ -363,7 +348,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* Budget Planning Framework */}
-        <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+        <section className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20 md:py-28">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               Budget Planning Framework for Paid Media
@@ -487,7 +472,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* How to Evaluate a Paid Media Agency */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-28">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               How to Evaluate a Paid Media Advertising Agency
@@ -608,7 +593,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* Account Structure Best Practices */}
-        <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+        <section className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20 md:py-28">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               PPC Account Structure Best Practices
@@ -678,7 +663,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* KPI Framework */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-28">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               PPC KPI Framework: What Metrics Matter at Each Funnel Stage
@@ -806,7 +791,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+        <section className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20 md:py-28">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-10 text-center">
               Frequently Asked Questions About PPC Agencies
@@ -823,7 +808,7 @@ export default function PPCDigitalMarketingAgencyPage() {
         </section>
 
         {/* CTA Section with Contact Form */}
-        <section id="contact" className="py-16 md:py-24">
+        <section id="contact" className="py-20 md:py-28">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">

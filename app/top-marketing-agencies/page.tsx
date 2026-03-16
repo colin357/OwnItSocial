@@ -91,12 +91,12 @@ const faqs = [
   {
     question: 'What makes a marketing agency a "top" agency?',
     answer:
-      'A top marketing agency consistently delivers measurable business outcomes, not just campaign metrics. The markers include a documented track record of improving pipeline or revenue for clients in your vertical, transparent reporting tied to business KPIs, a team structure that pairs senior strategists with execution specialists, and the ability to adapt strategy based on data rather than following a fixed playbook. Avoid ranking agencies by awards alone; ask for references from clients at your growth stage.',
+      'A top marketing agency consistently delivers measurable business outcomes, not just campaign metrics. The markers include a documented track record of improving pipeline or revenue for clients in your vertical, transparent reporting tied to business KPIs, a team structure that pairs senior strategists with execution specialists,',
   },
   {
     question: 'How much do big marketing agencies charge per month?',
     answer:
-      'Monthly retainers for big marketing agencies typically range from $10,000 to $50,000+ depending on scope. Boutique agencies start at $3,000-$8,000/month for focused channel work. Mid-market agencies charge $8,000-$25,000/month for multi-channel programs. Enterprise agencies often start at $25,000-$75,000/month and may require 12-month commitments. Separate from the retainer, most agencies charge a percentage of ad spend (typically 10-20%) or a flat media management fee.',
+      'Monthly retainers for big marketing agencies typically range from $10,000 to $50,000+ depending on scope. Boutique agencies start at $3,000-$8,000/month for focused channel work. Mid-market agencies charge $8,000-$25,000/month for multi-channel programs.',
   },
   {
     question: 'What is the difference between a marketing agency and an advertising agency?',
@@ -106,38 +106,23 @@ const faqs = [
   {
     question: 'How do I choose between a big marketing agency and a boutique firm?',
     answer:
-      'Choose a big agency when you need multi-market execution, deep platform partnerships (e.g., Google Premier Partner status), or dedicated account teams across many channels simultaneously. Choose a boutique when you need senior-level attention on every call, faster turnaround on creative and strategy pivots, or specialized industry knowledge. The deciding factors are usually your monthly budget (under $15K favors boutique), the number of channels you need managed, and how quickly your strategy needs to evolve.',
+      'Choose a big agency when you need multi-market execution, deep platform partnerships (e.g., Google Premier Partner status), or dedicated account teams across many channels simultaneously.',
   },
   {
     question: 'What should I look for in a top PPC agency?',
     answer:
-      'Five non-negotiable capabilities: (1) First-party conversion tracking setup, not just relying on platform pixels. (2) A testing framework with defined statistical significance thresholds. (3) Landing page strategy, not just ad management. (4) Segmented reporting by funnel stage, not just aggregate ROAS. (5) A clear process for managing lead quality, especially for lead-gen businesses where CPL and lead quality often move in opposite directions. Also verify they have experience with your specific platforms: Google Ads expertise does not automatically transfer to Meta, LinkedIn, or programmatic.',
+      'Five non-negotiable capabilities: (1) First-party conversion tracking setup, not just relying on platform pixels. (2) A testing framework with defined statistical significance thresholds. (3) Landing page strategy, not just ad management. (4) Segmented reporting by funnel stage, not just aggregate ROAS.',
   },
   {
     question: 'Why are advertising companies in NYC more expensive?',
     answer:
-      'NYC agencies carry higher overhead: office space, senior talent compensation, and the cost of maintaining relationships with major media companies headquartered in Manhattan. However, you also get access to a deeper talent pool, proximity to media buyers and publishers, and teams accustomed to working with demanding enterprise clients. The premium is typically 20-40% over comparable agencies in other markets. For businesses outside New York, working with an NYC agency makes sense primarily if you need enterprise-grade creative, access to premium media relationships, or brand work that requires top-tier production talent.',
+      'NYC agencies carry higher overhead: office space, senior talent compensation, and the cost of maintaining relationships with major media companies headquartered in Manhattan. However, you also get access to a deeper talent pool, proximity to media buyers and publishers, and teams accustomed to working with demanding enterprise clients.',
   },
   {
     question: 'How long should I give a marketing agency before evaluating results?',
     answer:
-      'For paid media (PPC, paid social), expect meaningful data within 60-90 days. The first 30 days are typically spent on audit, setup, and initial testing. By day 60, you should see clear trends in CPA, ROAS, and lead quality. For SEO and content marketing, 4-6 months is realistic for measurable organic traffic improvements, with meaningful pipeline impact at 6-9 months. If an agency cannot show any leading indicators of progress within 90 days on paid channels, that is a red flag, even if final revenue numbers take longer to materialize.',
-  },
-  {
-    question: 'What are common red flags when hiring a marketing agency?',
-    answer:
-      'Watch for these warning signs: (1) They guarantee specific rankings or ROAS numbers before auditing your business. (2) Reporting focuses on vanity metrics (impressions, clicks) without tying to pipeline or revenue. (3) No clear onboarding process or kickoff documentation. (4) The senior people on the pitch are not the people on your account. (5) Long-term contracts with no performance exit clause. (6) They cannot explain their strategy in plain language. (7) Reluctance to share access to ad accounts or analytics: you should always own your data and accounts.',
-  },
-  {
-    question: 'Should I hire one full-service agency or multiple specialized agencies?',
-    answer:
-      'Single full-service agency works best when your budget is under $20K/month, you need cohesive cross-channel strategy, and you lack internal marketing leadership to coordinate multiple vendors. Multiple specialists work better when you have a strong internal marketing lead who can orchestrate, your budget exceeds $30K/month, and specific channels require deep expertise (e.g., Amazon advertising, programmatic CTV). The hybrid model, one primary agency plus one or two specialists, is often the most practical approach for mid-market companies.',
-  },
-  {
-    question: 'How do I evaluate an agency comparison or "top agencies" list?',
-    answer:
-      'Most "top agencies" lists are pay-to-play directories or affiliate content. Evaluate any list by checking: Does the content include specific evaluation criteria, or just logos and descriptions? Are there actionable frameworks you can actually use? Does the author disclose relationships or methodology? The most trustworthy comparisons include concrete details about pricing, team structures, and trade-offs, not just praise. Use lists as a starting point for your shortlist, then validate with direct references, case studies, and trial projects.',
-  },
+      'For paid media (PPC, paid social), expect meaningful data within 60-90 days. The first 30 days are typically spent on audit, setup, and initial testing. By day 60, you should see clear trends in CPA, ROAS, and lead quality.',
+  }
 ];
 
 const evaluationCriteria = [
@@ -158,7 +143,7 @@ const evaluationCriteria = [
   {
     title: 'Creative Throughput',
     description:
-      'High-performing paid media requires constant creative testing. Understand their production capacity: how many ad variations per month, what their testing methodology is, and how quickly they can iterate on winning concepts. A strong PPC agency should test 10-20 new creative variations per month per channel.',
+      'High-performing paid media requires constant creative testing. Understand their production capacity: how many ad variations per month, what their testing methodology is,',
     question: 'What is your monthly creative output, and what does your ad testing framework look like?',
     scoring: 'Score 5 if they ship 10+ creative variations per month with documented testing protocols.',
   },
@@ -179,7 +164,7 @@ const evaluationCriteria = [
   {
     title: 'Commercial Model',
     description:
-      'The fee structure should align incentives. Percentage-of-spend models can incentivize agencies to recommend more budget rather than more efficiency. Flat retainers provide predictability but can misalign effort with results. Performance-based components (bonuses tied to KPIs) are the strongest signal of confidence.',
+      'The fee structure should align incentives. Percentage-of-spend models can incentivize agencies to recommend more budget rather than more efficiency.',
     question: 'Are you open to a performance component in the fee structure, and if not, why?',
     scoring: 'Score 5 if they offer performance-linked compensation or flat fees with clear deliverables.',
   },
@@ -416,7 +401,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         <section
           id="evaluation-framework"
-          className="bg-white border-y border-gray-100 py-16 md:py-24"
+          className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20 md:py-28"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
@@ -461,7 +446,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         {/* AGENCY TYPES BREAKDOWN                                        */}
         {/* ============================================================ */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <section className="bg-gray-50/50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               Four Types of Big Marketing Agencies (and When Each One Fits)
@@ -535,7 +520,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         {/* NYC ADVERTISING COMPANIES                                     */}
         {/* ============================================================ */}
-        <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+        <section className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -683,7 +668,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         {/* PPC AGENCY EVALUATION                                         */}
         {/* ============================================================ */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               Evaluating Top PPC Agencies: What Separates Good from Great
@@ -861,7 +846,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         {/* AGENCY COMPARISON TABLE                                       */}
         {/* ============================================================ */}
-        <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+        <section className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -925,7 +910,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         {/* PRICING BENCHMARKS                                            */}
         {/* ============================================================ */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <section className="bg-gray-50/50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               Marketing Agency Pricing Benchmarks (2026)
@@ -1067,7 +1052,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         {/* INTERVIEW QUESTIONS                                           */}
         {/* ============================================================ */}
-        <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+        <section className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -1112,7 +1097,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         {/* FAQ SECTION                                                   */}
         {/* ============================================================ */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
               Frequently Asked Questions About Top Marketing Agencies
@@ -1144,7 +1129,7 @@ export default function TopMarketingAgenciesPage() {
         {/* ============================================================ */}
         <section
           id="contact"
-          className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-16 md:py-24"
+          className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 md:py-28"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-start">

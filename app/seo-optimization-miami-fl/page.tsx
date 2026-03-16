@@ -27,17 +27,17 @@ const faqItems = [
   {
     question: 'How much does SEO optimization cost in Miami, FL?',
     answer:
-      'SEO pricing in Miami typically ranges from $1,500 to $5,000 per month for small to mid-size businesses. Enterprise-level campaigns for competitive industries like real estate or legal can run $5,000 to $15,000 or more per month. Be cautious of providers offering SEO for under $500 per month, as quality execution in a competitive market like Miami requires meaningful investment in content, technical work, and link building.',
+      'SEO pricing in Miami typically ranges from $1,500 to $5,000 per month for small to mid-size businesses. Enterprise-level campaigns for competitive industries like real estate or legal can run $5,000 to $15,000 or more per month.',
   },
   {
     question: 'How long does it take to see SEO results in the Miami market?',
     answer:
-      'Most Miami businesses start seeing measurable improvements in 3 to 6 months, with significant results typically appearing around months 6 to 12. Highly competitive verticals like Miami real estate, personal injury law, and luxury hospitality may take 9 to 18 months to achieve top-three positions. Local SEO improvements, such as Google Business Profile rankings, often show results faster, sometimes within 4 to 8 weeks.',
+      'Most Miami businesses start seeing measurable improvements in 3 to 6 months, with significant results typically appearing around months 6 to 12.',
   },
   {
     question: 'Do I need bilingual SEO for my Miami business?',
     answer:
-      'If a significant portion of your customer base speaks Spanish, bilingual SEO is not optional, it is a competitive advantage. Over 70% of Miami-Dade County residents speak a language other than English at home. Bilingual SEO involves creating separate Spanish-language pages (not just translations), implementing hreflang tags, and building Spanish-language citations and backlinks. Even businesses that primarily serve English speakers benefit from Spanish meta descriptions and Google Business Profile content.',
+      'If a significant portion of your customer base speaks Spanish, bilingual SEO is not optional, it is a competitive advantage. Over 70% of Miami-Dade County residents speak a language other than English at home.',
   },
   {
     question: 'What is the difference between local SEO and organic SEO for Miami businesses?',
@@ -47,33 +47,18 @@ const faqItems = [
   {
     question: 'What industries are most competitive for SEO in Miami?',
     answer:
-      'The most competitive SEO verticals in Miami include real estate and property management, personal injury and immigration law, plastic surgery and cosmetic procedures, luxury hospitality and tourism, yacht and marine services, and financial advisory. These industries have high customer lifetime values, which means more businesses invest aggressively in SEO. Standing out requires a focused niche strategy rather than trying to rank for every broad keyword.',
+      'The most competitive SEO verticals in Miami include real estate and property management, personal injury and immigration law, plastic surgery and cosmetic procedures, luxury hospitality and tourism, yacht and marine services, and financial advisory.',
   },
   {
     question: 'Should I hire a local Miami SEO company or a national agency?',
     answer:
-      'A Florida-based SEO company often has a meaningful advantage for local and regional campaigns. They understand the Miami market dynamics, seasonal patterns, bilingual audience, and local link building opportunities. However, what matters most is the provider methodology and track record. Ask for case studies from Miami or Florida clients, check that they have a clear process for local SEO, and confirm they will provide transparent monthly reporting with metrics tied to revenue, not just rankings.',
+      'A Florida-based SEO company often has a meaningful advantage for local and regional campaigns. They understand the Miami market dynamics, seasonal patterns, bilingual audience, and local link building opportunities. However, what matters most is the provider methodology and track record.',
   },
   {
     question: 'How do I know if my current SEO company is doing a good job?',
     answer:
-      'Evaluate your SEO provider against these benchmarks: Are you seeing month-over-month growth in organic traffic and impressions? Are you ranking for keywords that actually drive leads or sales, not just vanity terms? Is your Google Business Profile generating more calls and direction requests? Are they providing clear monthly reports with actionable next steps? If after 6 months you cannot point to measurable progress in traffic, leads, or revenue, it is time to reassess the relationship.',
-  },
-  {
-    question: 'What technical SEO issues are most common for Miami business websites?',
-    answer:
-      'The most frequent technical SEO problems we see with Miami business websites include slow mobile page speed (critical in a mobile-first market), missing or incorrect structured data markup, duplicate content from location page variations, poor Core Web Vitals scores especially on image-heavy sites, missing hreflang tags on bilingual sites, unoptimized Google Business Profile categories, and thin content on service or location pages that fail to differentiate from competitors.',
-  },
-  {
-    question: 'Can I do SEO myself or do I need to hire a Florida SEO company?',
-    answer:
-      'You can handle foundational SEO yourself if you have the time and willingness to learn. Start with claiming and optimizing your Google Business Profile, fixing basic technical issues with tools like Google Search Console, and creating high-quality content that answers your customers most common questions. However, competitive Miami markets usually require professional help for advanced technical SEO, strategic link building, and the consistent execution needed to outpace competitors who are also investing in SEO.',
-  },
-  {
-    question: 'What role does content play in Miami SEO strategy?',
-    answer:
-      'Content is the foundation of sustainable SEO results. For Miami businesses, effective content strategy includes neighborhood-specific landing pages, bilingual resource content, seasonal guides aligned with tourism patterns, FAQ pages addressing local buyer questions, and thought leadership that earns natural backlinks. The key is creating content that serves genuine user intent rather than publishing thin pages stuffed with keywords. Google rewards depth, originality, and genuine expertise.',
-  },
+      'Evaluate your SEO provider against these benchmarks: Are you seeing month-over-month growth in organic traffic and impressions? Are you ranking for keywords that actually drive leads or sales,',
+  }
 ];
 
 const breadcrumbItems = [
@@ -182,7 +167,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* Miami Market Overview */}
-      <section id="miami-market" className="bg-white border-y border-gray-100 py-16 md:py-24">
+      <section id="miami-market" className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -262,7 +247,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* Technical SEO Foundations */}
-      <section id="technical-seo" className="py-16 md:py-24">
+      <section id="technical-seo" className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -378,7 +363,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* Local SEO for Miami */}
-      <section id="local-seo" className="bg-white border-y border-gray-100 py-16 md:py-24">
+      <section id="local-seo" className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -523,7 +508,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* Content Strategy for Florida Businesses */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -642,7 +627,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* Link Building in the Florida Market */}
-      <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+      <section className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -721,7 +706,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* How to Choose a Florida SEO Company */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -865,7 +850,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* SEO Metrics That Matter */}
-      <section className="bg-white border-y border-gray-100 py-16 md:py-24">
+      <section className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -970,7 +955,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 md:py-24">
+      <section id="faq" className="py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -994,7 +979,7 @@ export default function SEOOptimizationMiamiFLPage() {
       </section>
 
       {/* CTA Section with Contact Form */}
-      <section id="contact" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 md:py-24">
+      <section id="contact" className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="text-white">

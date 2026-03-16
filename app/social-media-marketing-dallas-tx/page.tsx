@@ -25,53 +25,38 @@ const faqItems = [
   {
     question: 'How much does social media marketing cost in Dallas, TX?',
     answer:
-      'Social media marketing in Dallas typically ranges from $1,500 to $10,000+ per month depending on scope. Basic packages covering 2-3 platforms with organic content start around $1,500-$3,000/month. Mid-tier packages that include paid social management, content creation, and community management run $3,000-$6,000/month. Full-service packages with video production, influencer partnerships, and comprehensive analytics range from $6,000-$10,000+ monthly. The Dallas market is competitive, so agencies here tend to be slightly more affordable than New York or LA while offering comparable quality.',
+      'Social media marketing in Dallas typically ranges from $1,500 to $10,000+ per month depending on scope. Basic packages covering 2-3 platforms with organic content start around $1,500-$3,000/month. Mid-tier packages that include paid social management, content creation, and community management run $3,000-$6,000/month.',
   },
   {
     question: 'Which social media platforms work best for Dallas businesses?',
     answer:
-      'The best platforms depend on your industry and audience. For B2B companies in the Dallas Telecom Corridor or the financial district, LinkedIn is essential. Instagram and TikTok perform strongly for restaurants, retail, and real estate in areas like Deep Ellum, Uptown, and Bishop Arts. Facebook remains effective for reaching the suburban DFW audience, particularly in Plano, Frisco, and Allen. For healthcare and professional services, a combination of LinkedIn and Facebook typically yields the best ROI. YouTube is underutilized in the Dallas market and offers significant opportunity for businesses willing to invest in video content.',
+      'The best platforms depend on your industry and audience. For B2B companies in the Dallas Telecom Corridor or the financial district, LinkedIn is essential. Instagram and TikTok perform strongly for restaurants, retail, and real estate in areas like Deep Ellum, Uptown, and Bishop Arts. Facebook remains effective for reaching the suburban DFW audience, particularly in Plano, Frisco, and Allen.',
   },
   {
     question: 'How long does it take to see results from social media marketing in Dallas?',
     answer:
-      'Most Dallas businesses begin seeing measurable engagement improvements within 60-90 days of consistent social media marketing. Lead generation results typically appear within 3-4 months, while significant ROI and brand authority gains usually take 6-12 months. Paid social campaigns can generate results much faster, often within the first 2-4 weeks. The DFW market is competitive, so businesses that commit to a 6-month minimum strategy tend to see the strongest outcomes compared to those who stop after 2-3 months.',
+      'Most Dallas businesses begin seeing measurable engagement improvements within 60-90 days of consistent social media marketing. Lead generation results typically appear within 3-4 months, while significant ROI and brand authority gains usually take 6-12 months.',
   },
   {
     question: 'What makes social media marketing different in Dallas compared to other Texas cities?',
     answer:
-      'Dallas has several unique characteristics that influence social media strategy. The DFW metroplex is the 4th largest metro in the US with nearly 8 million people, creating a massive but diverse audience. Dallas has a higher concentration of corporate headquarters than most US cities, making B2B content and LinkedIn strategies more effective here. The city has distinct neighborhoods with different demographics—Uptown skews young professional, Park Cities skews affluent, Oak Cliff is increasingly diverse and creative. Dallas also has a strong sports culture (Cowboys, Mavericks, Rangers, Stars) that creates seasonal content opportunities not seen as strongly in Austin or San Antonio.',
+      'Dallas has several unique characteristics that influence social media strategy. The DFW metroplex is the 4th largest metro in the US with nearly 8 million people, creating a massive but diverse audience. Dallas has a higher concentration of corporate headquarters than most US cities, making B2B content and LinkedIn strategies more effective here.',
   },
   {
     question: 'Should Dallas businesses focus on organic or paid social media?',
     answer:
-      'The most effective approach for Dallas businesses is a hybrid strategy. Organic social media builds brand trust and community engagement, which is especially important in the relationship-driven Texas business culture. However, organic reach on platforms like Facebook and Instagram has declined significantly. Paid social allows you to precisely target DFW zip codes, demographics, and interests. We recommend allocating 60-70% of your social budget to paid campaigns and 30-40% to organic content creation and community management. Start with paid to generate quick wins and data, then use those insights to optimize your organic strategy.',
+      'The most effective approach for Dallas businesses is a hybrid strategy. Organic social media builds brand trust and community engagement, which is especially important in the relationship-driven Texas business culture. However, organic reach on platforms like Facebook and Instagram has declined significantly. Paid social allows you to precisely target DFW zip codes, demographics, and interests.',
   },
   {
     question: 'How do I create content that resonates with Dallas audiences?',
     answer:
-      'Dallas audiences respond well to content that reflects local pride, community involvement, and professionalism. Reference local landmarks (Reunion Tower, the Margaret Hunt Hill Bridge, AT&T Discovery District), support local causes, and engage with Dallas-specific events like the State Fair of Texas, Dallas Arts District events, and neighborhood festivals. Texans value authenticity and personal connection, so behind-the-scenes content and founder stories perform well. Avoid being overly corporate—even B2B Dallas audiences prefer a personable tone. Use location tags for Dallas neighborhoods and participate in local hashtags like #DallasTX, #DFW, and #SupportLocalDallas.',
+      'Dallas audiences respond well to content that reflects local pride, community involvement, and professionalism. Reference local landmarks (Reunion Tower, the Margaret Hunt Hill Bridge, AT&T Discovery District), support local causes, and engage with Dallas-specific events like the State Fair of Texas, Dallas Arts District events, and neighborhood festivals.',
   },
   {
     question: 'What content marketing strategies work best for Dallas companies?',
     answer:
-      'The most effective content marketing strategies for Dallas companies include: hyperlocal blog content targeting Dallas/DFW search terms, video content featuring local landmarks and culture, thought leadership articles positioned for the strong Dallas B2B market, email newsletters tied to local events and industry trends, and case studies featuring Dallas-based clients. The key is creating a content repurposing engine—one long-form piece becomes blog posts, social snippets, email content, and short-form videos. Dallas businesses that publish 2-4 quality blog posts per month and maintain active social channels see the strongest inbound lead generation.',
-  },
-  {
-    question: 'Are there Texas-specific regulations for social media marketing?',
-    answer:
-      'Yes, there are several considerations. The Texas Business and Commerce Code includes provisions about deceptive trade practices that apply to social media advertising claims. The Telephone Consumer Protection Act (TCPA) has strict rules about text message marketing and automated calls, which is relevant when using social media to collect phone numbers for follow-up. Texas also has its own data privacy considerations businesses should be aware of. Industry-specific regulations apply too—healthcare providers must maintain HIPAA compliance in social content, and real estate agents must follow TREC advertising rules. The Texas Social Media Law (HB 20) also created unique considerations for platform usage and content moderation.',
-  },
-  {
-    question: 'How do I measure the ROI of social media marketing in Dallas?',
-    answer:
-      'Measuring social media ROI in Dallas requires tracking both leading and lagging indicators. Leading indicators include engagement rate, reach, website traffic from social, and follower growth. Lagging indicators include leads generated, cost per lead, conversion rate, and revenue attributed to social channels. Set up UTM tracking on all social links, use Facebook Pixel and LinkedIn Insight Tag for conversion tracking, and integrate your CRM to track leads from social through to closed deals. For the Dallas market specifically, benchmark your cost per lead against local averages: $15-$40 for B2C and $50-$150 for B2B. Track your social share of voice against local competitors to measure brand awareness growth.',
-  },
-  {
-    question: 'Can a small business in Dallas compete on social media against larger companies?',
-    answer:
-      'Absolutely. Small Dallas businesses often have an advantage on social media because they can be more authentic, responsive, and community-focused than large corporations. The DFW market values local businesses—hashtags like #ShopLocalDallas and #SupportSmallDFW have strong followings. Small businesses can win by focusing on a niche audience, creating highly localized content (neighborhood-specific posts perform well), leveraging user-generated content from loyal customers, and engaging personally in comments and DMs. Micro-influencer partnerships with Dallas-based creators (10K-50K followers) are also cost-effective, typically running $200-$1,000 per post, and often outperform celebrity partnerships in engagement.',
-  },
+      'The most effective content marketing strategies for Dallas companies include: hyperlocal blog content targeting Dallas/DFW search terms, video content featuring local landmarks and culture, thought leadership articles positioned for the strong Dallas B2B market, email newsletters tied to local events and industry trends, and case studies featuring Dallas-based clients.',
+  }
 ];
 
 const faqSchema = generateFAQSchema(faqItems);
@@ -145,7 +130,7 @@ export default function SocialMediaMarketingDallasTXPage() {
       </section>
 
       {/* Dallas Market Stats */}
-      <section className="bg-white border-y border-gray-100 py-16">
+      <section className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center font-bold text-sm text-gray-500 mb-8 tracking-wider">DALLAS-FORT WORTH MARKET SNAPSHOT</h3>
           <div className="grid md:grid-cols-4 gap-8 text-center">
@@ -170,7 +155,7 @@ export default function SocialMediaMarketingDallasTXPage() {
       </section>
 
       {/* Dallas Market Overview */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="bg-gray-50/50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-6">
             <span className="text-gray-900">Why the Dallas Market Demands a </span>
@@ -593,7 +578,7 @@ export default function SocialMediaMarketingDallasTXPage() {
       </section>
 
       {/* Texas Regulations */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="bg-gray-50/50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black mb-6">
             <span className="text-gray-900">Texas Social Media </span>

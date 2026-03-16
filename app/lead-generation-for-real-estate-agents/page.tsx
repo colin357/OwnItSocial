@@ -23,15 +23,15 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: 'What is the best lead source for real estate agents?',
-    answer: 'There is no single best source. Google Search ads deliver the highest-intent leads (3-5% conversion to appointment) but cost $25-$50+ per lead. Meta/Facebook ads provide the highest volume at $5-$20 per lead but require more nurturing. Referrals from past clients and partners convert at the highest rate (15-25%) but are harder to scale. The most successful agents use 2-3 sources simultaneously and measure cost per closing, not just cost per lead, to determine which sources perform best for their market.',
+    answer: 'There is no single best source. Google Search ads deliver the highest-intent leads (3-5% conversion to appointment) but cost $25-$50+ per lead. Meta/Facebook ads provide the highest volume at $5-$20 per lead but require more nurturing.',
   },
   {
     question: 'How much should a real estate agent spend on lead generation?',
-    answer: 'A common benchmark is 10-15% of your target gross commission income (GCI). If your goal is $200,000 GCI, plan to invest $20,000-$30,000 per year ($1,700-$2,500/month) across all lead gen activities including ad spend, technology, and agency fees. New agents or those entering a new market may need to invest 15-20% initially to build pipeline. The key is tracking cost per closing, not just cost per lead, and ensuring your CAC stays below 20% of average commission per transaction.',
+    answer: 'A common benchmark is 10-15% of your target gross commission income (GCI). If your goal is $200,000 GCI, plan to invest $20,000-$30,000 per year ($1,700-$2,500/month) across all lead gen activities including ad spend, technology, and agency fees.',
   },
   {
     question: 'How many leads does it take to get one real estate closing?',
-    answer: 'For internet leads (Google, Meta, Zillow), the typical funnel is: 100 leads → 20 conversations (20% contact rate) → 8 appointments (40% of conversations) → 2-3 closings (25-35% close rate from appointments). This means roughly 35-50 internet leads per closing. For referral leads, the ratio is much better: approximately 4-6 referral leads per closing. These ratios improve significantly with speed-to-lead under 5 minutes, structured follow-up sequences, and consistent long-term nurture.',
+    answer: 'For internet leads (Google, Meta, Zillow), the typical funnel is: 100 leads → 20 conversations (20% contact rate) → 8 appointments (40% of conversations) → 2-3 closings (25-35% close rate from appointments). This means roughly 35-50 internet leads per closing.',
   },
   {
     question: 'What is speed-to-lead and why does it matter for real estate?',
@@ -39,28 +39,16 @@ const faqs = [
   },
   {
     question: 'Should I buy leads from Zillow or Realtor.com?',
-    answer: 'Zillow Premier Agent and Realtor.com OpCity leads can work, but understand the economics: leads typically cost $20-$100+ each depending on zip code, they are often shared with 2-3 other agents, conversion rates average 1-3%, and quality varies significantly by market. The ROI math works best in markets where average commission exceeds $10,000 and you have a disciplined follow-up system. Many top-producing agents have shifted budget from portal leads to Google Ads and Meta campaigns where they own the audience data and are not competing with other agents on the same lead.',
+    answer: 'Zillow Premier Agent and Realtor.com OpCity leads can work, but understand the economics: leads typically cost $20-$100+ each depending on zip code, they are often shared with 2-3 other agents, conversion rates average 1-3%, and quality varies significantly by market.',
   },
   {
     question: 'What CRM should real estate agents use for lead generation?',
-    answer: 'The best CRM is the one you will actually use consistently. For agents focused on lead gen: Follow Up Boss is the industry standard for internet lead management with strong automation and routing features ($69-$499/mo per user). Sierra Interactive combines CRM with IDX website and marketing automation ($500-$1,000+/mo). KvCORE offers an all-in-one platform popular with teams ($500+/mo). For solo agents on a budget, LionDesk ($25-$83/mo) provides solid automation. The critical features are: automatic lead routing, text/email automation, pipeline tracking, and source attribution.',
+    answer: 'The best CRM is the one you will actually use consistently. For agents focused on lead gen: Follow Up Boss is the industry standard for internet lead management with strong automation and routing features ($69-$499/mo per user). Sierra Interactive combines CRM with IDX website and marketing automation ($500-$1,000+/mo).',
   },
   {
     question: 'How do I generate seller leads in real estate?',
     answer: 'Seller leads require different strategies than buyer leads. Effective approaches include: (1) Google Ads targeting "sell my house in [city]" and "home value [city]" keywords; (2) Home valuation landing pages (via Homebot, Ylopo, or custom) that capture seller contact info; (3) Just Listed/Just Sold direct mail and social campaigns in target neighborhoods; (4) Circle prospecting around your recent listings and sales; (5) Content marketing with market update videos and neighborhood analysis; (6) Expired listing and FSBO outreach. Sellers are higher value (they often buy too) but harder to acquire than buyers.',
-  },
-  {
-    question: 'What is an ISA in real estate and should I hire one?',
-    answer: 'An ISA (Inside Sales Agent) is a dedicated person who handles initial lead follow-up, qualification, and appointment setting so agents can focus on showing homes and closing deals. Hire an ISA when you are generating 50+ leads per month and cannot personally follow up within 5 minutes, or when your leads-to-appointment conversion rate is below 10% due to inconsistent follow-up. ISAs typically cost $3,000-$5,000/month (salary + bonus per appointment set). The math works when your average commission exceeds $5,000 and your ISA sets 15-20+ appointments per month.',
-  },
-  {
-    question: 'How long does it take for real estate lead generation to work?',
-    answer: 'Paid advertising (Google, Meta) generates leads within days but pipeline builds over 30-60 days. Expect your first closing from internet leads at 60-90 days minimum, with most closing at 90-180 days because real estate has a long sales cycle. SEO and content marketing take 6-12 months to generate consistent organic leads. Sphere of influence and referral campaigns can produce results in 30-60 days if you have an existing database. The critical mistake is stopping after 30 days because "it is not working." Real estate lead gen is a 6-12 month commitment to see true ROI.',
-  },
-  {
-    question: 'How do I convert more real estate leads into clients?',
-    answer: 'Focus on three areas: (1) Speed - respond within 5 minutes, every time, no exceptions. (2) Persistence - most leads require 6-8 contact attempts before connecting. Follow a structured sequence: call-text-email on day 1, call-text on day 2, email on day 3, continue for 14 days. (3) Value - provide market insights, neighborhood data, or property alerts that keep leads engaged before they are ready to transact. Agents who implement all three consistently convert 3-5x more leads than those who call once and move on.',
-  },
+  }
 ];
 
 const leadSources = [
@@ -141,7 +129,7 @@ const leadSources = [
     intent: 'Low',
     volume: 'Varies',
     description: 'Reels, TikTok, Stories, and community-focused content build brand awareness and keep you top-of-mind with your sphere. Organic social rarely produces direct leads but dramatically improves conversion rates on every other channel because prospects already know and trust you.',
-    strategy: 'Post 3-5 times per week mixing market tips, behind-the-scenes content, client wins, and local community content. Use DMs to build relationships. Reply to every comment. Use Stories for daily visibility. Think of organic social as the trust layer that makes your paid campaigns and referrals convert at higher rates.',
+    strategy: 'Post 3-5 times per week mixing market tips, behind-the-scenes content, client wins, and local community content. Use DMs to build relationships. Reply to every comment. Use Stories for daily visibility.',
     bestFor: 'Every agent. Organic social is a force multiplier for all other lead gen activities.',
   },
 ];
@@ -171,7 +159,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </header>
 
         {/* Hero */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="inline-block mb-6 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
             Real Estate Lead Gen Guide &bull; 2026
           </div>
@@ -195,7 +183,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* The Real Problem */}
-        <section className="bg-white border-y border-gray-100 py-16">
+        <section className="bg-white border-t-4 border-t-purple-500 shadow-sm py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Why Most Real Estate Lead Gen Fails</h2>
             <p className="text-gray-700 mb-8 max-w-3xl">
@@ -225,7 +213,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* Lead Sources */}
-        <section id="lead-sources" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section id="lead-sources" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Lead Source Breakdown: Cost, Intent, and Strategy</h2>
           <p className="text-gray-700 mb-8">Every lead source has different economics. Understanding the cost per lead, intent level, and required follow-up investment helps you allocate your budget effectively.</p>
           <div className="space-y-6">
@@ -256,7 +244,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* Lead Nurture System */}
-        <section className="bg-gradient-to-br from-purple-50 to-blue-50 border-y border-purple-100 py-16">
+        <section className="bg-gradient-to-br from-purple-50 to-blue-50 border-t-4 border-t-purple-400 py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">The Lead Nurture System That Converts</h2>
             <p className="text-gray-700 mb-8">Follow-up is where money is made or lost. Here is the exact sequence top-producing agents use.</p>
@@ -339,7 +327,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* Conversion Optimization */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section className="bg-gray-50/50 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Conversion Optimization: Lead to Appointment to Closing</h2>
           <p className="text-gray-700 mb-8 max-w-3xl">More leads will not fix a broken conversion process. These frameworks help you turn more of your existing pipeline into appointments and closings.</p>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -478,7 +466,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* Lead Gen Math */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">The Lead Generation Math</h2>
           <p className="text-gray-700 mb-8">Work backward from your income goal to determine exactly how many leads and how much budget you need.</p>
           <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mb-8">
@@ -563,7 +551,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* Technology Stack */}
-        <section className="bg-white border-y border-gray-100 py-16">
+        <section className="bg-white border-t-4 border-t-blue-500 shadow-sm py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Recommended Technology Stack</h2>
             <p className="text-gray-700 mb-8">You do not need every tool. Start with a CRM and one lead source, then add as your pipeline grows.</p>
@@ -588,7 +576,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* Common Mistakes */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section className="bg-gray-50/50 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8">10 Lead Generation Mistakes Real Estate Agents Make</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[
@@ -617,7 +605,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-gradient-to-br from-slate-50 to-white border-y border-gray-100 py-16">
+        <section className="bg-gradient-to-br from-slate-50 to-white border-y border-gray-100 py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-8">Frequently Asked Questions</h2>
             <div className="space-y-6">
@@ -632,7 +620,7 @@ export default function LeadGenerationForRealEstateAgentsPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-r from-purple-600 to-blue-600 py-16">
+        <section className="bg-gradient-to-r from-purple-600 to-blue-600 py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Ready to Build a Predictable Lead Pipeline?</h2>
             <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">

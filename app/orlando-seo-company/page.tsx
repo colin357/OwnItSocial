@@ -19,7 +19,7 @@ const faqs = [
   {
     question: 'How much do Orlando SEO services cost?',
     answer:
-      'Orlando SEO services typically range from $1,500 to $10,000 per month depending on scope. Basic local SEO packages covering Google Business Profile optimization and citation management start around $1,500-$2,500/mo. Mid-tier packages that add content creation, technical SEO, and link building run $3,000-$5,000/mo. Enterprise or multi-location campaigns with aggressive content production and advanced analytics cost $5,000-$10,000/mo. Avoid any agency quoting below $1,000/mo as they likely use templated, low-quality tactics.',
+      'Orlando SEO services typically range from $1,500 to $10,000 per month depending on scope. Basic local SEO packages covering Google Business Profile optimization and citation management start around $1,500-$2,500/mo. Mid-tier packages that add content creation, technical SEO, and link building run $3,000-$5,000/mo.',
   },
   {
     question: 'How long does it take to see results from Orlando SEO?',
@@ -29,7 +29,7 @@ const faqs = [
   {
     question: 'What should I look for in an Orlando SEO company?',
     answer:
-      'Look for an Orlando SEO company that provides transparent reporting with actual business metrics (leads, calls, revenue) rather than just rankings. They should conduct a thorough audit before proposing a strategy, have documented case studies from Orlando or similar markets, avoid guaranteeing specific rankings, and clearly explain their link building methods. Ask for references from current clients in your industry. Red flags include long-term contracts with no performance clauses, vague deliverables, and promises of overnight results.',
+      'Look for an Orlando SEO company that provides transparent reporting with actual business metrics (leads, calls, revenue) rather than just rankings. They should conduct a thorough audit before proposing a strategy, have documented case studies from Orlando or similar markets, avoid guaranteeing specific rankings,',
   },
   {
     question: 'Is local SEO different from regular SEO for Orlando businesses?',
@@ -44,28 +44,13 @@ const faqs = [
   {
     question: 'How important is Google Business Profile for Orlando SEO?',
     answer:
-      'Google Business Profile (GBP) is critical for Orlando SEO because 46% of all Google searches have local intent, and the local map pack appears above organic results for most service-based queries. For Orlando businesses, GBP optimization includes selecting accurate primary and secondary categories, adding all services with descriptions, posting weekly updates, responding to every review within 24 hours, uploading geo-tagged photos regularly, and using the Q&A feature proactively. Businesses with fully optimized GBP profiles receive 7x more clicks than incomplete listings.',
+      'Google Business Profile (GBP) is critical for Orlando SEO because 46% of all Google searches have local intent, and the local map pack appears above organic results for most service-based queries.',
   },
   {
     question: 'What Orlando-specific directories should my business be listed on?',
     answer:
-      'Beyond the national directories (Google, Bing, Apple Maps, Yelp), Orlando businesses should ensure consistent listings on Orlando-specific platforms: Visit Orlando (visitorlando.com), Orlando Business Journal directory, Orlando Sentinel business listings, Orlando Regional Chamber of Commerce, Central Florida Tourism Oversight District resources, Orlando Weekly, and industry-specific directories. Tourism businesses should also list on TripAdvisor, Viator, and GetYourGuide. Consistent NAP data across 40-50 quality directories forms the citation foundation for local SEO.',
-  },
-  {
-    question: 'Can I do SEO myself for my Orlando business?',
-    answer:
-      'You can handle foundational SEO yourself if you have 5-10 hours per week to dedicate. Start with claiming and fully optimizing your Google Business Profile, ensuring your website loads in under 3 seconds on mobile, creating unique pages for each service you offer in Orlando, and building a consistent review generation process. However, competitive industries like legal, healthcare, and hospitality in Orlando typically require professional help for technical SEO, link building, and content strategy. A hybrid approach where you manage GBP and reviews while an agency handles technical and content work is often the most cost-effective.',
-  },
-  {
-    question: 'What is the difference between Orlando SEO and PPC advertising?',
-    answer:
-      'Orlando SEO builds long-term organic visibility that compounds over time, while PPC (pay-per-click) provides immediate but temporary traffic. SEO typically costs $1,500-$10,000/mo with results growing over 6-12 months and traffic continuing even if you pause investment. PPC in Orlando\'s competitive markets can cost $3-$50+ per click depending on industry (legal keywords exceed $50/click). The best approach for most Orlando businesses is to run PPC for immediate lead flow while building SEO as a long-term asset. Once SEO gains traction, you can reduce PPC spend and improve overall cost per acquisition.',
-  },
-  {
-    question: 'How do I track whether my Orlando SEO campaign is working?',
-    answer:
-      'Track these metrics monthly: organic traffic (via Google Analytics), keyword rankings for your target Orlando terms (via Semrush or Ahrefs), Google Business Profile views and actions (calls, directions, website clicks), organic leads and phone calls (use call tracking like CallRail), local pack visibility for priority keywords, and most importantly, revenue attributed to organic search. A good Orlando SEO company will provide a monthly dashboard showing these metrics plus a narrative explaining what changed, why, and what\'s planned next. If your agency only reports rankings without tying them to business outcomes, that\'s a red flag.',
-  },
+      'Beyond the national directories (Google, Bing, Apple Maps, Yelp), Orlando businesses should ensure consistent listings on Orlando-specific platforms: Visit Orlando (visitorlando.com), Orlando Business Journal directory, Orlando Sentinel business listings, Orlando Regional Chamber of Commerce, Central Florida Tourism Oversight District resources, Orlando Weekly,',
+  }
 ];
 
 export default function OrlandoSEOCompanyPage() {
@@ -144,7 +129,7 @@ export default function OrlandoSEOCompanyPage() {
         </section>
 
         {/* Orlando Market Overview */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <section className="bg-gray-50/50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black mb-6 text-gray-900">
               Why Orlando SEO Is Uniquely Competitive
@@ -907,7 +892,7 @@ export default function OrlandoSEOCompanyPage() {
         </section>
 
         {/* SEO Timeline & Expectations */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <section className="bg-gray-50/50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black mb-6 text-gray-900">
               SEO Timeline: What to Expect Month by Month
