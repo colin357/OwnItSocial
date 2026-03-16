@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 declare global {
   function gtag(...args: unknown[]): void;
+  function fbq(...args: unknown[]): void;
 }
 
 export default function ContactForm() {
@@ -34,6 +35,9 @@ export default function ContactForm() {
       if (response.ok) {
         if (typeof gtag === 'function') {
           gtag('event', 'conversion', { send_to: 'AW-11353830288/2anpCMuBkekYEJDn9qUq' });
+        }
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
         }
         setSubmitMessage('Thanks for reaching out! We\'ll be in touch soon.');
         setFormData({ name: '', company: '', phone: '', email: '', revenue: '' });
