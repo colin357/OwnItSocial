@@ -398,6 +398,59 @@ export default function NJMBAConferencePage() {
           </div>
         </section>
 
+        {/* About Colin Section */}
+        <section id="about" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 md:py-32">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-black mb-4">
+                Meet <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Colin Hickmon</span>
+              </h2>
+              <p className="text-xl text-gray-300">Founder & Marketing Strategist</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-30 blur-2xl"></div>
+                <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/images/colin-portrait.webp"
+                    alt="Colin Hickmon - Founder of Own It Social"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  Most business owners do everything right—they build a website, post content, and collect leads—but often lack a strategic direction that delivers real results.
+                </p>
+                <p>
+                  I started Own It Social because I saw how frustrating it was for business owners to waste time and money on marketing that wasn&apos;t working. Too many entrepreneurs hustle relentlessly only to feel confused when what used to work suddenly stops delivering.
+                </p>
+                <p>
+                  The marketing landscape has changed dramatically. What worked five years ago doesn&apos;t work today. Social media algorithms shift constantly. New platforms emerge. AI is transforming search. Most business owners can&apos;t keep up—and they shouldn&apos;t have to.
+                </p>
+                <p>
+                  At Own It Social, we stay ahead of every trend and platform change so you don&apos;t have to. We provide a complete, modern marketing system that actually generates leads and grows your business—not just likes and vanity metrics.
+                </p>
+                <p className="text-purple-400 font-semibold text-lg">
+                  I built this company around one mission: helping businesses dominate their local markets with marketing that actually works.
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link
+                href="#contact"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
+              >
+                Work With Me
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="text-center mb-16">
@@ -510,59 +563,6 @@ export default function NJMBAConferencePage() {
             </p>
           </div>
           <ContactForm />
-        </section>
-
-        {/* About Colin Section */}
-        <section id="about" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 md:py-32">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-black mb-4">
-                Meet <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Colin Hickmon</span>
-              </h2>
-              <p className="text-xl text-gray-300">Founder & Marketing Strategist</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-30 blur-2xl"></div>
-                <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/colin-portrait.webp"
-                    alt="Colin Hickmon - Founder of Own It Social"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  Most business owners do everything right—they build a website, post content, and collect leads—but often lack a strategic direction that delivers real results.
-                </p>
-                <p>
-                  I started Own It Social because I saw how frustrating it was for business owners to waste time and money on marketing that wasn&apos;t working. Too many entrepreneurs hustle relentlessly only to feel confused when what used to work suddenly stops delivering.
-                </p>
-                <p>
-                  The marketing landscape has changed dramatically. What worked five years ago doesn&apos;t work today. Social media algorithms shift constantly. New platforms emerge. AI is transforming search. Most business owners can&apos;t keep up—and they shouldn&apos;t have to.
-                </p>
-                <p>
-                  At Own It Social, we stay ahead of every trend and platform change so you don&apos;t have to. We provide a complete, modern marketing system that actually generates leads and grows your business—not just likes and vanity metrics.
-                </p>
-                <p className="text-purple-400 font-semibold text-lg">
-                  I built this company around one mission: helping businesses dominate their local markets with marketing that actually works.
-                </p>
-              </div>
-            </div>
-
-            <div className="text-center mt-12">
-              <Link
-                href="#contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-              >
-                Work With Me
-              </Link>
-            </div>
-          </div>
         </section>
 
         {/* Footer */}
