@@ -94,17 +94,20 @@ export default function NJMBAConferencePage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
               <span className="text-black">Stop Posting.</span>
               <br />
-              <span className="relative bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Start Closing More Loans.
-                <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
-                  <path d="M2 10C100 2 200 2 298 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
-                  <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#9333ea" />
-                      <stop offset="100%" stopColor="#2563eb" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Start Closing More{" "}
+                <span className="relative inline-block">
+                  Loans.
+                  <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
+                    <path d="M2 10C100 2 200 2 298 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#9333ea" />
+                        <stop offset="100%" stopColor="#2563eb" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </span>
               </span>
             </h1>
             <p className="text-xl mb-6 text-gray-700 leading-relaxed">
