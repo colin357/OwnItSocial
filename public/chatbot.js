@@ -287,10 +287,13 @@
   function submitToWebhook() {
     if (!WEBHOOK_URL || WEBHOOK_URL === 'YOUR_WEBHOOK_URL_HERE') return;
     var payload = Object.assign({ timestamp: new Date().toISOString(), source: window.location.href }, state.answers);
+    // Use no-cors + text/plain to avoid CORS preflight, which Zapier webhooks do not support.
+    // Zapier receives the raw JSON string in the request body.
     fetch(WEBHOOK_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(payload).toString(),
     }).catch(function () {});
   }
 
