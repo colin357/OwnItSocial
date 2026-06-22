@@ -75,10 +75,10 @@ export default function Home() {
               🚀 Full-Service Marketing Agency
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              <span className="text-black">Own Your Market</span>
+              <span className="text-black">Turn Attention Into</span>
               <br />
               <span className="relative bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Dominate Online
+                Customers on Repeat
                 <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
                   <path d="M2 10C100 2 200 2 298 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
                   <defs>
