@@ -34,6 +34,11 @@ export function trackBookingClick() {
 /**
  * PRIMARY conversion: a strategy call was actually booked in the embed.
  * Uses the standard `Lead` event so it maps to a Meta conversion objective.
+ *
+ * Called from BookingEmbed's best-effort message listener. LeadConnector does
+ * not reliably post a booking-success event to the parent page, so for the
+ * most accurate conversion signal also add your Pixel ID inside GHL (calendar
+ * / funnel settings) to fire this same event on the booking confirmation step.
  */
 export function trackBookingComplete() {
   fire('track', 'Lead', { content_name: 'CMO Strategy Call' });
