@@ -115,6 +115,14 @@ const FAQS = [
   },
 ];
 
+// Trust logos — same brand assets used across the rest of the site.
+const TRUST_LOGOS = [
+  { src: '/images/Fairway.webp', alt: 'Fairway Independent Mortgage' },
+  { src: '/images/Compass Logo.png', alt: 'Compass' },
+  { src: '/images/Keller Williams.png', alt: 'Keller Williams' },
+  { src: '/images/William Raveis.png', alt: 'William Raveis' },
+];
+
 export default function CmoLandingPage() {
   return (
     <BookingProvider>
@@ -412,19 +420,24 @@ export default function CmoLandingPage() {
               </figure>
             ))}
           </div>
-          {/* PLACEHOLDER LOGO ROW — drop in partner/lender logos. */}
-          <p className="text-center text-xs font-bold tracking-widest text-gray-400 mt-16 mb-6">
-            [ TRUSTED BY LOAN OFFICERS AT — ADD LOGOS ]
+          {/* Trust logos — teams our loan officers come from. */}
+          <p className="text-center text-xs font-bold tracking-widest text-gray-400 mt-16 mb-8">
+            TRUSTED BY LOAN OFFICERS AT
           </p>
-          <div
-            className="flex flex-wrap justify-center items-center gap-6"
-            aria-hidden="true"
-          >
-            {[...Array(4)].map((_, i) => (
-              <span
-                key={i}
-                className="h-10 w-32 rounded-lg bg-gray-100 border border-dashed border-gray-200"
-              />
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
+            {TRUST_LOGOS.map((logo) => (
+              <div
+                key={logo.src}
+                className="relative h-10 w-32 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  fill
+                  sizes="128px"
+                  className="object-contain"
+                />
+              </div>
             ))}
           </div>
         </section>
