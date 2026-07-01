@@ -477,7 +477,7 @@ export default function CmoLandingPage() {
           </div>
           {/* Trust logos — teams our loan officers come from. */}
           <p className="text-center text-xs font-bold tracking-widest text-gray-400 mt-16 mb-8">
-            TRUSTED BY LOAN OFFICERS AT
+            TRUSTED BY TEAMS AT
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
             {TRUST_LOGOS.map((logo) => (
