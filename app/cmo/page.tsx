@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import CtaButton from './CtaButton';
-import BookingEmbed from './BookingEmbed';
+import { BookingProvider } from './BookingModal';
 
 // Paid-traffic campaign page — must NOT be indexed. This overrides the
 // site-wide `index: true` / canonical set in app/layout.tsx.
@@ -117,6 +117,7 @@ const FAQS = [
 
 export default function CmoLandingPage() {
   return (
+    <BookingProvider>
     <div className="min-h-screen bg-white text-gray-900">
       {/* Minimal header — no nav links, no escape routes. Logo + the one CTA. */}
       <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-gray-100">
@@ -147,15 +148,16 @@ export default function CmoLandingPage() {
               FOR MORTGAGE LOAN OFFICERS WHO WANT TO GROW
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.05] tracking-tight text-balance">
-              Your socials are dead. Your database is a graveyard. Your agents
-              stopped sending deals.
-              <span className="block mt-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                You don&apos;t need another tool. You need a CMO.
+              You don&apos;t need another tool.
+              <span className="block mt-2 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                You need a CMO.
               </span>
             </h1>
-            <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              We become your entire marketing department — done for you — so you
-              can close more loans without lifting a finger on marketing.
+            <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Your socials are dead, your database is a graveyard, and your
+              agents stopped sending deals. We become your entire marketing
+              department — done for you — so you close more loans without
+              lifting a finger on marketing.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4">
               <CtaButton />
@@ -468,11 +470,8 @@ export default function CmoLandingPage() {
           </div>
         </section>
 
-        {/* 8. FINAL CTA + booking embed */}
-        <section
-          id="book"
-          className="scroll-mt-24 bg-gradient-to-br from-purple-600 to-blue-600 py-20 md:py-28"
-        >
+        {/* 8. FINAL CTA — button opens the booking modal */}
+        <section className="bg-gradient-to-br from-purple-600 to-blue-600 py-20 md:py-28">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight text-balance">
               Get a marketing department without building one.
@@ -487,11 +486,6 @@ export default function CmoLandingPage() {
                 Book Your CMO Strategy Call
               </CtaButton>
             </div>
-          </div>
-
-          {/* Booking embed target. Swap the link via NEXT_PUBLIC_BOOKING_URL. */}
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <BookingEmbed />
           </div>
         </section>
       </main>
@@ -511,5 +505,6 @@ export default function CmoLandingPage() {
         </div>
       </footer>
     </div>
+    </BookingProvider>
   );
 }

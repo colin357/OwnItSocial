@@ -65,7 +65,7 @@ export default function BookingEmbed({ url = DEFAULT_BOOKING_URL }: Props) {
   }, []);
 
   return (
-    <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white ring-1 ring-gray-100">
+    <div className="relative overflow-hidden bg-white">
       <iframe
         src={url}
         title="Book your CMO strategy call"
