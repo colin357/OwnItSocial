@@ -1,6 +1,6 @@
 'use client';
 
-import { trackBookingClick } from './pixel';
+import { useBooking } from './BookingModal';
 
 type Props = {
   children?: React.ReactNode;
@@ -13,9 +13,9 @@ type Props = {
 
 /**
  * The single conversion action on this page. Every CTA on /cmo is this button:
- * it fires the Meta Pixel intent event, then smooth-scrolls to the booking
- * embed (#book). Keeping it one component means the CTA behaves identically in
- * the hero, mid-page, and footer.
+ * it opens the booking modal (which fires the Meta Pixel intent event).
+ * Keeping it one component means the CTA behaves identically in the hero,
+ * mid-page, and footer.
  */
 export default function CtaButton({
   children = 'Book Your CMO Strategy Call',
@@ -23,23 +23,17 @@ export default function CtaButton({
   size = 'lg',
   className = '',
 }: Props) {
+  const { open } = useBooking();
   const sizes = size === 'lg' ? 'px-8 py-4 text-base' : 'px-6 py-2.5 text-sm';
   const variants =
     variant === 'inverse'
       ? 'bg-white text-purple-700 hover:bg-purple-50'
       : 'bg-gradient-to-r from-purple-600 to-blue-600 text-white';
 
-  function handleClick() {
-    trackBookingClick();
-    document
-      .getElementById('book')
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
   return (
     <button
       type="button"
-      onClick={handleClick}
+      onClick={open}
       className={`inline-flex items-center justify-center font-bold rounded-full shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-purple-400/50 ${sizes} ${variants} ${className}`}
     >
       {children}
