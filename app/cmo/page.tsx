@@ -6,9 +6,9 @@ import { BookingProvider } from './BookingModal';
 // Paid-traffic campaign page — must NOT be indexed. This overrides the
 // site-wide `index: true` / canonical set in app/layout.tsx.
 export const metadata: Metadata = {
-  title: 'Your New CMO — A Full Marketing Department for Loan Officers | Own It Social',
+  title: 'Your New CMO — More Buyers in Your Pipeline, Consistently | Own It Social',
   description:
-    'Stop duct-taping your marketing together. Own It Social becomes your entire marketing department — strategy plus execution — so you close more loans without hiring, managing, or posting anything yourself.',
+    'Own It Social becomes your entire marketing department — we optimize everything that brings buyers to you and build it into a consistent system, so you close more loans without hiring, managing, or posting anything yourself.',
   robots: {
     index: false,
     follow: false,
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: 'https://ownitsocial.com/cmo' },
   openGraph: {
-    title: 'Your New CMO — Done-For-You Marketing for Loan Officers',
+    title: 'Your New CMO — More Buyers in Your Pipeline, Consistently',
     description:
-      'A CMO’s strategy plus a full team’s execution — for a rounding error against the cost of hiring one. Book your strategy call.',
+      'We optimize everything that brings buyers to you and turn it into a consistent system — a full marketing department for a rounding error against the cost of building one. Book your strategy call.',
     type: 'website',
   },
 };
@@ -27,18 +27,18 @@ export const metadata: Metadata = {
 // The department, framed as outcomes (role) with the deliverable underneath.
 const DEPARTMENT = [
   {
-    role: 'A social presence that actually runs',
+    role: 'A social presence that brings in buyers',
     outcome:
-      'You stay top of mind with agents and past clients every single week — without ever opening the app.',
+      'You stay in front of buyers and agents every week, so new conversations keep starting — without you ever opening the app.',
     deliverable:
       'Done-for-you content: scripts, captions, and a posting calendar across Instagram, Facebook, and LinkedIn, published for you.',
   },
   {
-    role: 'A database that reactivates itself',
+    role: 'Past clients who come back to you',
     outcome:
-      'The past clients and dead leads sitting in your CRM turn back into refis, referrals, and repeat business.',
+      'The clients you’ve already helped become repeat business, refis, and referrals — reached with the right message at the right time.',
     deliverable:
-      'CRM setup and cleanup, plus automated email + SMS reactivation campaigns to your entire past-client list.',
+      'CRM setup and cleanup, plus automated email + SMS campaigns that keep you connected to your past-client list.',
   },
   {
     role: 'A Google profile that ranks and collects reviews',
@@ -63,22 +63,22 @@ const DEPARTMENT = [
   },
 ];
 
-const PROBLEMS = [
+const OUTCOMES = [
   {
-    title: 'Your socials have been dead for months',
-    body: 'You know you should be posting. You&apos;re not. And every week of silence is a week an agent forgets you exist.',
+    title: 'New buyers from social',
+    body: 'We turn your social channels into a steady source of new buyer conversations — posting consistently so you stay in front of people ready to make a move.',
   },
   {
-    title: 'Your database is a graveyard',
-    body: 'Hundreds of past clients and old leads sit untouched in your CRM — a pipeline of refis and referrals you never work.',
+    title: 'Repeat and referral business',
+    body: 'Your past clients are your warmest source of new deals. We reach them with the right message at the right time, turning them into refis, referrals, and repeat closings.',
   },
   {
-    title: 'You have no system for realtor referrals',
-    body: 'Deals come from relationships you happen to remember to nurture. There&apos;s no engine — just you, hustling, hoping.',
+    title: 'More deals from your agents',
+    body: 'We give your realtor partners co-marketing they actually want to use, so you become the loan officer they send their buyers to.',
   },
   {
-    title: 'You have no time to do any of it',
-    body: 'You&apos;re closing loans, not writing captions. Marketing is the thing that only happens when everything else is done — so it never does.',
+    title: 'A pipeline that stays full',
+    body: 'Instead of feast-or-famine months, you get a consistent system that keeps new buyers coming in — without you having to run it.',
   },
 ];
 
@@ -92,8 +92,8 @@ const FOR = [
 const NOT_FOR = [
   'Anyone shopping for the cheapest post-a-day service',
   'People who want to micromanage every caption and comma',
-  'Tire-kickers looking for a magic button instead of a system',
-  'Loan officers who aren&apos;t actually committed to growing',
+  'Someone looking for a quick hack instead of a real system',
+  'Anyone not ready to invest in steady, long-term growth',
 ];
 
 const FAQS = [
@@ -107,7 +107,7 @@ const FAQS = [
   },
   {
     q: 'How fast will I see results?',
-    a: 'Your presence goes live within the first couple of weeks, and database reactivation often surfaces conversations in the first 30–60 days. Referral relationships and search rankings compound from there. This is a marketing department, not a lottery ticket — it builds a durable pipeline instead of a one-time spike.',
+    a: 'Your presence goes live within the first couple of weeks, and reaching back out to your past clients often surfaces new buyer conversations in the first 30–60 days. Referral relationships and search rankings compound from there. This is a marketing department, not a lottery ticket — it builds a consistent pipeline of buyers, not a one-time spike.',
   },
   {
     q: 'What if I already post sometimes?',
@@ -212,19 +212,19 @@ export default function CmoLandingPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50" />
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-24 text-center">
             <p className="inline-block mb-6 px-4 py-1.5 rounded-full bg-white shadow-sm ring-1 ring-purple-100 text-sm font-bold tracking-wide text-purple-700">
-              FOR LOAN OFFICERS WHO WANT TO GROW
+              FOR LOAN OFFICERS WHO WANT MORE BUYERS
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.05] tracking-tight text-balance">
-              You don&apos;t need another tool.
+              More buyers in your pipeline.
               <span className="block mt-2 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                You need a CMO.
+                Consistently.
               </span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Your socials are dead, your database is a graveyard, and your
-              agents stopped sending deals. We become your entire marketing
-              department — done for you — so you close more loans without
-              lifting a finger on marketing.
+              Own It Social becomes your entire marketing department. We optimize
+              everything that brings buyers to you and turn it into a consistent,
+              predictable system — so you can focus on closing loans while we
+              handle the rest.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4">
               <CtaButton />
@@ -235,30 +235,31 @@ export default function CmoLandingPage() {
           </div>
         </section>
 
-        {/* 2. THE PROBLEM */}
+        {/* 2. THE OUTCOME */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight">
-              You&apos;re a great loan officer.
+              You close the loans.
               <br />
-              <span className="text-gray-500">
-                Your marketing is quietly costing you deals.
+              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                We bring you the buyers.
               </span>
             </h2>
+            <p className="mt-5 text-lg text-gray-600">
+              We build one system that pulls new buyers in from every direction —
+              and keeps it running month after month.
+            </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
-            {PROBLEMS.map((p) => (
+            {OUTCOMES.map((o) => (
               <div
-                key={p.title}
+                key={o.title}
                 className="rounded-2xl border border-gray-100 bg-gray-50/60 p-8"
               >
                 <h3 className="text-xl font-black mb-3 text-gray-900">
-                  {p.title}
+                  {o.title}
                 </h3>
-                <p
-                  className="text-gray-600 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: p.body }}
-                />
+                <p className="text-gray-600 leading-relaxed">{o.body}</p>
               </div>
             ))}
           </div>
@@ -271,7 +272,7 @@ export default function CmoLandingPage() {
               THE THIRD OPTION
             </p>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-10">
-              Until now, you&apos;ve had two bad choices.
+              Growing your marketing used to mean two options.
             </h2>
             <div className="grid md:grid-cols-2 gap-6 text-left mb-12">
               <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-8">
@@ -285,9 +286,9 @@ export default function CmoLandingPage() {
               <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 p-8">
                 <h3 className="text-xl font-black mb-3">Do it all yourself</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Squeeze marketing into the cracks between closings. It&apos;s
-                  inconsistent, it doesn&apos;t scale, and it always loses to the
-                  next loan in your pipeline.
+                  Fit marketing in around your closings. It works when you have
+                  time — but it&apos;s hard to keep consistent, and it&apos;s the
+                  first thing to slip the moment business picks up.
                 </p>
               </div>
             </div>
@@ -298,8 +299,9 @@ export default function CmoLandingPage() {
                 </h3>
                 <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
                   A CMO&apos;s strategy plus a full team&apos;s execution — a
-                  complete marketing department, done for you, for a rounding
-                  error against the cost of building one yourself.
+                  complete marketing department that brings you a steady flow of
+                  new buyers, for a rounding error against the cost of building
+                  one yourself.
                 </p>
                 <div className="mt-8">
                   <CtaButton variant="inverse">
@@ -541,12 +543,13 @@ export default function CmoLandingPage() {
         <section className="bg-gradient-to-br from-purple-600 to-blue-600 py-20 md:py-28">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight text-balance">
-              Get a marketing department without building one.
+              Ready to fill your pipeline with more buyers?
             </h2>
             <p className="mt-6 text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
               Book a 30-minute strategy call. We&apos;ll map out exactly how your
-              new CMO takes social, your database, Google, and your referral
-              partners off your plate — so you can get back to closing loans.
+              new CMO brings more buyers into your pipeline across social, your
+              past clients, Google, and your referral partners — so you can focus
+              on closing loans.
             </p>
             <div className="mt-10">
               <CtaButton variant="inverse">
