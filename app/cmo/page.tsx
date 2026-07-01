@@ -123,6 +123,65 @@ const TRUST_LOGOS = [
   { src: '/images/William Raveis.png', alt: 'William Raveis' },
 ];
 
+// Real client testimonials. The first is featured (long-form); the other two
+// render as a compact pair below it.
+const TESTIMONIALS = [
+  {
+    name: 'Justin Elkins',
+    initials: 'JE',
+    quote: [
+      'I’ve had an outstanding experience working with the team at Own It Social. They consistently deliver high-quality print marketing materials on time, create engaging social media content, and provide a clear strategy that keeps my marketing moving forward.',
+      'What I appreciate most is how collaborative the process is. We meet weekly to review performance metrics, discuss reach and engagement, brainstorm new ideas, and adjust our strategy based on what’s working. They don’t just hand me a marketing plan — they invite my input, encourage new ideas, and are always willing to take something I suggest and turn it into an effective campaign.',
+      'The team is responsive, creative, organized, and genuinely invested in helping my business grow. If you’re a mortgage professional looking for a marketing partner that is proactive, dynamic, and easy to work with, I highly recommend Own It Social.',
+    ],
+  },
+  {
+    name: 'Taylor Eisenbarth',
+    initials: 'TE',
+    quote: [
+      'Own It has helped me grow my social media by hundreds of thousands of views in just 30 days. It really has been exponential growth. They also make marketing through my CRM a breeze. I highly recommend this business. Consistent and professional.',
+    ],
+  },
+  {
+    name: 'Michael Martin',
+    initials: 'MM',
+    quote: [
+      'I’ve been working with Colin now for two months and he has taken a giant weight off my shoulders — managing my entire social media presence and creating content and scripts for me to utilize. If you are looking for someone to take the burden of posting social media off your plate, Colin is your guy.',
+    ],
+  },
+];
+
+function Stars() {
+  return (
+    <div className="flex gap-1" aria-hidden="true">
+      {[...Array(5)].map((_, i) => (
+        <svg
+          key={i}
+          className="w-5 h-5 text-yellow-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.966a1 1 0 00.95.69h4.17c.969 0 1.371 1.24.588 1.81l-3.375 2.452a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.374-2.453a1 1 0 00-1.176 0l-3.375 2.453c-.783.57-1.838-.196-1.538-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.98 9.393c-.783-.57-.38-1.81.588-1.81h4.17a1 1 0 00.95-.69l1.287-3.966z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+function Attribution({ name, initials }: { name: string; initials: string }) {
+  return (
+    <figcaption className="mt-6 flex items-center gap-3">
+      <span className="flex-shrink-0 w-11 h-11 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center text-white font-black text-sm">
+        {initials}
+      </span>
+      <span className="text-sm">
+        <span className="block font-bold text-gray-900">{name}</span>
+        <span className="block text-gray-500">Own It Social client</span>
+      </span>
+    </figcaption>
+  );
+}
+
 export default function CmoLandingPage() {
   return (
     <BookingProvider>
@@ -375,50 +434,45 @@ export default function CmoLandingPage() {
               Loan officers who stopped doing their own marketing
             </h2>
             <p className="text-lg text-gray-600">
-              {/* PLACEHOLDER: replace with a real proof stat once available. */}
-              Real results from real loan officers.
+              Real words from loan officers who handed us their marketing.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((n) => (
-              <figure
-                key={n}
-                className="rounded-2xl border border-gray-100 bg-gray-50/60 p-8 flex flex-col"
-              >
-                <div className="flex gap-1 mb-4" aria-hidden="true">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-5 h-5 text-yellow-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.966a1 1 0 00.95.69h4.17c.969 0 1.371 1.24.588 1.81l-3.375 2.452a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.374-2.453a1 1 0 00-1.176 0l-3.375 2.453c-.783.57-1.838-.196-1.538-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.98 9.393c-.783-.57-.38-1.81.588-1.81h4.17a1 1 0 00.95-.69l1.287-3.966z" />
-                    </svg>
-                  ))}
-                </div>
-                {/* PLACEHOLDER TESTIMONIAL — swap in a real quote. */}
-                <blockquote className="text-gray-700 leading-relaxed flex-1">
-                  &ldquo;[ Testimonial placeholder — drop a real loan officer
-                  quote here about what changed after Own It Social took over
-                  their marketing. ]&rdquo;
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-3">
-                  {/* PLACEHOLDER HEADSHOT — replace the initials block with a photo. */}
-                  <span className="flex-shrink-0 w-11 h-11 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center text-white font-black text-sm">
-                    LO
-                  </span>
-                  <span className="text-sm">
-                    <span className="block font-bold text-gray-900">
-                      [ Name, Loan Officer ]
-                    </span>
-                    <span className="block text-gray-500">
-                      [ Company / City ]
-                    </span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* Featured, long-form testimonial */}
+            <figure className="rounded-2xl border border-gray-100 bg-gray-50/60 p-8 md:p-10">
+              <Stars />
+              <blockquote className="mt-5 space-y-4 text-gray-700 leading-relaxed md:text-lg">
+                {TESTIMONIALS[0].quote.map((para, i, arr) => (
+                  <p key={i}>
+                    {i === 0 ? '“' : ''}
+                    {para}
+                    {i === arr.length - 1 ? '”' : ''}
+                  </p>
+                ))}
+              </blockquote>
+              <Attribution
+                name={TESTIMONIALS[0].name}
+                initials={TESTIMONIALS[0].initials}
+              />
+            </figure>
+
+            {/* The two shorter testimonials */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {TESTIMONIALS.slice(1).map((t) => (
+                <figure
+                  key={t.name}
+                  className="rounded-2xl border border-gray-100 bg-gray-50/60 p-8 flex flex-col"
+                >
+                  <Stars />
+                  <blockquote className="mt-5 text-gray-700 leading-relaxed flex-1">
+                    {'“'}
+                    {t.quote[0]}
+                    {'”'}
+                  </blockquote>
+                  <Attribution name={t.name} initials={t.initials} />
+                </figure>
+              ))}
+            </div>
           </div>
           {/* Trust logos — teams our loan officers come from. */}
           <p className="text-center text-xs font-bold tracking-widest text-gray-400 mt-16 mb-8">
