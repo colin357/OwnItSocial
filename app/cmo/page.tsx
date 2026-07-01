@@ -8,7 +8,7 @@ import { BookingProvider } from './BookingModal';
 export const metadata: Metadata = {
   title: 'Your New CMO — More Buyers in Your Pipeline, Consistently | Own It Social',
   description:
-    'Own It Social becomes your entire marketing department — we optimize everything that brings buyers to you and build it into a consistent system, so you close more loans without hiring, managing, or posting anything yourself.',
+    'We become your entire marketing department, optimizing everything that brings buyers to you and building it into a consistent system — so you close more loans without hiring, managing, or posting anything yourself.',
   robots: {
     index: false,
     follow: false,
@@ -221,8 +221,8 @@ export default function CmoLandingPage() {
               </span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Own It Social becomes your entire marketing department. We optimize
-              everything that brings buyers to you and turn it into a consistent,
+              We become your entire marketing department, optimizing everything
+              that brings buyers to you and turning it into a consistent,
               predictable system — so you can focus on closing loans while we
               handle the rest.
             </p>
