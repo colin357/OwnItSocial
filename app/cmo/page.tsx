@@ -145,7 +145,7 @@ export default function CmoLandingPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50" />
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-24 text-center">
             <p className="inline-block mb-6 px-4 py-1.5 rounded-full bg-white shadow-sm ring-1 ring-purple-100 text-sm font-bold tracking-wide text-purple-700">
-              FOR MORTGAGE LOAN OFFICERS WHO WANT TO GROW
+              FOR LOAN OFFICERS WHO WANT TO GROW
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.05] tracking-tight text-balance">
               You don&apos;t need another tool.
@@ -500,7 +500,7 @@ export default function CmoLandingPage() {
             © 2026 OwnItSocial.com · All rights reserved.
           </p>
           <p className="mt-2 text-xs text-gray-600">
-            Marketing services for mortgage loan officers. Results vary.
+            Marketing services for loan officers. Results vary.
           </p>
         </div>
       </footer>
