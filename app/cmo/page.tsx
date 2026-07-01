@@ -215,16 +215,15 @@ export default function CmoLandingPage() {
               YOUR NEW CMO — BUILT FOR LOAN OFFICERS
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.05] tracking-tight text-balance">
-              More buyers in your pipeline.
+              Your marketing shouldn’t stop
               <span className="block mt-2 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Consistently.
+                every time you’re closing a deal.
               </span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              We become your entire marketing department, optimizing everything
-              that brings buyers to you and turning it into a consistent,
-              predictable system — so you can focus on closing loans while we
-              handle the rest.
+              Right now, you’re the whole department — and it stalls the second
+              you get busy. We become the team that keeps it running, so your
+              pipeline fills whether you’ve got a free Sunday or not.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4">
               <CtaButton />
