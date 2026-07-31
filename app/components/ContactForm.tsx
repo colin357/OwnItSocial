@@ -5,6 +5,7 @@ import { useState } from 'react';
 declare global {
   function gtag(...args: unknown[]): void;
   function fbq(...args: unknown[]): void;
+  function oaiq(...args: unknown[]): void;
 }
 
 export default function ContactForm() {
@@ -38,6 +39,9 @@ export default function ContactForm() {
         }
         if (typeof fbq === 'function') {
           fbq('track', 'Lead');
+        }
+        if (typeof oaiq === 'function') {
+          oaiq('measure', 'registration_completed', { type: 'customer_action', amount: 0, currency: 'USD' });
         }
         setSubmitMessage('Thanks for reaching out! We\'ll be in touch soon.');
         setFormData({ name: '', company: '', phone: '', email: '', revenue: '' });

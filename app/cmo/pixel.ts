@@ -12,8 +12,8 @@
 
 declare global {
   interface Window {
-    // Provided by the Meta Pixel base snippet in app/layout.tsx
     fbq?: (...args: unknown[]) => void;
+    oaiq?: (...args: unknown[]) => void;
   }
 }
 
@@ -23,12 +23,19 @@ function fire(...args: unknown[]) {
   }
 }
 
+function fireOaiq(...args: unknown[]) {
+  if (typeof window !== 'undefined' && typeof window.oaiq === 'function') {
+    window.oaiq(...args);
+  }
+}
+
 /**
  * Top-of-funnel intent: a visitor clicked one of the "Book a Call" CTAs.
  * Custom event so you can build a lookalike/retargeting audience off it.
  */
 export function trackBookingClick() {
   fire('trackCustom', 'BookCallClick', { source: 'cmo-landing' });
+  fireOaiq('measure', 'registration_completed', { type: 'customer_action', amount: 0, currency: 'USD' });
 }
 
 /**
@@ -42,4 +49,5 @@ export function trackBookingClick() {
  */
 export function trackBookingComplete() {
   fire('track', 'Lead', { content_name: 'CMO Strategy Call' });
+  fireOaiq('measure', 'registration_completed', { type: 'customer_action', amount: 0, currency: 'USD' });
 }
