@@ -301,8 +301,7 @@ export default function Home() {
               <span className="label">The Human Behind It</span>
               <h2 className="team__title" id="about-title">Meet Colin Hickmon</h2>
               <p className="team__intro">
-                Founder &amp; Marketing Strategist. When you hire Own It Social, you get a person
-                who answers the phone.
+                When you hire Own It Social, you get a person who answers the phone.
               </p>
             </div>
 
@@ -313,7 +312,7 @@ export default function Home() {
                     src="/images/colin-portrait.webp"
                     alt="Colin Hickmon, founder of Own It Social"
                     fill
-                    sizes="(max-width: 900px) 90vw, 420px"
+                    sizes="(max-width: 900px) 90vw, 360px"
                     className="member__photo"
                   />
                   <span className="member__name">Colin<br />Hickmon</span>
@@ -323,30 +322,20 @@ export default function Home() {
 
               <div className="member__bio reveal" style={delay(200)}>
                 <p>
-                  Most business owners do everything right — they build a website, post content,
-                  and collect leads — but often lack a strategic direction that delivers real
-                  results.
+                  Most business owners do everything right &mdash; build the website, post the
+                  content, collect the leads &mdash; and still never get the strategic direction
+                  that turns any of it into results. I started Own It Social because watching
+                  people hustle that hard for marketing that wasn&rsquo;t working got frustrating.
                 </p>
                 <p>
-                  I started Own It Social because I saw how frustrating it was for business owners
-                  to waste time and money on marketing that wasn&rsquo;t working. Too many
-                  entrepreneurs hustle relentlessly only to feel confused when what used to work
-                  suddenly stops delivering.
-                </p>
-                <p>
-                  The marketing landscape has changed dramatically. What worked five years ago
-                  doesn&rsquo;t work today. Social media algorithms shift constantly. New platforms
-                  emerge. AI is transforming search. Most business owners can&rsquo;t keep up — and
-                  they shouldn&rsquo;t have to.
-                </p>
-                <p>
-                  At Own It Social, we stay ahead of every trend and platform change so you
-                  don&rsquo;t have to. We provide a complete, modern marketing system that actually
-                  generates leads and grows your business — not just likes and vanity metrics.
+                  Algorithms shift, platforms come and go, AI is rewriting search. Most owners
+                  can&rsquo;t keep up with all of it, and they shouldn&rsquo;t have to. We stay
+                  ahead of it so you get a marketing system that generates leads instead of vanity
+                  metrics.
                 </p>
                 <p className="member__kicker">
-                  I built this company around one mission: helping businesses own their local
-                  markets with marketing made by people who actually care whether it works.
+                  One mission: help businesses own their local markets with marketing made by
+                  people who actually care whether it works.
                 </p>
               </div>
             </div>
