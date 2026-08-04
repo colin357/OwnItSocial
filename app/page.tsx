@@ -1,11 +1,102 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import ContactForm from './components/ContactForm';
+import EditorialChrome from './components/EditorialChrome';
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
   getStructuredDataScript
 } from '@/lib/seo/structured-data';
+
+/** CSS custom property for stagger delays; typed so React accepts it. */
+const delay = (ms: number) => ({ '--delay': `${ms}ms` }) as React.CSSProperties;
+
+const HEART_PATH =
+  'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z';
+
+const PROMISES = [
+  {
+    title: 'Written by a person',
+    body: 'Every caption, email, script, and follow-up is written by someone on our team who read your brief and knows your customers. Nothing goes out on autopilot.',
+  },
+  {
+    title: 'Filmed and edited by a person',
+    body: 'Real cameras, real edits, real taste. We direct the shoot, cut the footage, and design the graphics ourselves — no generated stock, no template packs.',
+  },
+  {
+    title: 'Strategy from a person who studies your market',
+    body: 'We use AI to make sure you get found. We never use it to decide what you have to say. The thinking stays human, because that is the part your customers can feel.',
+  },
+];
+
+const SERVICES = [
+  {
+    number: '01',
+    name: 'Social Media Content & Strategy',
+    desc: 'We plan, script, edit, and post short and long form content that positions you as the local expert — created by people who know how to make you sound like you.',
+    items: ['Content ideas & filming guidance', 'Posting strategy & optimization', 'Instagram, Facebook, TikTok, YouTube, LinkedIn'],
+  },
+  {
+    number: '02',
+    name: 'CRM & Email Marketing',
+    desc: 'We build and manage automated email and follow up campaigns that turn leads into conversations. Automated delivery, human words.',
+    items: ['Database segmentation', 'Nurture & post-close campaigns', 'Referral requests & re-engagement'],
+  },
+  {
+    number: '03',
+    name: 'AI Optimization (AIO)',
+    desc: 'We help your brand show up in AI driven search results like ChatGPT, Google AI, and voice search — so the machines recommend the humans behind your business.',
+    items: ['AI-optimized content', 'Authority signals & structured pages', 'Future-proof visibility strategies'],
+  },
+  {
+    number: '04',
+    name: 'Paid Advertising & Lead Gen',
+    desc: 'We run targeted ad campaigns designed to generate high quality leads, not vanity metrics — with creative written and designed in-house.',
+    items: ['Funnel setup & landing pages', 'Meta ads management', 'Offer positioning & optimization'],
+  },
+  {
+    number: '05',
+    name: 'Brand Systems & Client Portals',
+    desc: 'Our client portal gives you complete visibility and control over your marketing, so you always know which person is working on what.',
+    items: ['Content approval workflows', 'Video uploads & campaign tracking', 'Centralized access to all assets'],
+  },
+];
+
+const STEPS = [
+  {
+    number: '1',
+    name: 'Discovery & Strategy',
+    desc: 'We analyze your business, target audience, and goals to create a custom marketing strategy. We’ll identify exactly what you need to stand out in your local market.',
+  },
+  {
+    number: '2',
+    name: 'Setup & Launch',
+    desc: 'We build your marketing engine from the ground up — content calendars, email sequences, ad campaigns, and automated systems. Everything is ready to go within 2 weeks.',
+  },
+  {
+    number: '3',
+    name: 'Optimize & Scale',
+    desc: 'We continuously monitor performance, optimize campaigns, and scale what works. You get monthly reports and full visibility into every aspect of your marketing through our client portal.',
+  },
+];
+
+const LOGOS = [
+  { src: '/images/Fairway.webp', alt: 'Fairway Independent Mortgage Corporation' },
+  { src: '/images/Compass Logo.png', alt: 'Compass' },
+  { src: '/images/Keller Williams.png', alt: 'Keller Williams' },
+  { src: '/images/William Raveis.png', alt: 'William Raveis' },
+];
+
+// Six frames fill the rotated 3x2 gallery; with four source images the two
+// repeats sit diagonally so they never land next to each other.
+const WORK = [
+  { src: '/images/video-production.webp', alt: 'Video production on set for a client campaign' },
+  { src: '/images/success-team.jpg', alt: 'Client team celebrating a campaign result' },
+  { src: '/images/hero-business.png', alt: 'Brand and content system built for a client' },
+  { src: '/images/chatgpt-phone.webp', alt: 'AI search optimization work for a client brand' },
+  { src: '/images/video-production.webp', alt: 'Filming client content on location' },
+  { src: '/images/success-team.jpg', alt: 'Client team reviewing campaign results' },
+];
 
 export default function Home() {
   const organizationSchema = generateOrganizationSchema({
@@ -39,562 +130,366 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: getStructuredDataScript(localBusinessSchema) }}
       />
+      {/* Arms the scroll-reveal only when JS is available, before first paint. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.classList.add('oi-js')`,
+        }}
+      />
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="relative h-10 w-56">
-            <Image
-              src="/OWN IT SOCIAL.png"
-              alt="Own It Social"
-              fill
-              className="object-contain object-left"
-              priority
-            />
+      <div className="oi-root">
+        <EditorialChrome />
+
+        {/* ── Nav (slides in past the hero) ── */}
+        <header className="nav" id="oi-nav">
+          <div className="nav__inner container">
+            <a className="nav__logo" href="#home">
+              Own It Social <span className="nav__heart" aria-hidden="true">&hearts;</span>
+            </a>
+            <nav className="nav__links">
+              <a href="#promise">Why Us</a>
+              <a href="#services">Services</a>
+              <a href="#how-it-works">How It Works</a>
+              <a href="#about">About</a>
+            </nav>
+            <a className="btn btn--primary" href="#contact">Book a Call &rarr;</a>
           </div>
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-gray-800 hover:text-gray-900 font-medium transition">Services</a>
-            <a href="#how-it-works" className="text-gray-800 hover:text-gray-900 font-medium transition">How It Works</a>
-            <a href="#about" className="text-gray-800 hover:text-gray-900 font-medium transition">About</a>
-          </nav>
-          <Link
-            href="#contact"
-            className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold text-sm hover:shadow-lg hover:scale-105 transition-all duration-200 rounded-full"
-          >
-            Book Free Call
-          </Link>
-        </div>
-      </header>
+        </header>
 
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-block mb-4 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-              🚀 Full-Service Marketing Agency
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              <span className="text-black">Own Your Market</span>
-              <br />
-              <span className="relative bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Dominate Online
-                <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 300 12" fill="none">
-                  <path d="M2 10C100 2 200 2 298 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
-                  <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#9333ea" />
-                      <stop offset="100%" stopColor="#2563eb" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </span>
-            </h1>
-            <p className="text-xl mb-8 text-gray-700 leading-relaxed">
-              We handle your social media, email marketing, paid ads, and online visibility—so you can focus on closing deals and growing your business.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-              >
-                Get Started Free
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold text-sm hover:border-purple-600 hover:text-purple-600 transition-all duration-200 rounded-full"
-              >
-                Learn More
-              </a>
-            </div>
+        {/* ── Hero ── */}
+        <section className="hero" id="home" aria-label="Own It Social">
+          <h1 className="hero__headline">
+            <span className="reveal" style={delay(80)}>Own It</span>
+            <span className="reveal" style={delay(180)}>
+              Social<span className="accent">.</span>
+            </span>
+          </h1>
 
-            {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-6">
-              <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">24/7</div>
-                <div className="text-sm text-gray-700 mt-1">Marketing Engine</div>
+          <div className="hero__body reveal" style={delay(320)}>
+            <div className="hero__heart" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d={HEART_PATH} />
+              </svg>
+            </div>
+            <div className="hero__body-bottom">
+              <p className="hero__sub">
+                We build your brand, your content, and your follow-up the way you&rsquo;d want it
+                done if you had more hours in the day. Every idea, every word, every frame &mdash;
+                made by humans.
+              </p>
+              <span className="label hero__stamp">Human made marketing since day one</span>
+              <a className="btn btn--primary" href="#contact">Book a Discovery Call &rarr;</a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── The Problem ── */}
+        <section className="why" id="why" aria-labelledby="why-title">
+          <div className="why__inner">
+            <div className="why__header reveal">
+              <span className="label">The Problem</span>
+              <h2 className="why__headline" id="why-title">
+                Everything got automated.<br />Your customers noticed.
+              </h2>
+            </div>
+            <div className="why__grid">
+              <div className="why__copy reveal" style={delay(100)}>
+                <p className="why__lead">
+                  Somewhere between the AI captions and the automated email sequences, businesses
+                  lost the one thing that made them different: their humanity.
+                </p>
+                <p>
+                  Your feed looks like everyone else&rsquo;s feed. Your follow-up sounds like
+                  everyone else&rsquo;s follow-up. And the leads you paid for scroll right past it,
+                  because they can tell when nobody was really there.
+                </p>
+                <p>
+                  We work with businesses that get it. You know your brand has a voice. You know
+                  your leads deserve a real conversation. You just need a team that can deliver
+                  that consistently, every week, without you finding the hours.
+                </p>
               </div>
-              <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">10x</div>
-                <div className="text-sm text-gray-700 mt-1">More Visibility</div>
+              <div className="why__visual reveal" style={delay(200)}>
+                <figure className="why__quote">
+                  <blockquote>
+                    &ldquo;We don&rsquo;t do business with companies. We do business with people.
+                    Business is always human.&rdquo;
+                  </blockquote>
+                  <figcaption className="label">Simon Sinek</figcaption>
+                </figure>
               </div>
-              <div>
-                <div className="text-3xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">100%</div>
-                <div className="text-sm text-gray-700 mt-1">Done For You</div>
-              </div>
             </div>
           </div>
+        </section>
 
-          <div className="relative hidden md:block">
-            <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-20 blur-2xl"></div>
-            <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/hero-business.png"
-                alt="Marketing team collaboration and success"
-                fill
-                className="object-cover"
-                priority
-              />
+        {/* ── Made by humans ── */}
+        <section className="promise" id="promise" aria-labelledby="promise-title">
+          <div className="promise__inner">
+            <div className="promise__header reveal">
+              <span className="label">Our Promise</span>
+              <h2 className="promise__title" id="promise-title">
+                Made by humans<span className="accent">.</span> On purpose.
+              </h2>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trusted By Section */}
-      <section className="bg-white border-y border-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-center font-bold text-sm text-gray-500 mb-8 tracking-wider">TRUSTED BY TEAMS AT</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">FAIRWAY HOME MORTGAGE</div>
-            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">COMPASS</div>
-            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">KELLER WILLIAMS</div>
-            <div className="text-2xl font-black text-gray-700 hover:text-gray-900 transition">WILLIAM RAVEIS</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Prop Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105">
-              <Image
-                src="/images/video-production.webp"
-                alt="Video content creation"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105">
-              <Image
-                src="/images/chatgpt-phone.webp"
-                alt="AI-powered marketing"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition transform hover:scale-105 col-span-2">
-              <Image
-                src="/images/success-team.jpg"
-                alt="Marketing success and growth"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div>
-            <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">
-              <span className="text-gray-900">Your Complete</span>
-              <br />
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                Marketing System
-              </span>
-            </h2>
-            <p className="text-lg mb-6 text-gray-700 leading-relaxed">
-              Stop juggling multiple agencies and freelancers. We provide everything you need to grow your business in one place—from content creation to lead generation.
-            </p>
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mt-1">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+            <div className="promise__grid">
+              {PROMISES.map((promise, i) => (
+                <div
+                  key={promise.title}
+                  className="promise__item reveal"
+                  style={delay(100 + i * 100)}
+                >
+                  <h3>{promise.title}</h3>
+                  <p>{promise.body}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Services ── */}
+        <section className="services" id="services" aria-labelledby="services-title">
+          <div className="services__inner">
+            <h2 className="services__title reveal" id="services-title">What we do</h2>
+            <p className="services__intro reveal" style={delay(80)}>
+              Everything you need to own your market, handled by one team of real people instead
+              of five freelancers and a content generator.
+            </p>
+            {SERVICES.map((service) => (
+              <article className="service reveal" key={service.number}>
+                <span className="service__number" aria-hidden="true">{service.number}</span>
                 <div>
-                  <div className="font-semibold text-gray-900">Consistent Content</div>
-                  <div className="text-gray-700">Professional social media that positions you as the expert</div>
+                  <h3 className="service__name">{service.name}</h3>
+                  <p className="service__desc">{service.desc}</p>
+                  <ul className="service__list">
+                    {service.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* ── How it works ── */}
+        <section className="process" id="how-it-works" aria-labelledby="process-title">
+          <div className="process__inner">
+            <div className="process__header reveal">
+              <span className="label">How It Works</span>
+              <h2 className="process__title" id="process-title">
+                Three steps to consistent growth.
+              </h2>
+            </div>
+            <div className="process__grid">
+              {STEPS.map((step, i) => (
+                <div
+                  key={step.number}
+                  className="step reveal"
+                  style={delay(100 + i * 100)}
+                >
+                  <span className="step__number" aria-hidden="true">{step.number}</span>
+                  <h3 className="step__name">{step.name}</h3>
+                  <p className="step__desc">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Trusted by ── */}
+        <section className="trusted" aria-label="Trusted by">
+          <div className="trusted__inner">
+            <span className="label">Trusted by teams at</span>
+            <div className="trusted__logos">
+              {LOGOS.map((logo) => (
+                <div className="trusted__logo-item" key={logo.src}>
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    sizes="200px"
+                    className="trusted__logo-img"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Our work ── */}
+        <section className="work" aria-labelledby="work-title">
+          <div className="work__header reveal">
+            <h2 className="work__title" id="work-title">Our work</h2>
+            <p className="work__sub">Brands, content, and campaigns made by hand.</p>
+          </div>
+          <div className="work__gallery" aria-hidden="true">
+            {WORK.map((item, i) => (
+              <div className="work-card" key={`${item.src}-${i}`}>
+                <div className="work-card__img-wrap">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 767px) 40vw, 280px"
+                    className="work-card__img"
+                  />
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mt-1">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">Automated Nurture</div>
-                  <div className="text-gray-700">Email sequences that turn leads into clients</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mt-1">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">Quality Leads</div>
-                  <div className="text-gray-700">Targeted ads that drive real business results</div>
-                </div>
-              </div>
-            </div>
-            <Link
-              href="#contact"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-            >
-              Start Growing Today
-            </Link>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="bg-gradient-to-br from-purple-50 to-blue-50 py-20 md:py-32">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">
-              <span className="text-gray-900">How It</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Works</span>
-            </h2>
-            <p className="text-xl text-gray-700">Three simple steps to consistent growth</p>
-          </div>
-
-          <div className="space-y-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition group">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-lg group-hover:scale-110 transition">
-                  1
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-black mb-3 text-gray-900">Discovery & Strategy</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    We analyze your business, target audience, and goals to create a custom marketing strategy. We&apos;ll identify exactly what you need to dominate your local market.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition group">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-lg group-hover:scale-110 transition">
-                  2
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-black mb-3 text-gray-900">Setup & Launch</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    We build your marketing engine from the ground up—content calendars, email sequences, ad campaigns, and automated systems. Everything is ready to go within 2 weeks.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition group">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-lg group-hover:scale-110 transition">
-                  3
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-black mb-3 text-gray-900">Optimize & Scale</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    We continuously monitor performance, optimize campaigns, and scale what works. You get monthly reports and have full visibility into every aspect of your marketing through our client portal.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="#contact"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-            >
-              I&apos;m Interested
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            <span className="text-gray-900">Our</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Services</span>
-          </h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Everything you need to dominate your market—all managed by our expert team
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
-          {/* Social Media Content & Strategy */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-black mb-4 text-gray-900">Social Media Content & Strategy</h3>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              We plan, script, edit, and post short and long form content that positions you as the local expert.
-            </p>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Content ideas & filming guidance</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Posting strategy & optimization</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Instagram, Facebook, TikTok, YouTube, LinkedIn</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* CRM & Email Marketing */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-black mb-4 text-gray-900">CRM & Email Marketing</h3>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              We build and manage automated email and follow up campaigns that turn leads into conversations.
-            </p>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Database segmentation</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Nurture & post-close campaigns</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Referral requests & re-engagement</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* AI Optimization */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-black mb-4 text-gray-900">AI Optimization (AIO)</h3>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              We help your brand show up in AI driven search results like ChatGPT, Google AI, and voice search.
-            </p>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>AI-optimized content</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Authority signals & structured pages</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Future-proof visibility strategies</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Paid Advertising & Lead Generation */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-black mb-4 text-gray-900">Paid Advertising & Lead Gen</h3>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              We run targeted ad campaigns designed to generate high quality leads, not vanity metrics.
-            </p>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Funnel setup & landing pages</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Meta ads management</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Offer positioning & optimization</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Brand Systems & Client Portals */}
-          <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 md:col-span-2 lg:col-span-1">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-black mb-4 text-gray-900">Brand Systems & Client Portals</h3>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              Our revolutionary client portal gives you complete visibility and control over your marketing.
-            </p>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Content approval workflows</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Video uploads & campaign tracking</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 mt-1">•</span>
-                <span>Centralized access to all assets</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-          >
-            Book Free Discovery Call
-          </Link>
-        </div>
-      </section>
-
-      {/* About Colin Section */}
-      <section id="about" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20 md:py-32">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Meet <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Colin Hickmon</span>
-            </h2>
-            <p className="text-xl text-gray-300">Founder & Marketing Strategist</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl opacity-30 blur-2xl"></div>
-              <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/colin-portrait.webp"
-                  alt="Colin Hickmon - Founder of Own It Social"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Most business owners do everything right—they build a website, post content, and collect leads—but often lack a strategic direction that delivers real results.
-              </p>
-              <p>
-                I started Own It Social because I saw how frustrating it was for business owners to waste time and money on marketing that wasn&apos;t working. Too many entrepreneurs hustle relentlessly only to feel confused when what used to work suddenly stops delivering.
-              </p>
-              <p>
-                The marketing landscape has changed dramatically. What worked five years ago doesn&apos;t work today. Social media algorithms shift constantly. New platforms emerge. AI is transforming search. Most business owners can&apos;t keep up—and they shouldn&apos;t have to.
-              </p>
-              <p>
-                At Own It Social, we stay ahead of every trend and platform change so you don&apos;t have to. We provide a complete, modern marketing system that actually generates leads and grows your business—not just likes and vanity metrics.
-              </p>
-              <p className="text-purple-400 font-semibold text-lg">
-                I built this company around one mission: helping businesses dominate their local markets with marketing that actually works.
+        {/* ── Founder ── */}
+        <section className="team" id="about" aria-labelledby="about-title">
+          <div className="team__inner">
+            <div className="team__header reveal">
+              <span className="label">The Human Behind It</span>
+              <h2 className="team__title" id="about-title">Meet Colin Hickmon</h2>
+              <p className="team__intro">
+                Founder &amp; Marketing Strategist. When you hire Own It Social, you get a person
+                who answers the phone.
               </p>
             </div>
-          </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="#contact"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-            >
-              Work With Me
-            </Link>
-          </div>
-        </div>
-      </section>
+            <div className="team__grid">
+              <div className="member reveal" style={delay(100)}>
+                <div className="member__photo-wrap">
+                  <Image
+                    src="/images/colin-portrait.webp"
+                    alt="Colin Hickmon, founder of Own It Social"
+                    fill
+                    sizes="(max-width: 900px) 90vw, 420px"
+                    className="member__photo"
+                  />
+                  <span className="member__name">Colin<br />Hickmon</span>
+                </div>
+                <span className="label member__role">Founder &amp; Marketing Strategist</span>
+              </div>
 
-      {/* CTA Section */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center">
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 md:p-16 shadow-2xl">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-            Join the businesses already dominating their local markets. Book your free consultation today and discover how we can transform your marketing.
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-bold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 rounded-full"
-          >
-            Book Your Free Call Now
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              <div className="member__bio reveal" style={delay(200)}>
+                <p>
+                  Most business owners do everything right — they build a website, post content,
+                  and collect leads — but often lack a strategic direction that delivers real
+                  results.
+                </p>
+                <p>
+                  I started Own It Social because I saw how frustrating it was for business owners
+                  to waste time and money on marketing that wasn&rsquo;t working. Too many
+                  entrepreneurs hustle relentlessly only to feel confused when what used to work
+                  suddenly stops delivering.
+                </p>
+                <p>
+                  The marketing landscape has changed dramatically. What worked five years ago
+                  doesn&rsquo;t work today. Social media algorithms shift constantly. New platforms
+                  emerge. AI is transforming search. Most business owners can&rsquo;t keep up — and
+                  they shouldn&rsquo;t have to.
+                </p>
+                <p>
+                  At Own It Social, we stay ahead of every trend and platform change so you
+                  don&rsquo;t have to. We provide a complete, modern marketing system that actually
+                  generates leads and grows your business — not just likes and vanity metrics.
+                </p>
+                <p className="member__kicker">
+                  I built this company around one mission: helping businesses own their local
+                  markets with marketing made by people who actually care whether it works.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section className="cta" aria-labelledby="cta-title">
+          <div className="cta__bg-heart" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d={HEART_PATH} />
             </svg>
-          </a>
-        </div>
-      </section>
+          </div>
+          <div className="cta__inner">
+            <h2 className="cta__headline" id="cta-title">
+              Let&rsquo;s make something<br />worth paying attention to.
+            </h2>
+            <p className="cta__sub">
+              Book a free discovery call. You&rsquo;ll talk to a person, get a straight answer about
+              what your marketing actually needs, and leave with a plan either way.
+            </p>
+            <a className="btn btn--outline-white" href="#contact">Book a Free Call &rarr;</a>
+          </div>
+        </section>
 
-      {/* Contact Form Section */}
-      <section id="contact" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            <span className="text-gray-900">Let&apos;s</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Connect</span>
-          </h2>
-          <p className="text-xl text-gray-700">
-            Ready to dominate your market? Fill out the form below and we&apos;ll be in touch.
-          </p>
-        </div>
-        <ContactForm />
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
-            <div className="md:col-span-2">
-              <div className="font-black text-2xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
-                OWN IT SOCIAL
-              </div>
-              <p className="text-gray-500 mb-4">
-                Full-service marketing agency helping businesses dominate their local markets with social media, email marketing, paid ads, and more.
+        {/* ── Contact ── */}
+        <section className="contact" id="contact" aria-labelledby="contact-title">
+          <div className="contact__inner">
+            <div className="reveal">
+              <span className="label">Get In Touch</span>
+              <h2 className="contact__title" id="contact-title">
+                Tell us about<br />your business.
+              </h2>
+              <p className="contact__copy">
+                Fill this out and a human on our team reads it — usually the same day. No bots, no
+                auto-responder loop, no sales sequence you can&rsquo;t escape.
               </p>
+              <div className="contact__meta">
+                <p className="label">Prefer email?</p>
+                <p>
+                  <a href="mailto:colin@ownitsocial.com">colin@ownitsocial.com</a>
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#services" className="hover:text-white transition">Services</a></li>
-                <li><a href="#how-it-works" className="hover:text-white transition">How It Works</a></li>
-                <li><a href="#about" className="hover:text-white transition">About</a></li>
-                <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+            <div className="reveal" style={delay(150)}>
+              <ContactForm variant="editorial" />
+            </div>
+          </div>
+        </section>
+
+        {/* ── Footer ── */}
+        <footer className="footer">
+          <div className="footer__inner">
+            <span className="footer__logo">
+              Own It Social <span className="nav__heart" aria-hidden="true">&hearts;</span>
+            </span>
+            <div className="footer__links">
+              <a href="#promise">Why Us</a>
+              <a href="#services">Services</a>
+              <a href="#how-it-works">How It Works</a>
+              <a href="#about">About</a>
+              <a href="#contact">Book a Call</a>
+            </div>
+          </div>
+
+          <div className="footer__cols">
+            <div className="footer__col">
+              <h4>Explore</h4>
+              <ul>
+                <li><Link href="/articles">Articles</Link></li>
+                <li><Link href="/locations">Service Areas</Link></li>
+                <li><Link href="/top-marketing-agencies">Top Marketing Agencies</Link></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Specializations</h4>
-              <ul className="space-y-2">
-                <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
-                <li><Link href="/locations" className="hover:text-white transition">Service Areas</Link></li>
-                <li><Link href="/real-estate-marketing/miami" className="hover:text-white transition">Real Estate Marketing</Link></li>
-                <li><Link href="/loan-officer-marketing/miami" className="hover:text-white transition">Loan Officer Marketing</Link></li>
+            <div className="footer__col">
+              <h4>Specializations</h4>
+              <ul>
+                <li><Link href="/real-estate-marketing/miami">Real Estate Marketing</Link></li>
+                <li><Link href="/loan-officer-marketing/miami">Loan Officer Marketing</Link></li>
+                <li><Link href="/social-media-marketing-agency-near-me">Social Media Marketing</Link></li>
+                <li><Link href="/ppc-digital-marketing-agency">PPC &amp; Paid Ads</Link></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Legal</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
+            <div className="footer__col">
+              <h4>Contact</h4>
+              <ul>
+                <li><a href="mailto:colin@ownitsocial.com">colin@ownitsocial.com</a></li>
+                <li><a href="#contact">Book a Discovery Call</a></li>
               </ul>
             </div>
           </div>
-          <div className="text-center text-sm border-t border-gray-800 pt-8">
-            <p>© 2025 OwnItSocial.com | All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+
+          <p className="footer__legal">
+            &copy; {new Date().getFullYear()} OwnItSocial.com &mdash; All rights reserved. Made by
+            humans in Miami, FL.
+          </p>
+        </footer>
+      </div>
     </>
   );
 }

@@ -8,7 +8,28 @@ declare global {
   function oaiq(...args: unknown[]): void;
 }
 
-export default function ContactForm() {
+type ContactFormProps = {
+  /** 'card' is the original rounded card used across the landing pages.
+   *  'editorial' matches the Human Made-style homepage. */
+  variant?: 'card' | 'editorial';
+};
+
+const FIELDS = [
+  { id: 'name', label: 'Name', type: 'text', placeholder: 'Your full name' },
+  { id: 'company', label: 'Company', type: 'text', placeholder: 'Your company name' },
+  { id: 'email', label: 'Email', type: 'email', placeholder: 'your@email.com' },
+  { id: 'phone', label: 'Phone Number', type: 'tel', placeholder: '(555) 123-4567' },
+] as const;
+
+const REVENUE_OPTIONS = [
+  { value: 'Under $250K', label: 'Under $250K' },
+  { value: '$250K - $500K', label: '$250K – $500K' },
+  { value: '$500K - $1M', label: '$500K – $1M' },
+  { value: '$1M - $5M', label: '$1M – $5M' },
+  { value: '$5M+', label: '$5M+' },
+];
+
+export default function ContactForm({ variant = 'card' }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -58,6 +79,67 @@ export default function ContactForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  if (variant === 'editorial') {
+    return (
+      <form onSubmit={handleSubmit} className="oi-form">
+        {FIELDS.map((field) => (
+          <div key={field.id} className="oi-form__field">
+            <label className="oi-form__label" htmlFor={`ed-${field.id}`}>
+              {field.label}
+            </label>
+            <input
+              type={field.type}
+              id={`ed-${field.id}`}
+              name={field.id}
+              value={formData[field.id]}
+              onChange={handleChange}
+              required
+              className="oi-form__input"
+              placeholder={field.placeholder}
+            />
+          </div>
+        ))}
+
+        <div className="oi-form__field">
+          <label className="oi-form__label" htmlFor="ed-revenue">
+            Annual Business Revenue
+          </label>
+          <select
+            id="ed-revenue"
+            name="revenue"
+            value={formData.revenue}
+            onChange={handleChange}
+            required
+            className="oi-form__input"
+          >
+            <option value="" disabled>
+              Select your annual revenue
+            </option>
+            {REVENUE_OPTIONS.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {submitMessage && (
+          <div
+            className={`oi-form__note ${
+              submitMessage.includes('Thanks') ? 'oi-form__note--ok' : ''
+            }`}
+          >
+            {submitMessage}
+          </div>
+        )}
+
+        <button type="submit" disabled={isSubmitting} className="btn btn--primary">
+          {isSubmitting ? 'Sending…' : 'Send it to a human →'}
+        </button>
+      </form>
+    );
+  }
 
   return (
     <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
