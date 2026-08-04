@@ -50,12 +50,6 @@ const SERVICES = [
   },
   {
     number: '04',
-    name: 'Paid Advertising & Lead Gen',
-    desc: 'We run targeted ad campaigns designed to generate high quality leads, not vanity metrics — with creative written and designed in-house.',
-    items: ['Funnel setup & landing pages', 'Meta ads management', 'Offer positioning & optimization'],
-  },
-  {
-    number: '05',
     name: 'Brand Systems & Client Portals',
     desc: 'Our client portal gives you complete visibility and control over your marketing, so you always know which person is working on what.',
     items: ['Content approval workflows', 'Video uploads & campaign tracking', 'Centralized access to all assets'],
@@ -183,41 +177,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── The Problem ── */}
-        <section className="why" id="why" aria-labelledby="why-title">
-          <div className="why__inner">
-            <div className="why__header reveal">
-              <span className="label">The Problem</span>
-              <h2 className="why__headline" id="why-title">
-                Everything got automated.<br />Your customers noticed.
-              </h2>
-            </div>
-            <div className="why__grid">
-              <div className="why__copy reveal" style={delay(100)}>
-                <p className="why__lead">
-                  Somewhere between the AI captions and the automated email sequences, businesses
-                  lost the one thing that made them different: their humanity.
-                </p>
-                <p>
-                  Your feed looks like everyone else&rsquo;s feed. Your follow-up sounds like
-                  everyone else&rsquo;s follow-up. And the leads you paid for scroll right past it,
-                  because they can tell when nobody was really there.
-                </p>
-                <p>
-                  We work with businesses that get it. You know your brand has a voice. You know
-                  your leads deserve a real conversation. You just need a team that can deliver
-                  that consistently, every week, without you finding the hours.
-                </p>
-              </div>
-              <div className="why__visual reveal" style={delay(200)}>
-                <figure className="why__quote">
-                  <blockquote>
-                    &ldquo;We don&rsquo;t do business with companies. We do business with people.
-                    Business is always human.&rdquo;
-                  </blockquote>
-                  <figcaption className="label">Simon Sinek</figcaption>
-                </figure>
-              </div>
+        {/* ── Trusted by ── */}
+        <section className="trusted" aria-label="Trusted by">
+          <div className="trusted__inner">
+            <span className="label">Trusted by teams at</span>
+            <div className="trusted__logos">
+              {LOGOS.map((logo) => (
+                <div className="trusted__logo-item" key={logo.src}>
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    sizes="200px"
+                    className="trusted__logo-img"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -290,26 +265,6 @@ export default function Home() {
                   <span className="step__number" aria-hidden="true">{step.number}</span>
                   <h3 className="step__name">{step.name}</h3>
                   <p className="step__desc">{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Trusted by ── */}
-        <section className="trusted" aria-label="Trusted by">
-          <div className="trusted__inner">
-            <span className="label">Trusted by teams at</span>
-            <div className="trusted__logos">
-              {LOGOS.map((logo) => (
-                <div className="trusted__logo-item" key={logo.src}>
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    fill
-                    sizes="200px"
-                    className="trusted__logo-img"
-                  />
                 </div>
               ))}
             </div>
@@ -398,45 +353,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── CTA ── */}
-        <section className="cta" aria-labelledby="cta-title">
-          <div className="cta__bg-heart" aria-hidden="true">
+        {/* ── CTA + contact, as one red closing block ── */}
+        <section className="contact" id="contact" aria-labelledby="contact-title">
+          <div className="contact__bg-heart" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d={HEART_PATH} />
             </svg>
           </div>
-          <div className="cta__inner">
-            <h2 className="cta__headline" id="cta-title">
-              Let&rsquo;s make something<br />worth paying attention to.
-            </h2>
-            <p className="cta__sub">
-              Book a free discovery call. You&rsquo;ll talk to a person, get a straight answer about
-              what your marketing actually needs, and leave with a plan either way.
-            </p>
-            <a className="btn btn--outline-white" href="#contact">Book a Free Call &rarr;</a>
-          </div>
-        </section>
-
-        {/* ── Contact ── */}
-        <section className="contact" id="contact" aria-labelledby="contact-title">
           <div className="contact__inner">
             <div className="reveal">
               <span className="label">Get In Touch</span>
               <h2 className="contact__title" id="contact-title">
-                Tell us about<br />your business.
+                Let&rsquo;s make something<br />worth paying attention to.
               </h2>
               <p className="contact__copy">
-                Fill this out and a human on our team reads it — usually the same day. No bots, no
-                auto-responder loop, no sales sequence you can&rsquo;t escape.
+                Tell us about your business and we&rsquo;ll set up a free discovery call. A human
+                reads every message &mdash; usually the same day.
               </p>
-              <div className="contact__meta">
-                <p className="label">Prefer email?</p>
-                <p>
-                  <a href="mailto:colin@ownitsocial.com">colin@ownitsocial.com</a>
-                </p>
-              </div>
+              <p className="contact__meta">
+                Prefer email? <a href="mailto:colin@ownitsocial.com">colin@ownitsocial.com</a>
+              </p>
             </div>
-            <div className="reveal" style={delay(150)}>
+            <div className="contact__card reveal" style={delay(150)}>
               <ContactForm variant="editorial" />
             </div>
           </div>
