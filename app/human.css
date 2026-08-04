@@ -651,7 +651,7 @@
 }
 
 /* ================================================
-   CONTACT — the closing CTA and the form, as one red block
+   CONTACT — closing CTA on red, with the form on a calm cream card
    ================================================ */
 .oi-root .contact {
   position: relative;
@@ -660,12 +660,12 @@
   padding-block: clamp(var(--sp-lg), 10vw, var(--sp-xl));
   padding-inline: var(--pad-x);
 }
-/* Large decorative heart, bottom-right */
+/* Decorative heart, kept clear of the form card on the right */
 .oi-root .contact__bg-heart {
   position: absolute;
-  bottom: -16%;
-  right: -7%;
-  width: clamp(14rem, 32vw, 26rem);
+  bottom: -18%;
+  left: -6%;
+  width: clamp(12rem, 26vw, 22rem);
   color: oklch(51% 0.21 28);
   z-index: 1;
   user-select: none;
@@ -678,95 +678,90 @@
   max-width: var(--max-w);
   margin-inline: auto;
   display: grid;
-  gap: clamp(2.5rem, 5vw, 5rem);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
 }
 @media (min-width: 900px) {
-  .oi-root .contact__inner { grid-template-columns: 1fr 1fr; align-items: start; }
+  .oi-root .contact__inner {
+    grid-template-columns: 1fr minmax(0, 30rem);
+    align-items: center;
+  }
 }
-.oi-root .contact .label { color: oklch(88% 0.05 28); }
+.oi-root .contact .label { color: oklch(89% 0.05 28); }
 .oi-root .contact__title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: var(--text-h1);
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: var(--white);
+  margin-top: var(--sp-sm);
   margin-bottom: var(--sp-md);
 }
 .oi-root .contact__copy {
   font-size: var(--text-lead);
-  color: oklch(92% 0.02 28);
-  max-width: 42ch;
+  color: oklch(93% 0.02 28);
+  max-width: 38ch;
   line-height: 1.55;
 }
-.oi-root .contact__copy + .contact__copy { margin-top: var(--sp-sm); }
 .oi-root .contact__meta {
   margin-top: var(--sp-md);
-  padding-top: var(--sp-md);
-  border-top: 2px solid oklch(98% 0.012 80 / 0.45);
+  font-size: var(--text-sm);
+  color: oklch(89% 0.05 28);
 }
 .oi-root .contact__meta a { color: var(--white); text-decoration: underline; }
 
-/* Editorial form styling (ContactForm variant="editorial"), sitting on red */
-.oi-form { display: flex; flex-direction: column; gap: var(--sp-md); }
-.oi-form__field { display: flex; flex-direction: column; gap: 0.5rem; }
+/* The form sits on its own cream card so the fields stay high-contrast */
+.oi-root .contact__card {
+  background: var(--bg);
+  border-radius: 4px;
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  box-shadow: 0 24px 60px oklch(18% 0.012 80 / 0.22);
+}
+
+/* Editorial form styling (ContactForm variant="editorial") */
+.oi-form { display: flex; flex-direction: column; gap: 1.35rem; }
+.oi-form__field { display: flex; flex-direction: column; gap: 0.35rem; }
 .oi-form__label {
   font-family: var(--font-display);
   font-size: var(--text-label);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: oklch(88% 0.05 28);
+  color: var(--muted);
 }
 .oi-form__input {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--white);
+  color: var(--ink);
   background: transparent;
   border: none;
-  border-bottom: 1px solid oklch(98% 0.012 80 / 0.45);
+  border-bottom: 1px solid var(--border);
   border-radius: 0;
-  padding: 0.65rem 0.15rem;
+  padding: 0.55rem 0.15rem;
   outline: none;
   transition: border-color var(--dur-fast) var(--ease-out-quart);
   width: 100%;
 }
-.oi-form__input::placeholder { color: oklch(98% 0.012 80 / 0.6); }
-.oi-form__input:focus { border-bottom-color: var(--white); }
-/* Native dropdown list paints on the UA background, so options need ink text. */
-.oi-form__input option { color: var(--ink); background: var(--white); }
+.oi-form__input::placeholder { color: oklch(72% 0.008 80); }
+.oi-form__input:focus { border-bottom-color: var(--accent); }
 select.oi-form__input {
   appearance: none;
   cursor: pointer;
   padding-right: 1.75rem;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23787067' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.15rem center;
   background-size: 0.9rem;
 }
 .oi-form__note {
   padding: 0.9rem 1rem;
-  border-left: 3px solid var(--white);
-  background: oklch(98% 0.012 80 / 0.16);
-  color: var(--white);
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
   font-size: var(--text-sm);
 }
-.oi-form__note--ok { border-left-color: oklch(88% 0.16 150); }
-.oi-form .btn { justify-content: center; }
+.oi-form__note--ok { border-left-color: oklch(58% 0.15 150); }
+.oi-form .btn { justify-content: center; margin-top: 0.35rem; }
 .oi-form .btn:disabled { opacity: 0.55; cursor: not-allowed; }
-/* On red, the submit button inverts to white-on-accent. */
-.oi-form .btn--primary {
-  background: var(--white);
-  color: var(--accent-dark);
-  border-color: var(--white);
-}
-.oi-form .btn--primary:hover:not(:disabled),
-.oi-form .btn--primary:focus-visible {
-  background: var(--ink);
-  color: var(--white);
-  border-color: var(--ink);
-}
-.oi-root .contact :focus-visible { outline-color: var(--white); }
 
 /* ================================================
    FOOTER

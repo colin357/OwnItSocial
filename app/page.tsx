@@ -367,22 +367,14 @@ export default function Home() {
                 Let&rsquo;s make something<br />worth paying attention to.
               </h2>
               <p className="contact__copy">
-                Tell us about your business and we&rsquo;ll set up a free discovery call.
-                You&rsquo;ll talk to a person, get a straight answer about what your marketing
-                actually needs, and leave with a plan either way.
+                Tell us about your business and we&rsquo;ll set up a free discovery call. A human
+                reads every message &mdash; usually the same day.
               </p>
-              <p className="contact__copy">
-                A human on our team reads every message &mdash; usually the same day. No bots, no
-                auto-responder loop, no sales sequence you can&rsquo;t escape.
+              <p className="contact__meta">
+                Prefer email? <a href="mailto:colin@ownitsocial.com">colin@ownitsocial.com</a>
               </p>
-              <div className="contact__meta">
-                <p className="label">Prefer email?</p>
-                <p>
-                  <a href="mailto:colin@ownitsocial.com">colin@ownitsocial.com</a>
-                </p>
-              </div>
             </div>
-            <div className="reveal" style={delay(150)}>
+            <div className="contact__card reveal" style={delay(150)}>
               <ContactForm variant="editorial" />
             </div>
           </div>
