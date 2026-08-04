@@ -283,53 +283,6 @@
 }
 
 /* ================================================
-   WHY / THE PROBLEM
-   ================================================ */
-.oi-root .why {
-  background: var(--surface);
-  padding-block: clamp(var(--sp-lg), 10vw, var(--sp-xl));
-  padding-inline: var(--pad-x);
-}
-.oi-root .why__inner { max-width: var(--max-w); margin-inline: auto; }
-.oi-root .why__header { margin-bottom: clamp(3rem, 6vw, 5rem); }
-.oi-root .why__header .label { display: block; margin-bottom: var(--sp-sm); }
-.oi-root .why__headline {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: var(--text-h1);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  max-width: 18ch;
-}
-.oi-root .why__grid { display: grid; gap: clamp(2.5rem, 5vw, 5rem); }
-@media (min-width: 768px) {
-  .oi-root .why__grid { grid-template-columns: 1fr 1fr; }
-}
-.oi-root .why__copy p {
-  font-size: var(--text-lead);
-  line-height: 1.65;
-  color: var(--muted);
-}
-.oi-root .why__copy p + p { margin-top: var(--sp-md); }
-.oi-root .why__lead {
-  color: var(--ink) !important;
-  font-weight: 500;
-}
-.oi-root .why__visual { display: flex; align-items: center; }
-.oi-root .why__quote {
-  border-top: 2px solid var(--accent);
-  padding-top: var(--sp-md);
-}
-.oi-root .why__quote blockquote {
-  font-style: italic;
-  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-  line-height: 1.45;
-  color: var(--ink);
-  margin-bottom: var(--sp-sm);
-}
-.oi-root .why__quote figcaption { font-size: var(--text-sm); }
-
-/* ================================================
    MADE BY HUMANS — promise band
    ================================================ */
 .oi-root .promise {
@@ -542,6 +495,7 @@
    OUR WORK
    ================================================ */
 .oi-root .work {
+  background: var(--surface);
   overflow: hidden;
   position: relative;
   height: clamp(360px, 48vh, 500px);
@@ -614,7 +568,6 @@
    FOUNDER / TEAM
    ================================================ */
 .oi-root .team {
-  background: var(--surface);
   padding-block: clamp(var(--sp-lg), 10vw, var(--sp-xl));
   padding-inline: var(--pad-x);
 }
@@ -698,60 +651,30 @@
 }
 
 /* ================================================
-   CTA
+   CONTACT — the closing CTA and the form, as one red block
    ================================================ */
-.oi-root .cta {
+.oi-root .contact {
   position: relative;
   overflow: hidden;
   background: var(--accent);
-  padding-block: clamp(var(--sp-xl), 14vw, var(--sp-2xl));
+  padding-block: clamp(var(--sp-lg), 10vw, var(--sp-xl));
   padding-inline: var(--pad-x);
-  text-align: center;
 }
-.oi-root .cta__inner {
-  position: relative;
-  z-index: 2;
-  max-width: var(--max-w);
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-md);
-}
-.oi-root .cta__bg-heart {
+/* Large decorative heart, bottom-right */
+.oi-root .contact__bg-heart {
   position: absolute;
-  bottom: -8%;
-  right: -4%;
-  width: clamp(18rem, 44vw, 34rem);
+  bottom: -16%;
+  right: -7%;
+  width: clamp(14rem, 32vw, 26rem);
   color: oklch(51% 0.21 28);
   z-index: 1;
   user-select: none;
   pointer-events: none;
 }
-.oi-root .cta__bg-heart svg { width: 100%; height: auto; display: block; }
-.oi-root .cta__headline {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: var(--text-h1);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  color: var(--white);
-}
-.oi-root .cta__sub {
-  font-size: var(--text-lead);
-  color: oklch(90% 0.008 28);
-  max-width: 46ch;
-  line-height: 1.55;
-}
-
-/* ================================================
-   CONTACT
-   ================================================ */
-.oi-root .contact {
-  padding-block: clamp(var(--sp-lg), 10vw, var(--sp-xl));
-  padding-inline: var(--pad-x);
-}
+.oi-root .contact__bg-heart svg { width: 100%; height: auto; display: block; }
 .oi-root .contact__inner {
+  position: relative;
+  z-index: 2;
   max-width: var(--max-w);
   margin-inline: auto;
   display: grid;
@@ -760,23 +683,31 @@
 @media (min-width: 900px) {
   .oi-root .contact__inner { grid-template-columns: 1fr 1fr; align-items: start; }
 }
+.oi-root .contact .label { color: oklch(88% 0.05 28); }
 .oi-root .contact__title {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: var(--text-h1);
   line-height: 1.05;
   letter-spacing: -0.025em;
+  color: var(--white);
   margin-bottom: var(--sp-md);
 }
-.oi-root .contact__copy { font-size: var(--text-lead); color: var(--muted); max-width: 42ch; }
+.oi-root .contact__copy {
+  font-size: var(--text-lead);
+  color: oklch(92% 0.02 28);
+  max-width: 42ch;
+  line-height: 1.55;
+}
+.oi-root .contact__copy + .contact__copy { margin-top: var(--sp-sm); }
 .oi-root .contact__meta {
   margin-top: var(--sp-md);
   padding-top: var(--sp-md);
-  border-top: 2px solid var(--accent);
+  border-top: 2px solid oklch(98% 0.012 80 / 0.45);
 }
-.oi-root .contact__meta a { color: var(--accent); text-decoration: underline; }
+.oi-root .contact__meta a { color: var(--white); text-decoration: underline; }
 
-/* Editorial form styling (ContactForm variant="editorial") */
+/* Editorial form styling (ContactForm variant="editorial"), sitting on red */
 .oi-form { display: flex; flex-direction: column; gap: var(--sp-md); }
 .oi-form__field { display: flex; flex-direction: column; gap: 0.5rem; }
 .oi-form__label {
@@ -785,41 +716,57 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: oklch(88% 0.05 28);
 }
 .oi-form__input {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--ink);
+  color: var(--white);
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid oklch(98% 0.012 80 / 0.45);
   border-radius: 0;
   padding: 0.65rem 0.15rem;
   outline: none;
   transition: border-color var(--dur-fast) var(--ease-out-quart);
   width: 100%;
 }
-.oi-form__input::placeholder { color: oklch(70% 0.008 80); }
-.oi-form__input:focus { border-bottom-color: var(--accent); }
+.oi-form__input::placeholder { color: oklch(98% 0.012 80 / 0.6); }
+.oi-form__input:focus { border-bottom-color: var(--white); }
+/* Native dropdown list paints on the UA background, so options need ink text. */
+.oi-form__input option { color: var(--ink); background: var(--white); }
 select.oi-form__input {
   appearance: none;
   cursor: pointer;
   padding-right: 1.75rem;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23787067' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.15rem center;
   background-size: 0.9rem;
 }
 .oi-form__note {
   padding: 0.9rem 1rem;
-  border-left: 3px solid var(--accent);
-  background: var(--surface);
+  border-left: 3px solid var(--white);
+  background: oklch(98% 0.012 80 / 0.16);
+  color: var(--white);
   font-size: var(--text-sm);
 }
-.oi-form__note--ok { border-left-color: oklch(58% 0.15 150); }
+.oi-form__note--ok { border-left-color: oklch(88% 0.16 150); }
 .oi-form .btn { justify-content: center; }
 .oi-form .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+/* On red, the submit button inverts to white-on-accent. */
+.oi-form .btn--primary {
+  background: var(--white);
+  color: var(--accent-dark);
+  border-color: var(--white);
+}
+.oi-form .btn--primary:hover:not(:disabled),
+.oi-form .btn--primary:focus-visible {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+.oi-root .contact :focus-visible { outline-color: var(--white); }
 
 /* ================================================
    FOOTER
