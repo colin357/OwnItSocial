@@ -118,12 +118,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* The product itself, as proof. */}
+            {/* The product itself, as proof — pinned while it steps through
+                review, upload, and calendar. */}
             <div id="portal" className="mx-auto mt-12 max-w-4xl scroll-mt-20 sm:mt-16">
               <PortalPreview />
-              <p className="mt-4 text-center text-[13px] leading-[1.7] text-muted">
-                Your portal: every post, approval, and campaign in one place.
-              </p>
             </div>
           </div>
         </section>

@@ -1,52 +1,209 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 // ---------------------------------------------------------------------------
-// The visual centerpiece of the homepage: the real client portal, framed in a
-// browser-style card. No stock photography, no illustration — a real product
-// screenshot or a clearly-marked empty frame, nothing in between.
+// The visual centerpiece: the real client portal, framed in a browser-style
+// card that stays pinned while the page scrolls through three phases of the
+// workflow. No stock photography, no illustration — a real product screenshot
+// or a clearly-marked empty frame, nothing in between.
 //
-// TO SHIP THE REAL THING: drop a screenshot of the portal calendar/task view at
-// public/images/portal-preview.png (2560×1600 or any 16:10 crop) and set the
-// constant below to '/images/portal-preview.png'. That is the only change.
+// TO SHIP THE REAL THING: save each screenshot to public/images/ and fill in
+// the `src` below. A 16:10 crop keeps the frame from letterboxing. That is the
+// only change needed — everything else is wired.
 //
-// For a looping video instead, replace the <Image> with:
-//   <video src="/videos/portal-preview.mp4" autoPlay loop muted playsInline
-//          className="h-full w-full object-cover" />
+// For a looping video in a phase instead of a still, set `src` to '' and swap
+// the <Image> for:
+//   <video src="/videos/portal-upload.mp4" autoPlay loop muted playsInline
+//          className="h-full w-full object-cover object-top" />
 // ---------------------------------------------------------------------------
-const PORTAL_SCREENSHOT: string = '';
+type Phase = {
+  id: string;
+  /** Short label for the step indicator under the card. */
+  label: string;
+  /** One line under the card explaining what the screenshot shows. */
+  caption: string;
+  /** Set to e.g. '/images/portal-review.png' to replace the placeholder. */
+  src: string;
+  /** Alt text for the real screenshot, and what to capture for the placeholder. */
+  shot: string;
+};
+
+const PHASES: Phase[] = [
+  {
+    id: 'review',
+    label: 'Review',
+    caption: 'Your content comes to you finished. Approve it in a tap.',
+    src: '',
+    shot: 'content review and approval queue',
+  },
+  {
+    id: 'upload',
+    label: 'Upload',
+    caption: 'Send us a clip from your phone and we handle the rest.',
+    src: '',
+    shot: 'content upload screen',
+  },
+  {
+    id: 'calendar',
+    label: 'Calendar',
+    caption: 'See everything that is scheduled, posted, and coming up.',
+    src: '',
+    shot: 'content calendar view',
+  },
+];
 
 export default function PortalPreview() {
-  return (
-    <div className="overflow-hidden rounded-xl border border-line bg-white shadow-portal">
-      {/* Browser chrome */}
-      <div className="flex h-9 items-center gap-1.5 border-b border-line px-4">
-        <span className="h-2.5 w-2.5 rounded-full bg-line" />
-        <span className="h-2.5 w-2.5 rounded-full bg-line" />
-        <span className="h-2.5 w-2.5 rounded-full bg-line" />
-      </div>
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const [instant, setInstant] = useState(false);
 
-      <div className="relative aspect-[16/10] w-full bg-sand">
-        {PORTAL_SCREENSHOT ? (
-          <Image
-            src={PORTAL_SCREENSHOT}
-            alt="The Own It Social client portal, showing a loan officer's content calendar and approval tasks"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 880px"
-            className="object-cover object-top"
-          />
-        ) : (
-          <div className="absolute inset-4 flex flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-line px-6 text-center">
-            <p className="text-[13px] font-medium text-ink">
-              [NEEDS CONTENT: client portal screenshot]
-            </p>
-            <p className="max-w-sm text-[13px] leading-[1.7] text-muted">
-              Calendar or task view, 16:10 crop. Save it to
-              public/images/portal-preview.png and set PORTAL_SCREENSHOT in this
-              component.
-            </p>
+  // Honour reduced-motion: the phases still change, they just don't cross-fade.
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const sync = () => setInstant(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
+
+  // Map scroll progress through the tall wrapper onto an equal share per phase.
+  useEffect(() => {
+    let frame = 0;
+
+    function measure() {
+      frame = 0;
+      const wrap = wrapRef.current;
+      const sticky = stickyRef.current;
+      if (!wrap || !sticky) return;
+
+      const travel = wrap.offsetHeight - sticky.offsetHeight;
+      if (travel <= 0) return;
+
+      const scrolled = Math.min(
+        Math.max(-wrap.getBoundingClientRect().top, 0),
+        travel,
+      );
+      const index = Math.min(
+        PHASES.length - 1,
+        Math.floor((scrolled / travel) * PHASES.length),
+      );
+      setActive(index);
+    }
+
+    function onScroll() {
+      if (frame) return;
+      frame = requestAnimationFrame(measure);
+    }
+
+    measure();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
+
+  // Clicking a step scrolls to the middle of that phase's share of the wrapper,
+  // so the indicator works as navigation and not just as a readout.
+  function goTo(index: number) {
+    const wrap = wrapRef.current;
+    const sticky = stickyRef.current;
+    if (!wrap || !sticky) return;
+
+    const travel = wrap.offsetHeight - sticky.offsetHeight;
+    const share = travel / PHASES.length;
+    const target =
+      wrap.getBoundingClientRect().top +
+      window.scrollY +
+      share * (index + 0.5);
+
+    window.scrollTo({
+      top: target,
+      behavior: instant ? 'auto' : 'smooth',
+    });
+  }
+
+  return (
+    // Tall enough to give each phase roughly half a screen of dwell before the
+    // card unpins and scrolls away.
+    <div ref={wrapRef} className="relative h-[190vh] sm:h-[220vh]">
+      <div ref={stickyRef} className="sticky top-20">
+        <div className="overflow-hidden rounded-xl border border-line bg-white shadow-portal">
+          {/* Browser chrome */}
+          <div className="flex h-9 items-center gap-1.5 border-b border-line px-4">
+            <span className="h-2.5 w-2.5 rounded-full bg-line" />
+            <span className="h-2.5 w-2.5 rounded-full bg-line" />
+            <span className="h-2.5 w-2.5 rounded-full bg-line" />
           </div>
-        )}
+
+          <div className="relative aspect-[16/10] w-full bg-sand">
+            {PHASES.map((phase, i) => (
+              <div
+                key={phase.id}
+                aria-hidden={i !== active}
+                className={`absolute inset-0 ${
+                  instant ? '' : 'transition-opacity duration-500 ease-out'
+                } ${i === active ? 'opacity-100' : 'opacity-0'}`}
+              >
+                {phase.src ? (
+                  <Image
+                    src={phase.src}
+                    alt={`The Own It Social client portal: ${phase.shot}`}
+                    fill
+                    priority={i === 0}
+                    sizes="(max-width: 1024px) 100vw, 880px"
+                    className="object-cover object-top"
+                  />
+                ) : (
+                  <div className="absolute inset-4 flex flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-line px-6 text-center">
+                    <p className="text-[13px] font-medium text-ink">
+                      [NEEDS CONTENT: portal {phase.shot}]
+                    </p>
+                    <p className="max-w-sm text-[13px] leading-[1.7] text-muted">
+                      16:10 crop. Save it to public/images/portal-{phase.id}.png
+                      and set the src for this phase in PortalPreview.
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Step indicator, doubling as navigation. */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          {PHASES.map((phase, i) => (
+            <button
+              key={phase.id}
+              type="button"
+              onClick={() => goTo(i)}
+              aria-current={i === active ? 'step' : undefined}
+              className="group flex items-center gap-2 rounded-md px-1 py-1 text-[13px] focus:outline-none focus-visible:ring-2 focus-visible:ring-navy"
+            >
+              <span
+                className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${
+                  i === active ? 'bg-navy' : 'bg-line'
+                }`}
+              />
+              <span
+                className={`transition-colors duration-300 ${
+                  i === active ? 'text-ink' : 'text-muted group-hover:text-ink'
+                }`}
+              >
+                {phase.label}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <p className="mt-3 text-center text-[13px] leading-[1.7] text-muted">
+          {PHASES[active].caption}
+        </p>
       </div>
     </div>
   );
