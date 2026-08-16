@@ -26,8 +26,11 @@ export default {
         inter: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
-        // The one shadow in the system — portal preview card only.
-        portal: '0 8px 24px rgba(0,0,0,0.08)',
+        // Reserved for the product frame, so it reads as the one object on the
+        // page with real depth.
+        portal: '0 32px 80px -28px rgba(12,46,78,0.30), 0 4px 16px rgba(12,46,78,0.05)',
+        // Cards lift slightly on hover; nothing else casts a shadow at rest.
+        lift: '0 18px 40px -22px rgba(12,46,78,0.28)',
       },
     },
   },

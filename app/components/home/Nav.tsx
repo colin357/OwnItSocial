@@ -16,22 +16,22 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+    <header className="sticky top-0 z-50 border-b border-line/70 bg-white/75 backdrop-blur-xl">
+      <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
         <a
           href="#top"
-          className="text-[16px] font-medium tracking-[-0.01em] text-ink"
+          className="text-[17px] font-medium tracking-[-0.02em] text-ink"
         >
           Own It Social
         </a>
 
-        <div className="flex items-center gap-2 sm:gap-6">
-          <nav className="hidden items-center gap-6 md:flex" aria-label="Main">
+        <div className="flex items-center gap-2 sm:gap-7">
+          <nav className="hidden items-center gap-7 md:flex" aria-label="Main">
             {LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[15px] text-muted transition-colors hover:text-ink"
+                className="text-[14px] text-muted transition-colors hover:text-ink"
               >
                 {link.label}
               </a>
@@ -72,7 +72,7 @@ export default function Nav() {
         <nav
           id="mobile-menu"
           aria-label="Main"
-          className="border-t border-line bg-white md:hidden"
+          className="border-t border-line bg-white/95 backdrop-blur-xl md:hidden"
         >
           <ul className="mx-auto max-w-6xl px-5 py-2 sm:px-8">
             {LINKS.map((link) => (
