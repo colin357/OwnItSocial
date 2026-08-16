@@ -21,7 +21,7 @@ const DEFAULT_BOOKING_URL =
   process.env.NEXT_PUBLIC_BOOKING_URL ||
   'https://api.leadconnectorhq.com/widget/booking/puxlTsFzbfDiOhN8CMhS';
 
-type Props = { url?: string };
+type Props = { url?: string; title?: string };
 
 // Best-effort booking-completion conversion.
 //
@@ -53,7 +53,10 @@ function isBookingSuccess(e: MessageEvent): boolean {
   );
 }
 
-export default function BookingEmbed({ url = DEFAULT_BOOKING_URL }: Props) {
+export default function BookingEmbed({
+  url = DEFAULT_BOOKING_URL,
+  title = 'Book your CMO strategy call',
+}: Props) {
   useEffect(() => {
     function onMessage(e: MessageEvent) {
       if (isBookingSuccess(e)) {
@@ -68,7 +71,7 @@ export default function BookingEmbed({ url = DEFAULT_BOOKING_URL }: Props) {
     <div className="relative overflow-hidden bg-white">
       <iframe
         src={url}
-        title="Book your CMO strategy call"
+        title={title}
         scrolling="no"
         loading="lazy"
         className="w-full block"

@@ -1,15 +1,25 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import "./human.css";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+
+// One family, two weights — the whole type system. Exposed as a CSS variable
+// (`font-inter` in Tailwind) so pages opt in rather than it being forced on
+// every legacy landing page.
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#f7f4ef',
+  themeColor: '#FFFFFF',
 };
 
 export const metadata: Metadata = {
@@ -80,23 +90,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
-        {/* Editorial type system: Cabinet Grotesk (display) + Literata (body).
-            These live in the App Router root layout, so they load site-wide —
-            the pages-router warning the linter raises doesn't apply here. */}
-        {/* eslint-disable @next/next/no-page-custom-font */}
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap"
-        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11353830288"
           strategy="afterInteractive"
