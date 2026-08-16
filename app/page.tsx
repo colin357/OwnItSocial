@@ -26,39 +26,24 @@ export const metadata: Metadata = {
   },
 };
 
-// Pain points — kept to a label each, no paragraph copy.
-// NEEDS CONFIRMATION (Colin): are these the three things LOs actually say?
-const PAIN_POINTS = [
-  {
-    label: 'No time to post',
-    // lucide "clock"
-    icon: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 2" />
-      </>
-    ),
-  },
-  {
-    label: 'Leads go cold',
-    // lucide "trending-down"
-    icon: (
-      <>
-        <path d="M22 17 13.5 8.5 8.5 13.5 2 7" />
-        <path d="M16 17h6v-6" />
-      </>
-    ),
-  },
-  {
-    label: 'No CMO in-house',
-    // lucide "briefcase"
-    icon: (
-      <>
-        <rect x="2" y="7" width="20" height="14" rx="2" />
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-      </>
-    ),
-  },
+// Brand assets already in the repo. Each sits in a fixed box and is fitted with
+// object-contain, so wildly different logo ratios still read as one row.
+const LOGOS = [
+  { src: '/images/Fairway.webp', alt: 'Fairway Independent Mortgage Corporation' },
+  { src: '/images/Compass Logo.png', alt: 'Compass' },
+  { src: '/images/Keller Williams.png', alt: 'Keller Williams' },
+  { src: '/images/William Raveis.png', alt: 'William Raveis' },
+];
+
+// The department framed as the roles you would otherwise have to hire for.
+// Each one maps to work already described on /cmo — no new claims.
+const ROLES = [
+  { role: 'Strategist', work: 'Decides what to say and when' },
+  { role: 'Copywriter', work: 'Scripts, captions, and emails' },
+  { role: 'Social manager', work: 'Posts and schedules every week' },
+  { role: 'Video editor', work: 'Cuts your clips into content' },
+  { role: 'CRM specialist', work: 'Runs the follow-up automatically' },
+  { role: 'Designer', work: 'Flyers and co-branded material' },
 ];
 
 // Condensed from the deliverables on /cmo — Colin's own copy, not new claims.
@@ -79,15 +64,6 @@ const SERVICES = [
     title: 'Co-marketing agents want to use',
     body: 'Co-branded flyers, social content, and market updates your realtor partners can actually put in front of their own clients.',
   },
-];
-
-const INCLUDED = [
-  'Social',
-  'CRM',
-  'Content',
-  'Google Business Profile',
-  'Handwritten cards',
-  'Co-marketing',
 ];
 
 const FOOTER_LINKS = [
@@ -144,8 +120,9 @@ export default function Home() {
                 Built exclusively for loan officers
               </p>
               <h1 className="mt-5 text-[40px] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-[56px] lg:text-[68px]">
-                Your marketing department,
-                <br className="hidden sm:block" /> without the department.
+                You close loans.
+                <br />
+                We do the rest.
               </h1>
               <p className="mx-auto mt-7 max-w-xl text-[19px] leading-[1.55] text-muted sm:text-[21px]">
                 We write and post your social content, run the follow-up in your
@@ -173,76 +150,29 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <Reveal>
               <p className="text-center text-[14px] text-muted">
-                Trusted by loan officers at
+                Trusted by teams at
               </p>
-              {/*
-                Fairway is the one brand already used across the rest of the
-                site, so it is the only logo here. Add the others once Colin
-                confirms which clients are cleared to appear — the row is
-                already a flex wrap, so they slot straight in.
-              */}
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
-                <Image
-                  src="/images/Fairway.webp"
-                  alt="Fairway Independent Mortgage Corporation"
-                  width={190}
-                  height={54}
-                  className="h-[52px] w-auto opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-                />
-              </div>
-              <p className="mt-8 text-center text-[12px] text-muted/70">
-                [NEEDS CONTENT: additional client logos, or one confirmed stat
-                line]
-              </p>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* ── Pain points — sets up the offer that answers them ── */}
-        <section className="px-5 py-24 sm:px-8 sm:py-32">
-          <div className="mx-auto max-w-5xl">
-            <Reveal>
-              <div className="mx-auto max-w-2xl text-center">
-                <h2 className="text-[32px] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[44px]">
-                  Sound familiar?
-                </h2>
-                <p className="mt-6 text-[19px] leading-[1.55] text-muted">
-                  You closed the loans. The marketing waited until you had a
-                  free evening, and then it waited some more.
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-3">
-              {PAIN_POINTS.map((point, i) => (
-                <Reveal key={point.label} delay={i * 90}>
-                  <div className="group h-full rounded-2xl border border-line bg-white px-7 py-11 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lift">
-                    <svg
-                      className="mx-auto h-7 w-7 text-navy"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={1.5}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      {point.icon}
-                    </svg>
-                    <p className="mt-5 text-[17px] tracking-[-0.01em] text-ink">
-                      {point.label}
-                    </p>
+              <div className="mt-9 flex flex-wrap items-center justify-center gap-x-14 gap-y-9 sm:gap-x-20">
+                {LOGOS.map((logo) => (
+                  <div key={logo.src} className="relative h-11 w-[132px] sm:w-[150px]">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      fill
+                      sizes="150px"
+                      className="object-contain opacity-55 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                    />
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </section>
 
         {/* ── What you get ── */}
         <section
           id="services"
-          className="scroll-mt-20 border-t border-line bg-sand px-5 py-24 sm:px-8 sm:py-32"
+          className="scroll-mt-20 px-5 py-24 sm:px-8 sm:py-32"
         >
           <div className="mx-auto max-w-5xl">
             <Reveal>
@@ -271,40 +201,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Your new CMO — the one dark moment on the page ── */}
+        {/* ── Your new CMO — the one dark moment on the page.
+             Asymmetric: the pitch holds the left rail, the roster fills the
+             right, so it reads as a team sheet rather than a poster. ── */}
         <section className="bg-navy px-5 py-24 text-white sm:px-8 sm:py-32">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:gap-24">
             <Reveal>
-              <h2 className="text-[32px] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[48px]">
-                Your new CMO
-              </h2>
-              <p className="mx-auto mt-7 max-w-xl text-[19px] leading-[1.55] text-white/70 sm:text-[21px]">
-                One team runs your entire marketing department for less than the
-                cost of hiring anyone to do part of it.
-              </p>
-
-              <ul className="mt-10 flex flex-wrap justify-center gap-2.5">
-                {INCLUDED.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-full border border-white/20 px-4 py-2 text-[14px] text-white/85"
+              <div className="lg:sticky lg:top-28">
+                <p className="text-[14px] font-medium text-white/50">
+                  Your new CMO
+                </p>
+                <h2 className="mt-5 text-[32px] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-[44px]">
+                  Meet your marketing department
+                </h2>
+                <p className="mt-7 max-w-md text-[19px] leading-[1.55] text-white/70">
+                  Every role you would otherwise have to hire, interview, train,
+                  and manage. One team, one retainer, and nothing for you to run.
+                </p>
+                {/* Stacked, not inline — the left rail is too narrow to hold
+                    the button and the link on one line without wrapping. */}
+                <div className="mt-10 flex flex-col items-start gap-6">
+                  <BookButton variant="white" className="whitespace-nowrap">
+                    Get your free strategy session
+                  </BookButton>
+                  <Link
+                    href="/cmo"
+                    className="text-[16px] text-white/70 underline decoration-white/25 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
                   >
-                    {item}
+                    See everything included
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <ul className="border-t border-white/10">
+                {ROLES.map((item) => (
+                  <li
+                    key={item.role}
+                    className="group flex flex-col gap-1 border-b border-white/10 py-6 transition-colors duration-300 hover:border-white/25 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+                  >
+                    <span className="text-[19px] tracking-[-0.02em] text-white sm:text-[21px]">
+                      {item.role}
+                    </span>
+                    <span className="text-[15px] text-white/55 transition-colors duration-300 group-hover:text-white/80 sm:text-right">
+                      {item.work}
+                    </span>
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-11 flex flex-col items-center gap-5 sm:flex-row sm:justify-center">
-                <BookButton variant="white">
-                  Get your free strategy session
-                </BookButton>
-                <Link
-                  href="/cmo"
-                  className="text-[16px] text-white/75 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
-                >
-                  See everything that&rsquo;s included
-                </Link>
-              </div>
             </Reveal>
           </div>
         </section>
