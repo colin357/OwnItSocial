@@ -6,6 +6,7 @@ import BookButton from './components/home/BookButton';
 import Nav from './components/home/Nav';
 import PortalPreview from './components/home/PortalPreview';
 import Reveal from './components/home/Reveal';
+import WorkGallery from './components/home/WorkGallery';
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
@@ -33,6 +34,15 @@ const LOGOS = [
   { src: '/images/Compass Logo.png', alt: 'Compass' },
   { src: '/images/Keller Williams.png', alt: 'Keller Williams' },
   { src: '/images/William Raveis.png', alt: 'William Raveis' },
+];
+
+// Testimonials — deliberately empty. Fill in `quote`, `name`, and `role` and
+// the card renders for real; anything still blank renders as a marked slot.
+// NEEDS CONTENT (Colin): three client quotes, with permission to use names.
+const TESTIMONIALS = [
+  { quote: '', name: '', role: '' },
+  { quote: '', name: '', role: '' },
+  { quote: '', name: '', role: '' },
 ];
 
 // The department framed as the roles you would otherwise have to hire for.
@@ -201,6 +211,32 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Our work — text rail left, tilted mosaic bleeding off the right.
+             The section clips the overflow, which is what lets the grid run
+             past the edge instead of forcing a horizontal scrollbar. ── */}
+        <section className="overflow-hidden border-t border-line bg-sand px-5 py-24 sm:px-8 sm:py-32">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] lg:gap-16">
+            <Reveal>
+              <div>
+                <p className="text-[14px] font-medium text-navy">Our work</p>
+                <h2 className="mt-5 text-[32px] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-[44px]">
+                  A few things
+                  <br className="hidden sm:block" /> we&rsquo;re proud of.
+                </h2>
+                <p className="mt-7 max-w-md text-[19px] leading-[1.55] text-muted">
+                  Every graphic, script, and caption is made for one loan
+                  officer and one market. Nothing here came out of a template
+                  pack.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <WorkGallery />
+            </Reveal>
+          </div>
+        </section>
+
         {/* ── Your new CMO — the one dark moment on the page.
              Asymmetric: the pitch holds the left rail, the roster fills the
              right, so it reads as a team sheet rather than a poster. ── */}
@@ -251,6 +287,58 @@ export default function Home() {
                 ))}
               </ul>
             </Reveal>
+          </div>
+        </section>
+
+        {/* ── Testimonials ── */}
+        <section className="bg-sand px-5 py-24 sm:px-8 sm:py-32">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <h2 className="mx-auto max-w-2xl text-center text-[32px] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[44px]">
+                What loan officers say
+              </h2>
+            </Reveal>
+
+            <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-16 md:grid-cols-3">
+              {TESTIMONIALS.map((item, i) => (
+                <Reveal key={i} delay={(i % 3) * 90}>
+                  <figure className="flex h-full flex-col rounded-2xl border border-line bg-white p-9">
+                    <svg
+                      className="h-6 w-6 flex-shrink-0 text-navy/25"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M9.5 5C6.5 6.9 5 9.6 5 13v6h6v-6H8.2c0-2.3.9-4 2.8-5.2L9.5 5Zm9 0c-3 1.9-4.5 4.6-4.5 8v6h6v-6h-2.8c0-2.3.9-4 2.8-5.2L18.5 5Z" />
+                    </svg>
+
+                    {item.quote ? (
+                      <>
+                        <blockquote className="mt-6 flex-1 text-[18px] leading-[1.6] text-ink">
+                          {item.quote}
+                        </blockquote>
+                        <figcaption className="mt-7 border-t border-line pt-5 text-[14px]">
+                          <span className="text-ink">{item.name}</span>
+                          <span className="text-muted"> — {item.role}</span>
+                        </figcaption>
+                      </>
+                    ) : (
+                      <>
+                        <div className="mt-6 flex-1 space-y-2.5" aria-hidden="true">
+                          <span className="block h-2.5 w-full rounded-full bg-sand" />
+                          <span className="block h-2.5 w-11/12 rounded-full bg-sand" />
+                          <span className="block h-2.5 w-4/5 rounded-full bg-sand" />
+                          <span className="block h-2.5 w-2/3 rounded-full bg-sand" />
+                        </div>
+                        <figcaption className="mt-7 border-t border-line pt-5 text-[13px] text-muted">
+                          [NEEDS CONTENT: client quote, name, and title]
+                        </figcaption>
+                      </>
+                    )}
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
