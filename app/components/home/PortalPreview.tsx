@@ -30,26 +30,31 @@ type Phase = {
   shot: string;
 };
 
+// NOTE FOR COLIN: phases are mapped to what each screenshot actually shows,
+// not to the filenames they arrived under — two of the three were swapped.
+// The middle slot is meant to be the upload flow, but no upload-screen capture
+// exists yet, so the dashboard is standing in. Send an upload screenshot and it
+// drops straight into that slot.
 const PHASES: Phase[] = [
   {
     id: 'review',
     label: 'Review',
-    caption: 'Your content comes to you finished. Approve it in a tap.',
-    src: '',
-    shot: 'content review and approval queue',
+    caption: 'Your posts, emails, and blogs come to you finished. Approve them in a tap.',
+    src: '/images/portal-review.png',
+    shot: 'content review queue',
   },
   {
-    id: 'upload',
-    label: 'Upload',
-    caption: 'Send us a clip from your phone and we handle the rest.',
-    src: '',
-    shot: 'content upload screen',
+    id: 'home',
+    label: 'Dashboard',
+    caption: 'Open the portal and see exactly where your marketing stands.',
+    src: '/images/portal-home.png',
+    shot: 'home dashboard with open tasks and monthly progress',
   },
   {
     id: 'calendar',
     label: 'Calendar',
     caption: 'See everything that is scheduled, posted, and coming up.',
-    src: '',
+    src: '/images/portal-calendar.png',
     shot: 'content calendar view',
   },
 ];
