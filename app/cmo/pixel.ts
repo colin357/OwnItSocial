@@ -33,8 +33,8 @@ function fireOaiq(...args: unknown[]) {
  * Top-of-funnel intent: a visitor clicked one of the "Book a Call" CTAs.
  * Custom event so you can build a lookalike/retargeting audience off it.
  */
-export function trackBookingClick() {
-  fire('trackCustom', 'BookCallClick', { source: 'cmo-landing' });
+export function trackBookingClick(source: string = 'cmo-landing') {
+  fire('trackCustom', 'BookCallClick', { source });
   fireOaiq('measure', 'registration_completed', { type: 'customer_action', amount: 0, currency: 'USD' });
 }
 
