@@ -10,7 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 // every legacy landing page.
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-inter',
 });

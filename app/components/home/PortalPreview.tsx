@@ -37,18 +37,18 @@ type Phase = {
 // drops straight into that slot.
 const PHASES: Phase[] = [
   {
-    id: 'review',
-    label: 'Review',
-    caption: 'Your posts, emails, and blogs come to you finished. Approve them in a tap.',
-    src: '/images/portal-review.png',
-    shot: 'content review queue',
-  },
-  {
     id: 'home',
     label: 'Dashboard',
     caption: 'Open the portal and see exactly where your marketing stands.',
     src: '/images/portal-home.png',
     shot: 'home dashboard with open tasks and monthly progress',
+  },
+  {
+    id: 'review',
+    label: 'Review',
+    caption: 'Your posts, emails, and blogs come to you finished. Approve them in a tap.',
+    src: '/images/portal-review.png',
+    shot: 'content review queue',
   },
   {
     id: 'calendar',
@@ -138,9 +138,9 @@ export default function PortalPreview() {
     // card unpins and scrolls away.
     <div ref={wrapRef} className="relative h-[190vh] sm:h-[220vh]">
       <div ref={stickyRef} className="sticky top-20">
-        <div className="overflow-hidden rounded-xl border border-line bg-white shadow-portal">
+        <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-portal">
           {/* Browser chrome */}
-          <div className="flex h-9 items-center gap-1.5 border-b border-line px-4">
+          <div className="flex h-10 items-center gap-1.5 border-b border-line px-4">
             <span className="h-2.5 w-2.5 rounded-full bg-line" />
             <span className="h-2.5 w-2.5 rounded-full bg-line" />
             <span className="h-2.5 w-2.5 rounded-full bg-line" />
@@ -180,33 +180,28 @@ export default function PortalPreview() {
           </div>
         </div>
 
-        {/* Step indicator, doubling as navigation. */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {PHASES.map((phase, i) => (
-            <button
-              key={phase.id}
-              type="button"
-              onClick={() => goTo(i)}
-              aria-current={i === active ? 'step' : undefined}
-              className="group flex items-center gap-2 rounded-md px-1 py-1 text-[13px] focus:outline-none focus-visible:ring-2 focus-visible:ring-navy"
-            >
-              <span
-                className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${
-                  i === active ? 'bg-navy' : 'bg-line'
-                }`}
-              />
-              <span
-                className={`transition-colors duration-300 ${
-                  i === active ? 'text-ink' : 'text-muted group-hover:text-ink'
+        {/* Segmented step indicator, doubling as navigation. */}
+        <div className="mt-7 flex justify-center">
+          <div className="inline-flex rounded-full border border-line bg-white/60 p-1 backdrop-blur">
+            {PHASES.map((phase, i) => (
+              <button
+                key={phase.id}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-current={i === active ? 'step' : undefined}
+                className={`rounded-full px-4 py-1.5 text-[13px] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy ${
+                  i === active
+                    ? 'bg-navy text-white'
+                    : 'text-muted hover:text-ink'
                 }`}
               >
                 {phase.label}
-              </span>
-            </button>
-          ))}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <p className="mt-3 text-center text-[13px] leading-[1.7] text-muted">
+        <p className="mt-4 text-center text-[15px] leading-[1.6] text-muted">
           {PHASES[active].caption}
         </p>
       </div>
