@@ -36,13 +36,29 @@ const LOGOS = [
   { src: '/images/William Raveis.png', alt: 'William Raveis' },
 ];
 
-// Testimonials — deliberately empty. Fill in `quote`, `name`, and `role` and
-// the card renders for real; anything still blank renders as a marked slot.
-// NEEDS CONTENT (Colin): three client quotes, with permission to use names.
+// Verbatim five-star Google reviews. Justin's runs to three paragraphs on
+// Google; the first is quoted here in full and unaltered rather than stitched
+// together from parts. Adding an entry with an empty `quote` renders a marked
+// slot instead, so the section still works while a new review is pending.
 const TESTIMONIALS = [
-  { quote: '', name: '', role: '' },
-  { quote: '', name: '', role: '' },
-  { quote: '', name: '', role: '' },
+  {
+    quote:
+      'I’ve been working with Colin now for two months and he has taken a giant weight off my shoulders and managing my entire social media platform and creating content for me and scripts for me to utilize. If you are looking for someone to help take the burden off of posting social media Colin is your guy.',
+    name: 'Michael Martin',
+    role: 'Google review',
+  },
+  {
+    quote:
+      'Own it has helped me grow my social media by hundreds of thousands of views in just 30 days. It really has been exponential growth. They also make marketing through my crm a breeze. I highly recommend this business. Consistent and professional.',
+    name: 'Taylor Eisenbarth',
+    role: 'Google review',
+  },
+  {
+    quote:
+      'I’ve had an outstanding experience working with the team at Own It Social. They consistently deliver high-quality print marketing materials on time, create engaging social media content, and provide a clear strategy that keeps my marketing moving forward.',
+    name: 'Justin Elkins',
+    role: 'Google review',
+  },
 ];
 
 // The department framed as the roles you would otherwise have to hire for.
@@ -303,14 +319,34 @@ export default function Home() {
               {TESTIMONIALS.map((item, i) => (
                 <Reveal key={i} delay={(i % 3) * 90}>
                   <figure className="flex h-full flex-col rounded-2xl border border-line bg-white p-9">
-                    <svg
-                      className="h-6 w-6 flex-shrink-0 text-navy/25"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M9.5 5C6.5 6.9 5 9.6 5 13v6h6v-6H8.2c0-2.3.9-4 2.8-5.2L9.5 5Zm9 0c-3 1.9-4.5 4.6-4.5 8v6h6v-6h-2.8c0-2.3.9-4 2.8-5.2L18.5 5Z" />
-                    </svg>
+                    {item.quote ? (
+                      <div
+                        className="flex gap-0.5 text-navy"
+                        role="img"
+                        aria-label="Rated 5 out of 5"
+                      >
+                        {[0, 1, 2, 3, 4].map((s) => (
+                          <svg
+                            key={s}
+                            className="h-4 w-4"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5-5.9-3.1-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z" />
+                          </svg>
+                        ))}
+                      </div>
+                    ) : (
+                      <svg
+                        className="h-6 w-6 flex-shrink-0 text-navy/25"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M9.5 5C6.5 6.9 5 9.6 5 13v6h6v-6H8.2c0-2.3.9-4 2.8-5.2L9.5 5Zm9 0c-3 1.9-4.5 4.6-4.5 8v6h6v-6h-2.8c0-2.3.9-4 2.8-5.2L18.5 5Z" />
+                      </svg>
+                    )}
 
                     {item.quote ? (
                       <>
