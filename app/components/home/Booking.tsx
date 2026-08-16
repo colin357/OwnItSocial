@@ -56,7 +56,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
       {isOpen && (
         // The modal renders outside the page's font wrapper, so it sets its own.
         <div
-          className="fixed inset-0 z-[100] flex items-start justify-center p-0 font-inter text-ink sm:items-center sm:p-6"
+          className="fixed inset-0 z-[100] flex items-start justify-center p-0 font-montserrat text-ink sm:items-center sm:p-6"
           role="dialog"
           aria-modal="true"
           aria-label="Book your free strategy session"

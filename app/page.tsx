@@ -135,7 +135,7 @@ export default function Home() {
         }}
       />
 
-      <div id="top" className="min-h-screen bg-white font-inter text-ink antialiased">
+      <div id="top" className="min-h-screen bg-white font-montserrat text-ink antialiased">
         <Nav />
 
         {/* ── Hero ── */}
@@ -145,12 +145,16 @@ export default function Home() {
               <p className="text-[14px] font-medium text-navy">
                 Built exclusively for loan officers
               </p>
-              <h1 className="mt-5 text-[40px] font-semibold leading-[1.05] tracking-[-0.035em] sm:text-[56px] lg:text-[68px]">
+              {/* -0.03em, not tighter: Montserrat's round geometric forms
+                  collide before Inter's do. */}
+              <h1 className="mt-5 text-[40px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[56px] lg:text-[68px]">
                 You close loans.
                 <br />
                 We do the rest.
               </h1>
-              <p className="mx-auto mt-7 max-w-xl text-[19px] leading-[1.55] text-muted sm:text-[21px]">
+              {/* Wider than the Inter version — Montserrat runs about 8% wider,
+                  which pushed a single word onto a fourth line. */}
+              <p className="mx-auto mt-7 max-w-2xl text-[19px] leading-[1.55] text-muted sm:text-[21px]">
                 We write and post your social content, run the follow-up in your
                 CRM, and keep your Google profile working — so the pipeline
                 stays warm while you stay on the loans.

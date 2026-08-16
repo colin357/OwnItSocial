@@ -22,8 +22,8 @@ export default {
         line: '#E5E3DC',
       },
       fontFamily: {
-        // Loaded in app/layout.tsx via next/font (400 + 500 only).
-        inter: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
+        // Loaded in app/layout.tsx via next/font (400/500/600).
+        montserrat: ['var(--font-montserrat)', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
         // Reserved for the product frame, so it reads as the one object on the

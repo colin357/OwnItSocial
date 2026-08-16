@@ -17,7 +17,10 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Site-wide face. The variable is set on <html> in app/layout.tsx, so the
+     older Tailwind landing pages inherit it too rather than falling back to
+     Arial. */
+  font-family: var(--font-montserrat), system-ui, -apple-system, sans-serif;
 }
 
 @layer utilities {
