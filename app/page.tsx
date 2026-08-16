@@ -153,26 +153,41 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Pain points ── */}
+        {/* ── Pain points — sets up the offer block that answers them ── */}
         <section className="border-b border-line px-5 py-16 sm:px-8 sm:py-20">
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
-            {PAIN_POINTS.map((point) => (
-              <div key={point.label} className="text-center">
-                <svg
-                  className="mx-auto h-6 w-6 text-navy"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
+          <div className="mx-auto max-w-4xl">
+            <div className="mx-auto max-w-xl text-center">
+              <h2 className="text-[24px] font-medium leading-[1.25] tracking-[-0.01em]">
+                Sound familiar?
+              </h2>
+              <p className="mt-4 text-base leading-[1.7] text-muted">
+                You closed the loans. The marketing waited until you had a
+                free evening, and then it waited some more.
+              </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-3">
+              {PAIN_POINTS.map((point) => (
+                <div
+                  key={point.label}
+                  className="rounded-lg border border-line px-6 py-7 text-center sm:py-9"
                 >
-                  {point.icon}
-                </svg>
-                <p className="mt-3 text-[15px] text-ink">{point.label}</p>
-              </div>
-            ))}
+                  <svg
+                    className="mx-auto h-6 w-6 text-navy"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    {point.icon}
+                  </svg>
+                  <p className="mt-4 text-[15px] text-ink">{point.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
