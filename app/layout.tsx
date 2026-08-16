@@ -1,18 +1,22 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-// One family, two weights — the whole type system. Exposed as a CSS variable
-// (`font-inter` in Tailwind) so pages opt in rather than it being forced on
-// every legacy landing page.
-const inter = Inter({
+// One family for the whole site. The variable is set on <html> and globals.css
+// points `body` at it, so every page picks it up — `font-montserrat` in
+// Tailwind is there for elements that need it explicitly (e.g. the booking
+// modal, which renders outside the page wrapper).
+// 700 is here for the older landing pages, which lean on font-bold and
+// font-black — without it the browser fakes them by smearing 600. The homepage
+// tops out at 600 by design.
+const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-montserrat',
 });
 
 export const viewport: Viewport = {
@@ -90,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={montserrat.variable}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11353830288"
