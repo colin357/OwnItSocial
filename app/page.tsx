@@ -40,26 +40,40 @@ const LOGOS = [
 // Google; the first is quoted here in full and unaltered rather than stitched
 // together from parts. Adding an entry with an empty `quote` renders a marked
 // slot instead, so the section still works while a new review is pending.
+//
+// PHOTOS: `image` is empty, so each card falls back to an initials avatar.
+// Save a headshot to public/images/ and set the path to swap it in — square
+// crops, 200x200 or larger. Get the reviewer's OK first: a photo on a Google
+// profile is not the same as one hosted on a commercial homepage.
 const TESTIMONIALS = [
   {
     quote:
       'I’ve been working with Colin now for two months and he has taken a giant weight off my shoulders and managing my entire social media platform and creating content for me and scripts for me to utilize. If you are looking for someone to help take the burden off of posting social media Colin is your guy.',
     name: 'Michael Martin',
     role: 'Google review',
+    image: '',
   },
   {
     quote:
       'Own it has helped me grow my social media by hundreds of thousands of views in just 30 days. It really has been exponential growth. They also make marketing through my crm a breeze. I highly recommend this business. Consistent and professional.',
     name: 'Taylor Eisenbarth',
     role: 'Google review',
+    image: '',
   },
   {
     quote:
       'I’ve had an outstanding experience working with the team at Own It Social. They consistently deliver high-quality print marketing materials on time, create engaging social media content, and provide a clear strategy that keeps my marketing moving forward.',
     name: 'Justin Elkins',
     role: 'Google review',
+    image: '',
   },
 ];
+
+/** "Michael Martin" -> "MM". Drives the avatar fallback. */
+function initials(name: string) {
+  const parts = name.trim().split(/\s+/);
+  return ((parts[0]?.[0] ?? '') + (parts.at(-1)?.[0] ?? '')).toUpperCase();
+}
 
 // The department framed as the roles you would otherwise have to hire for.
 // Each one maps to work already described on /cmo — no new claims.
@@ -357,9 +371,31 @@ export default function Home() {
                         <blockquote className="mt-6 flex-1 text-[18px] leading-[1.6] text-ink">
                           {item.quote}
                         </blockquote>
-                        <figcaption className="mt-7 border-t border-line pt-5 text-[14px]">
-                          <span className="text-ink">{item.name}</span>
-                          <span className="text-muted"> — {item.role}</span>
+                        <figcaption className="mt-7 flex items-center gap-3.5 border-t border-line pt-5">
+                          {item.image ? (
+                            <Image
+                              src={item.image}
+                              alt=""
+                              width={88}
+                              height={88}
+                              className="h-11 w-11 flex-shrink-0 rounded-full object-cover"
+                            />
+                          ) : (
+                            <span
+                              aria-hidden="true"
+                              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-sand text-[14px] font-medium text-navy"
+                            >
+                              {initials(item.name)}
+                            </span>
+                          )}
+                          <span className="min-w-0">
+                            <span className="block text-[15px] text-ink">
+                              {item.name}
+                            </span>
+                            <span className="block text-[13px] text-muted">
+                              {item.role}
+                            </span>
+                          </span>
                         </figcaption>
                       </>
                     ) : (
