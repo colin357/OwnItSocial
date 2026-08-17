@@ -155,19 +155,10 @@ export default function KeepPlayingPage() {
           }}
         />
 
-        {/* The headline stays two lines, like the homepage — a third pushes
-            the CTA under the fold at the hero's display size. */}
-        <Hero
-          eyebrow="Proud sponsor of Keep Playing"
-          headline={
-            <>
-              Fairway runs
-              <br />
-              on referrals.
-            </>
-          }
-          body="We keep them coming. Own It Social is the marketing department for Fairway loan officers — we write and post your social content, run your Total Expert follow-up, and keep your Google profile working, so the pipeline stays warm while you stay on the loans."
-        />
+        {/* Headline and body are the homepage's, on purpose — only the eyebrow
+            changes. Leaving both props off means this hero keeps tracking the
+            homepage if that copy is ever reworded. */}
+        <Hero eyebrow="Proud sponsor of Keep Playing" />
 
         {/* ── Who this is for ── */}
         <section
