@@ -23,12 +23,15 @@ type Props = {
   links?: { label: string; href: string }[];
   /** Where the wordmark points. Landing pages send it to the top of the page. */
   homeHref?: string;
+  /** The nav button's label. /keepplaying opens a form, not a calendar. */
+  ctaLabel?: string;
 };
 
 export default function Nav({
   announcement,
   links = LINKS,
   homeHref = '#top',
+  ctaLabel = 'Book a call',
 }: Props) {
   const [open, setOpen] = useState(false);
 
@@ -75,7 +78,7 @@ export default function Nav({
 
           {/* CTA stays visible at every breakpoint. */}
           <BookButton size="sm" className="hidden sm:inline-flex">
-            Book a call
+            {ctaLabel}
           </BookButton>
 
           <button
@@ -124,7 +127,7 @@ export default function Nav({
               </li>
             ))}
             <li className="py-5 sm:hidden">
-              <BookButton size="md">Book a call</BookButton>
+              <BookButton size="md">{ctaLabel}</BookButton>
             </li>
           </ul>
         </nav>

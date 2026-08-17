@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { BookingProvider } from '../components/home/Booking';
 import BookButton from '../components/home/BookButton';
 import Hero from '../components/home/Hero';
+import LeadForm from './LeadForm';
 import Nav from '../components/home/Nav';
 import PortalPreview from '../components/home/PortalPreview';
 import Reveal from '../components/home/Reveal';
@@ -130,7 +131,14 @@ export default function KeepPlayingPage() {
   });
 
   return (
-    <BookingProvider>
+    // The one difference from the homepage's plumbing: every CTA here opens a
+    // lead form instead of the calendar, so we capture the opt-ins before the
+    // conversation starts.
+    <BookingProvider
+      modal={<LeadForm />}
+      title="Request your free strategy session"
+      source="keepplaying"
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: getStructuredDataScript(organizationSchema) }}
@@ -149,9 +157,10 @@ export default function KeepPlayingPage() {
         <Nav
           links={NAV_LINKS}
           homeHref="#top"
+          ctaLabel="Request a call"
           announcement={{
             message: 'Proud sponsor of Keep Playing. Fairway loan officers:',
-            cta: 'Book your free strategy session',
+            cta: 'Get your free strategy session',
           }}
         />
 
@@ -430,7 +439,7 @@ export default function KeepPlayingPage() {
               </h2>
 
               <div className="mt-12 flex flex-wrap items-center gap-6">
-                <BookButton variant="white">Book your free session</BookButton>
+                <BookButton variant="white">Get your free session</BookButton>
                 <a
                   href="mailto:colin@ownitsocial.com"
                   className="font-display text-[13px] font-bold uppercase tracking-[0.12em] text-white underline underline-offset-8 transition-opacity hover:opacity-70"
