@@ -17,7 +17,7 @@ const LINKS = [
 ];
 
 type Props = {
-  /** Overrides the two strings in the purple strip (see /keep-playing). */
+  /** Overrides the two strings in the purple strip (see /keepplaying). */
   announcement?: { message?: string; cta?: string };
   /** Landing pages that don't have every homepage section pass their own. */
   links?: { label: string; href: string }[];

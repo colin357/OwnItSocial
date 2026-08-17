@@ -16,7 +16,7 @@ import {
 } from '@/lib/seo/structured-data';
 
 // ---------------------------------------------------------------------------
-// /keep-playing — the landing page for Fairway loan officers we meet at Keep
+// /keepplaying — the landing page for Fairway loan officers we meet at Keep
 // Playing, the event Own It Social sponsors.
 //
 // It is deliberately the homepage with a Fairway frame around it: same nav,
@@ -24,23 +24,20 @@ import {
 // one audience. Everything is shared with the homepage components, so a design
 // change there lands here too — the only thing this file owns is the copy.
 //
-// NOTE FOR COLIN: the two [NEEDS CONTENT] slots below are the facts I don't
-// have — the event's date and venue, and whether Keep Playing attendees get
-// their own pricing the way annual-meeting attendees did on
-// /fairway-annual-meeting. Fill those in (or delete the block) before you hand
-// the link out.
+// No pricing here by design: like the homepage, every button on the page opens
+// the same free strategy session.
 // ---------------------------------------------------------------------------
 
 export const metadata: Metadata = {
   title: 'Own It Social at Keep Playing — marketing for Fairway loan officers',
   description:
     'Proud sponsors of Keep Playing. Own It Social is the done-for-you marketing department for Fairway loan officers: social content, Total Expert follow-up, and Google presence. Book a free strategy session.',
-  alternates: { canonical: 'https://ownitsocial.com/keep-playing' },
+  alternates: { canonical: 'https://ownitsocial.com/keepplaying' },
   openGraph: {
     title: 'Own It Social at Keep Playing — marketing for Fairway loan officers',
     description:
       'Done-for-you social content, Total Expert follow-up, and Google presence for Fairway loan officers. Book a free strategy session.',
-    url: 'https://ownitsocial.com/keep-playing',
+    url: 'https://ownitsocial.com/keepplaying',
     type: 'website',
   },
 };
@@ -440,21 +437,6 @@ export default function KeepPlayingPage() {
               <h2 className="mt-6 max-w-[18ch] font-display text-[44px] font-black uppercase leading-[0.9] tracking-[-0.02em] sm:text-[70px] lg:text-[96px]">
                 Ready to hand off your marketing?
               </h2>
-
-              {/* NOTE FOR COLIN: the event details and any Keep Playing pricing
-                  go here. Fill in the two lines below or delete this block —
-                  it is the only part of the page that is not live copy. */}
-              <div className="mt-10 max-w-xl border border-white/40 p-6">
-                <p className="font-display text-[12px] font-bold uppercase tracking-[0.12em] text-white/80">
-                  [NEEDS CONTENT: event date, venue, and where to find us]
-                </p>
-                <p className="mt-3 text-[15px] leading-[1.65] text-white/75">
-                  [NEEDS CONTENT: Keep Playing offer, if attendees get their own
-                  pricing the way annual-meeting attendees did. Leave this out
-                  and the page still works — every button books the same free
-                  strategy session.]
-                </p>
-              </div>
 
               <div className="mt-12 flex flex-wrap items-center gap-6">
                 <BookButton variant="white">Book your free session</BookButton>

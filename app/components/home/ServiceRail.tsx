@@ -27,7 +27,7 @@ export type Service = {
 };
 
 // Exported so a landing page can start from this list and re-word a card for
-// its audience (see /keep-playing, which names Total Expert on the CRM card)
+// its audience (see /keepplaying, which names Total Expert on the CRM card)
 // without forking the component.
 export const SERVICES: Service[] = [
   {

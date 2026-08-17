@@ -7,7 +7,7 @@ import { useBooking } from './Booking';
  * link opens the same booking modal every other CTA on the page opens.
  *
  * NOTE FOR COLIN: to run a different offer here, change the two defaults below,
- * or pass `message`/`cta` from a landing page (see /keep-playing). If you'd
+ * or pass `message`/`cta` from a landing page (see /keepplaying). If you'd
  * rather point at a page than the booking modal, swap the <button> for a
  * <Link> and keep the classes.
  */

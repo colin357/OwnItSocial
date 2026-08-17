@@ -15,7 +15,7 @@ import { useBooking } from './Booking';
 // scrim: the headline is white and needs it to stay legible over any frame.
 //
 // The copy is overridable so a landing page can address its own audience
-// (see /keep-playing) while keeping the same hero.
+// (see /keepplaying) while keeping the same hero.
 // ---------------------------------------------------------------------------
 type Props = {
   /** Small uppercase line above the headline. Omit for none (the homepage). */
