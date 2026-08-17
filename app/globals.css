@@ -27,6 +27,16 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Carousels scroll horizontally by drag/swipe or the arrow buttons; the
+     native bar would cut across the cards on desktop. */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -54,5 +64,10 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  /* The ticker holds still and simply reads as a banner. */
+  .animate-marquee {
+    animation: none !important;
   }
 }

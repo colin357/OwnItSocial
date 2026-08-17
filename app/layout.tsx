@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Montserrat } from "next/font/google";
+import { Archivo, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -17,6 +17,17 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-montserrat',
+});
+
+// Display face for the homepage's oversized uppercase headlines. Archivo's
+// wide, flat-sided grotesque holds together at 100px+ in a way Montserrat's
+// circular forms do not. Body copy stays Montserrat, so only the headings and
+// the nav pick this up (`font-display` in Tailwind).
+const archivo = Archivo({
+  subsets: ['latin'],
+  weight: ['600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-archivo',
 });
 
 export const viewport: Viewport = {
@@ -94,7 +105,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={`${montserrat.variable} ${archivo.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11353830288"
