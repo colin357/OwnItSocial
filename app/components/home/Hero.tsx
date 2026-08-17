@@ -13,9 +13,19 @@ import { useBooking } from './Booking';
 //          className="h-full w-full object-cover object-center" />
 // Everything else — the scrim, the headline, the badge — stays as is. Keep the
 // scrim: the headline is white and needs it to stay legible over any frame.
+//
+// The copy is overridable so a landing page can address its own audience
+// (see /keepplaying) while keeping the same hero.
 // ---------------------------------------------------------------------------
+type Props = {
+  /** Small uppercase line above the headline. Omit for none (the homepage). */
+  eyebrow?: string;
+  /** Pass a fragment with your own <br /> — line breaks are part of the type. */
+  headline?: React.ReactNode;
+  body?: React.ReactNode;
+};
 
-export default function Hero() {
+export default function Hero({ eyebrow, headline, body }: Props) {
   const { open } = useBooking();
 
   return (
@@ -59,16 +69,25 @@ export default function Hero() {
       </button>
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
+        {eyebrow && (
+          <p className="mb-6 font-display text-[12px] font-bold uppercase tracking-[0.14em] text-brand-light">
+            {eyebrow}
+          </p>
+        )}
+
         <h1 className="max-w-[16ch] font-display text-[40px] font-black uppercase leading-[0.88] tracking-[-0.02em] text-white sm:text-[84px] lg:text-[112px]">
-          You close loans.
-          <br />
-          We do the rest.
+          {headline ?? (
+            <>
+              You close loans.
+              <br />
+              We do the rest.
+            </>
+          )}
         </h1>
 
         <p className="mt-8 max-w-xl text-[17px] leading-[1.6] text-white/80 sm:text-[19px]">
-          We write and post your social content, run the follow-up in your CRM,
-          and keep your Google profile working — so the pipeline stays warm
-          while you stay on the loans.
+          {body ??
+            'We write and post your social content, run the follow-up in your CRM, and keep your Google profile working — so the pipeline stays warm while you stay on the loans.'}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">

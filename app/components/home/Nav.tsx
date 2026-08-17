@@ -16,7 +16,20 @@ const LINKS = [
   { label: 'Articles', href: '/articles' },
 ];
 
-export default function Nav() {
+type Props = {
+  /** Overrides the two strings in the purple strip (see /keepplaying). */
+  announcement?: { message?: string; cta?: string };
+  /** Landing pages that don't have every homepage section pass their own. */
+  links?: { label: string; href: string }[];
+  /** Where the wordmark points. Landing pages send it to the top of the page. */
+  homeHref?: string;
+};
+
+export default function Nav({
+  announcement,
+  links = LINKS,
+  homeHref = '#top',
+}: Props) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -26,7 +39,7 @@ export default function Nav() {
             carry different weights so the lockup reads as one mark rather than
             three loose words. */}
         <a
-          href="#top"
+          href={homeHref}
           className="font-display text-[22px] uppercase leading-none tracking-[-0.03em] text-ink sm:text-[27px]"
           aria-label="Own It Social — home"
         >
@@ -39,7 +52,7 @@ export default function Nav() {
             className="hidden items-center gap-8 lg:flex"
             aria-label="Main"
           >
-            {LINKS.map((link) =>
+            {links.map((link) =>
               link.href.startsWith('/') ? (
                 <Link
                   key={link.label}
@@ -99,7 +112,7 @@ export default function Nav() {
           className="border-t border-line bg-white lg:hidden"
         >
           <ul className="mx-auto max-w-[1400px] px-5 py-3 sm:px-8">
-            {LINKS.map((link) => (
+            {links.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
@@ -117,7 +130,7 @@ export default function Nav() {
         </nav>
       )}
 
-      <AnnouncementBar />
+      <AnnouncementBar {...announcement} />
     </header>
   );
 }

@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 // ---------------------------------------------------------------------------
 // The visual centerpiece: the real client portal, framed in a browser-style
-// card that stays pinned while the page scrolls through three phases of the
-// workflow. No stock photography, no illustration — a real product screenshot
-// or a clearly-marked empty frame, nothing in between.
+// card. The three phases of the workflow are switched by the buttons under the
+// frame. No stock photography, no illustration — a real product screenshot or
+// a clearly-marked empty frame, nothing in between.
 //
 // TO SHIP THE REAL THING: save each screenshot to public/images/ and fill in
 // the `src` below. A 16:10 crop keeps the frame from letterboxing. That is the
@@ -60,8 +60,6 @@ const PHASES: Phase[] = [
 ];
 
 export default function PortalPreview() {
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const stickyRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [instant, setInstant] = useState(false);
 
@@ -74,70 +72,9 @@ export default function PortalPreview() {
     return () => mq.removeEventListener('change', sync);
   }, []);
 
-  // Map scroll progress through the tall wrapper onto an equal share per phase.
-  useEffect(() => {
-    let frame = 0;
-
-    function measure() {
-      frame = 0;
-      const wrap = wrapRef.current;
-      const sticky = stickyRef.current;
-      if (!wrap || !sticky) return;
-
-      const travel = wrap.offsetHeight - sticky.offsetHeight;
-      if (travel <= 0) return;
-
-      const scrolled = Math.min(
-        Math.max(-wrap.getBoundingClientRect().top, 0),
-        travel,
-      );
-      const index = Math.min(
-        PHASES.length - 1,
-        Math.floor((scrolled / travel) * PHASES.length),
-      );
-      setActive(index);
-    }
-
-    function onScroll() {
-      if (frame) return;
-      frame = requestAnimationFrame(measure);
-    }
-
-    measure();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    return () => {
-      if (frame) cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-    };
-  }, []);
-
-  // Clicking a step scrolls to the middle of that phase's share of the wrapper,
-  // so the indicator works as navigation and not just as a readout.
-  function goTo(index: number) {
-    const wrap = wrapRef.current;
-    const sticky = stickyRef.current;
-    if (!wrap || !sticky) return;
-
-    const travel = wrap.offsetHeight - sticky.offsetHeight;
-    const share = travel / PHASES.length;
-    const target =
-      wrap.getBoundingClientRect().top +
-      window.scrollY +
-      share * (index + 0.5);
-
-    window.scrollTo({
-      top: target,
-      behavior: instant ? 'auto' : 'smooth',
-    });
-  }
-
   return (
-    // Tall enough to give each phase roughly half a screen of dwell before the
-    // card unpins and scrolls away.
-    <div ref={wrapRef} className="relative h-[190vh] sm:h-[220vh]">
-      <div ref={stickyRef} className="sticky top-20">
+    <div>
+      <div>
         <div className="overflow-hidden border border-ink/10 bg-white shadow-portal">
           {/* Browser chrome */}
           <div className="flex h-10 items-center gap-1.5 border-b border-line px-4">
@@ -187,7 +124,7 @@ export default function PortalPreview() {
               <button
                 key={phase.id}
                 type="button"
-                onClick={() => goTo(i)}
+                onClick={() => setActive(i)}
                 aria-current={i === active ? 'step' : undefined}
                 className={`rounded-full px-5 py-2 font-display text-[12px] font-bold uppercase tracking-[0.1em] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                   i === active
