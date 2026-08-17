@@ -10,9 +10,13 @@ import {
 import BookingEmbed from '../../cmo/BookingEmbed';
 import { trackBookingClick } from '../../cmo/pixel';
 
-// The homepage drives exactly one action: booking a strategy session. Every CTA
-// on the page opens this single modal, which mounts the same LeadConnector
-// calendar the /cmo campaign page uses (swap it with NEXT_PUBLIC_BOOKING_URL).
+// The page drives exactly one action, and every CTA on it opens this single
+// modal. By default that modal is the same LeadConnector calendar the /cmo
+// campaign page uses (swap it with NEXT_PUBLIC_BOOKING_URL).
+//
+// A page that wants a different action passes its own `modal` — /keepplaying
+// passes a lead form instead of the calendar. Whatever is passed renders
+// inside this provider, so it can call useBooking() to close itself.
 
 type BookingCtx = { open: () => void; close: () => void };
 
@@ -26,13 +30,28 @@ export function useBooking(): BookingCtx {
   return ctx;
 }
 
-export function BookingProvider({ children }: { children: React.ReactNode }) {
+type ProviderProps = {
+  children: React.ReactNode;
+  /** Modal body. Defaults to the booking calendar. */
+  modal?: React.ReactNode;
+  /** Modal heading, and the dialog's accessible name. */
+  title?: string;
+  /** Distinguishes the pixel's intent event per page. */
+  source?: string;
+};
+
+export function BookingProvider({
+  children,
+  modal,
+  title = 'Book your free strategy session',
+  source = 'homepage',
+}: ProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = useCallback(() => {
-    trackBookingClick('homepage'); // Meta Pixel intent event
+    trackBookingClick(source); // Meta Pixel intent event
     setIsOpen(true);
-  }, []);
+  }, [source]);
   const close = useCallback(() => setIsOpen(false), []);
 
   // Esc to close + lock body scroll while the modal is open.
@@ -59,18 +78,18 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
           className="fixed inset-0 z-[100] flex items-start justify-center p-0 font-montserrat text-ink sm:items-center sm:p-6"
           role="dialog"
           aria-modal="true"
-          aria-label="Book your free strategy session"
+          aria-label={title}
         >
           <button
             type="button"
-            aria-label="Close booking"
+            aria-label="Close"
             onClick={close}
             className="absolute inset-0 bg-ink/60"
           />
           <div className="relative h-full w-full overflow-y-auto overscroll-contain bg-white sm:h-auto sm:max-h-[92vh] sm:max-w-2xl sm:border sm:border-ink">
             <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-white px-5 py-4">
               <span className="font-display text-[13px] font-bold uppercase tracking-[0.1em] text-ink">
-                Book your free strategy session
+                {title}
               </span>
               <button
                 type="button"
@@ -92,8 +111,9 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
               </button>
             </div>
             <div className="p-4 sm:p-5">
-              {/* Iframe only mounts once the modal is opened. */}
-              <BookingEmbed title="Book your free strategy session" />
+              {/* Whatever this is, it only mounts once the modal is opened —
+                  which is what keeps the calendar iframe off the initial load. */}
+              {modal ?? <BookingEmbed title={title} />}
             </div>
           </div>
         </div>
