@@ -16,7 +16,7 @@ import Carousel from './Carousel';
 // Swap any of these for a real photo of your own team or a client shoot; the
 // only requirement is a square crop.
 // ---------------------------------------------------------------------------
-type Service = {
+export type Service = {
   /** Small uppercase line above the title — the outcome, not the tactic. */
   eyebrow: string;
   title: string;
@@ -26,7 +26,10 @@ type Service = {
   alt: string;
 };
 
-const SERVICES: Service[] = [
+// Exported so a landing page can start from this list and re-word a card for
+// its audience (see /keep-playing, which names Total Expert on the CRM card)
+// without forking the component.
+export const SERVICES: Service[] = [
   {
     eyebrow: 'Staying top of mind',
     title: 'Social',
@@ -57,10 +60,14 @@ const SERVICES: Service[] = [
   },
 ];
 
-export default function ServiceRail() {
+export default function ServiceRail({
+  services = SERVICES,
+}: {
+  services?: Service[];
+}) {
   return (
     <Carousel label="Services" arrows="below">
-      {SERVICES.map((service) => (
+      {services.map((service) => (
         <article
           key={service.title}
           className="group w-[280px] shrink-0 snap-start sm:w-[340px] lg:w-[380px]"
