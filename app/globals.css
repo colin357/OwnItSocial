@@ -65,9 +65,4 @@ body {
     transform: none;
     transition: none;
   }
-
-  /* The ticker holds still and simply reads as a banner. */
-  .animate-marquee {
-    animation: none !important;
-  }
 }

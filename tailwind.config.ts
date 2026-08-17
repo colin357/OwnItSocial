@@ -15,7 +15,7 @@ export default {
 
         // ── Homepage design system ──
         // Editorial agency look: near-black type on white, one saturated purple
-        // doing every piece of accent work (banner, marquee, buttons, hovers).
+        // doing every piece of accent work (banner, buttons, hovers).
         brand: {
           DEFAULT: '#8B3DFF',
           dark: '#6C1FE8',   // hover / pressed
@@ -40,17 +40,6 @@ export default {
         // page with real depth.
         portal: '0 32px 80px -28px rgba(10,10,10,0.35), 0 4px 16px rgba(10,10,10,0.06)',
         lift: '0 18px 40px -22px rgba(10,10,10,0.30)',
-      },
-      keyframes: {
-        // Ticker: the track holds two identical copies of the phrase list, so
-        // sliding exactly one copy's width and snapping back reads as endless.
-        marquee: {
-          '0%': { transform: 'translate3d(0,0,0)' },
-          '100%': { transform: 'translate3d(-50%,0,0)' },
-        },
-      },
-      animation: {
-        marquee: 'marquee 28s linear infinite',
       },
     },
   },
