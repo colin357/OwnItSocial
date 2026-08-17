@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { BookingProvider } from './components/home/Booking';
 import BookButton from './components/home/BookButton';
 import Hero from './components/home/Hero';
-import Marquee from './components/home/Marquee';
 import Nav from './components/home/Nav';
 import PortalPreview from './components/home/PortalPreview';
 import Reveal from './components/home/Reveal';
@@ -125,10 +124,6 @@ export default function Home() {
         <Nav />
 
         <Hero />
-
-        {/* Ticker directly under the hero, the way the eye expects the page to
-            keep moving after a full-bleed image. */}
-        <Marquee text="You close loans. We do the rest." />
 
         {/* ── Positioning statement + logos ── */}
         <section
@@ -410,10 +405,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Black here, not purple: the closing CTA below is a full purple
-            field, and two purple bands stacked read as one shapeless block. */}
-        <Marquee text="Human made marketing." repeat={8} tone="dark" />
 
         {/* ── Closing CTA ── */}
         <section className="bg-brand px-5 py-24 text-white sm:px-8 sm:py-32">
