@@ -14,23 +14,43 @@ export default {
         'fairway-green': '#129e4b',
 
         // ── Homepage design system ──
-        // Navy is the ONLY accent: CTAs, the "Your new CMO" block, icon strokes.
+        // Editorial agency look: near-black type on white, one saturated purple
+        // doing every piece of accent work (banner, marquee, buttons, hovers).
+        brand: {
+          DEFAULT: '#8B3DFF',
+          dark: '#6C1FE8',   // hover / pressed
+          light: '#B487FF',  // on-dark secondary text
+        },
+        ink: '#0A0A0A',
+        muted: '#5B5B5B',
+        sand: '#F4F3F1',
+        line: '#E4E3E0',
+
+        // Retained so the older campaign pages that reference it keep working.
         navy: '#0C2E4E',
-        ink: '#1A1A1A',
-        muted: '#6B6B66',
-        sand: '#F5F4F0',
-        line: '#E5E3DC',
       },
       fontFamily: {
-        // Loaded in app/layout.tsx via next/font (400/500/600).
+        // Body copy. Loaded in app/layout.tsx via next/font (400/500/600/700).
         montserrat: ['var(--font-montserrat)', 'system-ui', '-apple-system', 'sans-serif'],
+        // Display face for the oversized uppercase headlines (700/800/900).
+        display: ['var(--font-archivo)', 'var(--font-montserrat)', 'Impact', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         // Reserved for the product frame, so it reads as the one object on the
         // page with real depth.
-        portal: '0 32px 80px -28px rgba(12,46,78,0.30), 0 4px 16px rgba(12,46,78,0.05)',
-        // Cards lift slightly on hover; nothing else casts a shadow at rest.
-        lift: '0 18px 40px -22px rgba(12,46,78,0.28)',
+        portal: '0 32px 80px -28px rgba(10,10,10,0.35), 0 4px 16px rgba(10,10,10,0.06)',
+        lift: '0 18px 40px -22px rgba(10,10,10,0.30)',
+      },
+      keyframes: {
+        // Ticker: the track holds two identical copies of the phrase list, so
+        // sliding exactly one copy's width and snapping back reads as endless.
+        marquee: {
+          '0%': { transform: 'translate3d(0,0,0)' },
+          '100%': { transform: 'translate3d(-50%,0,0)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 28s linear infinite',
       },
     },
   },

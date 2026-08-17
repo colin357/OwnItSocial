@@ -138,7 +138,7 @@ export default function PortalPreview() {
     // card unpins and scrolls away.
     <div ref={wrapRef} className="relative h-[190vh] sm:h-[220vh]">
       <div ref={stickyRef} className="sticky top-20">
-        <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-portal">
+        <div className="overflow-hidden border border-ink/10 bg-white shadow-portal">
           {/* Browser chrome */}
           <div className="flex h-10 items-center gap-1.5 border-b border-line px-4">
             <span className="h-2.5 w-2.5 rounded-full bg-line" />
@@ -182,16 +182,16 @@ export default function PortalPreview() {
 
         {/* Segmented step indicator, doubling as navigation. */}
         <div className="mt-7 flex justify-center">
-          <div className="inline-flex rounded-full border border-line bg-white/60 p-1 backdrop-blur">
+          <div className="inline-flex rounded-full border border-line bg-white p-1">
             {PHASES.map((phase, i) => (
               <button
                 key={phase.id}
                 type="button"
                 onClick={() => goTo(i)}
                 aria-current={i === active ? 'step' : undefined}
-                className={`rounded-full px-4 py-1.5 text-[13px] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy ${
+                className={`rounded-full px-5 py-2 font-display text-[12px] font-bold uppercase tracking-[0.1em] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                   i === active
-                    ? 'bg-navy text-white'
+                    ? 'bg-brand text-white'
                     : 'text-muted hover:text-ink'
                 }`}
               >
@@ -201,7 +201,7 @@ export default function PortalPreview() {
           </div>
         </div>
 
-        <p className="mt-4 text-center text-[15px] leading-[1.6] text-muted">
+        <p className="mx-auto mt-5 max-w-lg text-center text-[15px] leading-[1.6] text-muted">
           {PHASES[active].caption}
         </p>
       </div>

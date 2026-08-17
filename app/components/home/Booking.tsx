@@ -67,16 +67,16 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
             onClick={close}
             className="absolute inset-0 bg-ink/60"
           />
-          <div className="relative h-full w-full overflow-y-auto overscroll-contain bg-white sm:h-auto sm:max-h-[92vh] sm:max-w-2xl sm:rounded-xl sm:border sm:border-line">
+          <div className="relative h-full w-full overflow-y-auto overscroll-contain bg-white sm:h-auto sm:max-h-[92vh] sm:max-w-2xl sm:border sm:border-ink">
             <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-line bg-white px-5 py-4">
-              <span className="text-[15px] font-medium text-ink">
+              <span className="font-display text-[13px] font-bold uppercase tracking-[0.1em] text-ink">
                 Book your free strategy session
               </span>
               <button
                 type="button"
                 onClick={close}
                 aria-label="Close"
-                className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md text-muted transition-colors hover:bg-sand hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-navy"
+                className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full text-muted transition-colors hover:bg-sand hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               >
                 <svg
                   className="h-5 w-5"
