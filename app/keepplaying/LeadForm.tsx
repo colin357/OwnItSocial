@@ -15,6 +15,10 @@ import { HEARD_FROM_OPTIONS } from '../components/heardFrom';
 // from `canSubmit` below and relax the matching check in the API route.
 //
 // Rendered inside <BookingProvider>, so it can close its own modal.
+//
+// `source` names the page the lead came from; it is what the SMS alert and the
+// consent log are labelled with. Defaults to keepplaying so this page's own use
+// is unchanged; /calendar passes its own.
 // ---------------------------------------------------------------------------
 
 const FIELD =
@@ -22,7 +26,7 @@ const FIELD =
 const LABEL =
   'block font-display text-[11px] font-bold uppercase tracking-[0.12em] text-muted';
 
-export default function LeadForm() {
+export default function LeadForm({ source = 'keepplaying' }: { source?: string }) {
   const { close } = useBooking();
   const [form, setForm] = useState({ name: '', email: '', phone: '', heardFrom: '' });
   const [smsOptIn, setSmsOptIn] = useState(false);
@@ -53,7 +57,7 @@ export default function LeadForm() {
       const res = await fetch('/api/keep-playing-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, smsOptIn, emailOptIn, aiSource: getAiSource() }),
+        body: JSON.stringify({ ...form, smsOptIn, emailOptIn, aiSource: getAiSource(), source }),
       });
 
       if (res.ok) {

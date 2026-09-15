@@ -6,7 +6,8 @@ import {
 } from '@/app/keepplaying/consent';
 
 // ---------------------------------------------------------------------------
-// Lead capture for /keepplaying.
+// Lead capture for /keepplaying and /calendar (the Fairway Regional Meeting
+// page). The `source` field in the body says which one.
 //
 // Same delivery path as the other forms on the site: a Twilio SMS to Colin.
 // There is no database in this project, so that SMS plus the server log below
@@ -19,10 +20,21 @@ import {
 // durable consent record if you are ever asked to produce one.
 // ---------------------------------------------------------------------------
 
+// Known lead sources, keyed by what LeadForm sends. Anything else falls back
+// to keepplaying rather than trusting a free-text label from the browser.
+const SOURCES = {
+  keepplaying: { path: '/keepplaying', label: '🏌️ Keep Playing lead' },
+  'fairway-regional-meeting': {
+    path: '/calendar',
+    label: '📅 Fairway Regional Meeting lead',
+  },
+} as const;
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, phone, smsOptIn, emailOptIn, heardFrom, aiSource } = body;
+    const source = SOURCES[body.source as keyof typeof SOURCES] ?? SOURCES.keepplaying;
 
     if (!name || !email || !phone) {
       return NextResponse.json(
@@ -61,7 +73,7 @@ export async function POST(request: Request) {
         smsConsentText: SMS_CONSENT,
         emailOptIn: true,
         emailConsentText: EMAIL_CONSENT,
-        source: '/keepplaying',
+        source: source.path,
         heardFrom: heardFrom || null,
         aiSource: aiSource || null,
       }),
@@ -85,7 +97,7 @@ export async function POST(request: Request) {
     }
 
     const message =
-      `🏌️ Keep Playing lead\n\n` +
+      `${source.label}\n\n` +
       `Name: ${name}\n` +
       `Email: ${email}\n` +
       `Phone: ${phone}\n` +
