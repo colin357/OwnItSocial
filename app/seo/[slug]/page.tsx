@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!page) {
     return {
+      robots: { index: false, follow: false },
       title: 'Page Not Found',
     };
   }
@@ -45,6 +46,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: page.title,
     description: page.description,
     keywords: page.keywords,
+    // Sample/template content. Kept out of the index until it carries real
+    // copy, so thin pages do not drag down trust in the rest of the site.
+    robots: { index: false, follow: true },
     openGraph: {
       title: page.title,
       description: page.description,

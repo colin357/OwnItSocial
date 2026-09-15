@@ -8,6 +8,7 @@ import {
 } from '@/lib/seo/structured-data';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/best-marketing-agencies-miami' },
   title: 'Best Marketing Agencies in Miami 2025 | Independent Comparison',
   description: 'Unbiased comparison of the top marketing agencies in Miami, FL. Compare pricing, services, and reviews to find the perfect fit for your business.',
   keywords: 'best marketing agencies miami, top marketing agencies miami, miami marketing companies, marketing firms miami',

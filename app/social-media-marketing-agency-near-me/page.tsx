@@ -9,6 +9,7 @@ import {
 } from '@/lib/seo/structured-data';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/social-media-marketing-agency-near-me' },
   title: 'Social Media Marketing Agency Near Me | How to Choose the Right Social Media Company (2026)',
   description:
     'Find the right social media marketing agency near you. Compare services, pricing ($2K–$15K/mo), platform strategies, and evaluation frameworks for social media marketing firms near me.',

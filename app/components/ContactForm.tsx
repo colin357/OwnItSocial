@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { getAiSource } from './AiReferralTracker';
+import { HEARD_FROM_OPTIONS } from './heardFrom';
 
 declare global {
   function gtag(...args: unknown[]): void;
@@ -35,7 +37,8 @@ export default function ContactForm({ variant = 'card' }: ContactFormProps) {
     company: '',
     phone: '',
     email: '',
-    revenue: ''
+    revenue: '',
+    heardFrom: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
@@ -51,7 +54,9 @@ export default function ContactForm({ variant = 'card' }: ContactFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        // aiSource is set by AiReferralTracker when the visit came from an
+        // AI assistant; heardFrom is the visitor's own answer.
+        body: JSON.stringify({ ...formData, aiSource: getAiSource() }),
       });
 
       if (response.ok) {
@@ -65,7 +70,7 @@ export default function ContactForm({ variant = 'card' }: ContactFormProps) {
           oaiq('measure', 'registration_completed', { type: 'customer_action', amount: 0, currency: 'USD' });
         }
         setSubmitMessage('Thanks for reaching out! We\'ll be in touch soon.');
-        setFormData({ name: '', company: '', phone: '', email: '', revenue: '' });
+        setFormData({ name: '', company: '', phone: '', email: '', revenue: '', heardFrom: '' });
       } else {
         setSubmitMessage('Something went wrong. Please try again.');
       }
@@ -119,6 +124,26 @@ export default function ContactForm({ variant = 'card' }: ContactFormProps) {
             {REVENUE_OPTIONS.map((option) => (
               <option key={option.value} value={option.value}>
                 {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="oi-form__field">
+          <label className="oi-form__label" htmlFor="ed-heardFrom">
+            How did you hear about us? (optional)
+          </label>
+          <select
+            id="ed-heardFrom"
+            name="heardFrom"
+            value={formData.heardFrom}
+            onChange={handleChange}
+            className="oi-form__input"
+          >
+            <option value="">Select one</option>
+            {HEARD_FROM_OPTIONS.map((option) => (
+              <option key={option} value={option}>
+                {option}
               </option>
             ))}
           </select>
@@ -226,6 +251,24 @@ export default function ContactForm({ variant = 'card' }: ContactFormProps) {
             <option value="$500K - $1M">$500K – $1M</option>
             <option value="$1M - $5M">$1M – $5M</option>
             <option value="$5M+">$5M+</option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="heardFrom" className="block text-sm font-semibold text-gray-900 mb-2">
+            How did you hear about us? <span className="font-normal text-gray-500">(optional)</span>
+          </label>
+          <select
+            id="heardFrom"
+            name="heardFrom"
+            value={formData.heardFrom}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent outline-none transition text-gray-900 bg-white"
+          >
+            <option value="">Select one</option>
+            {HEARD_FROM_OPTIONS.map((option) => (
+              <option key={option} value={option}>{option}</option>
+            ))}
           </select>
         </div>
 

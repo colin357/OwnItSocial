@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useBooking } from '../components/home/Booking';
 import { EMAIL_CONSENT, SMS_CONSENT } from './consent';
 import { trackBookingComplete } from '../cmo/pixel';
+import { getAiSource } from '../components/AiReferralTracker';
+import { HEARD_FROM_OPTIONS } from '../components/heardFrom';
 
 // ---------------------------------------------------------------------------
 // What the modal shows on /keepplaying, in place of the calendar embed.
@@ -22,7 +24,7 @@ const LABEL =
 
 export default function LeadForm() {
   const { close } = useBooking();
-  const [form, setForm] = useState({ name: '', email: '', phone: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', heardFrom: '' });
   const [smsOptIn, setSmsOptIn] = useState(false);
   const [emailOptIn, setEmailOptIn] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -51,7 +53,7 @@ export default function LeadForm() {
       const res = await fetch('/api/keep-playing-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, smsOptIn, emailOptIn }),
+        body: JSON.stringify({ ...form, smsOptIn, emailOptIn, aiSource: getAiSource() }),
       });
 
       if (res.ok) {
@@ -67,7 +69,7 @@ export default function LeadForm() {
     }
   }
 
-  function change(e: React.ChangeEvent<HTMLInputElement>) {
+  function change(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
@@ -163,6 +165,26 @@ export default function LeadForm() {
           className={`mt-2 ${FIELD}`}
           placeholder="(555) 123-4567"
         />
+      </div>
+
+      <div>
+        <label htmlFor="kp-heardFrom" className={LABEL}>
+          How did you hear about us? <span className="normal-case tracking-normal">(optional)</span>
+        </label>
+        <select
+          id="kp-heardFrom"
+          name="heardFrom"
+          value={form.heardFrom}
+          onChange={change}
+          className={`mt-2 ${FIELD}`}
+        >
+          <option value="">Select one</option>
+          {HEARD_FROM_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
       </div>
 
       {/* Both unchecked by default — a pre-ticked consent box is not consent. */}

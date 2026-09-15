@@ -9,6 +9,7 @@ import {
 } from '@/lib/seo/structured-data';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/ppc-digital-marketing-agency' },
   title: 'PPC Digital Marketing Agency | Paid Media Advertising Agency Guide (2026)',
   description:
     'The definitive guide to choosing a PPC digital marketing agency. Includes channel strategies, budget frameworks, KPI formulas, account structure best practices, and what to demand from any paid media advertising agency.',

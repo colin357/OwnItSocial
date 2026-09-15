@@ -9,6 +9,7 @@ import {
 } from 'react';
 import BookingEmbed from '../../cmo/BookingEmbed';
 import { trackBookingClick } from '../../cmo/pixel';
+import { getAiSource } from '../AiReferralTracker';
 
 // The page drives exactly one action, and every CTA on it opens this single
 // modal. By default that modal is the same LeadConnector calendar the /cmo
@@ -49,7 +50,10 @@ export function BookingProvider({
   const [isOpen, setIsOpen] = useState(false);
 
   const open = useCallback(() => {
-    trackBookingClick(source); // Meta Pixel intent event
+    // Meta Pixel intent event. If the visit came from an AI assistant the
+    // source carries it ("homepage via ChatGPT") so those leads can be counted.
+    const ai = getAiSource();
+    trackBookingClick(ai ? `${source} via ${ai}` : source);
     setIsOpen(true);
   }, [source]);
   const close = useCallback(() => setIsOpen(false), []);

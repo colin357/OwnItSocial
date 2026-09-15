@@ -1,9 +1,15 @@
 import { Metadata } from 'next';
+import {
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+  getStructuredDataScript,
+} from '@/lib/seo/structured-data';
 import Link from 'next/link';
 import Image from 'next/image';
 import { sarasotaCompetitors, ownItSocial } from '@/app/data/competitors';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/best-marketing-agencies-sarasota' },
   title: 'Best Marketing Agencies in Sarasota, FL 2025 | Independent Comparison',
   description: 'Unbiased comparison of the top marketing agencies in Sarasota, Florida. Compare pricing, services, and reviews to find the perfect fit for your business.',
   keywords: 'best marketing agencies sarasota, top marketing agencies sarasota fl, sarasota marketing companies, marketing firms sarasota florida',
@@ -12,7 +18,29 @@ export const metadata: Metadata = {
 export default function BestMarketingAgenciesSarasotaPage() {
   const allAgencies = [ownItSocial, ...sarasotaCompetitors];
 
+  const articleSchema = generateArticleSchema({
+    headline: 'Best Marketing Agencies in Sarasota, FL 2025',
+    description: 'Unbiased comparison of the top marketing agencies in Sarasota, Florida. Compare pricing, services, and reviews to find the perfect fit for your business.',
+    author: 'Colin Hickmon',
+    datePublished: '2025-12-29',
+    image: '/og-image.png',
+  });
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Articles', url: '/articles' },
+    { name: 'Best Marketing Agencies in Sarasota, FL 2025', url: '/best-marketing-agencies-sarasota' },
+  ]);
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: getStructuredDataScript(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: getStructuredDataScript(breadcrumbSchema) }}
+      />
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
@@ -359,5 +387,6 @@ export default function BestMarketingAgenciesSarasotaPage() {
         </div>
       </footer>
     </div>
+    </>
   );
 }

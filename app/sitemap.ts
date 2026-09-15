@@ -1,90 +1,79 @@
 import { MetadataRoute } from 'next';
-import { ContentGenerator } from '@/lib/seo/content-generator';
-import { DataSourceManager, seoTemplates } from '@/lib/seo/data-sources';
 import { seoConfig } from '@/lib/seo/config';
 import { getAllCitySlugs } from '@/app/data/cities';
 import { getAllIndustrySlugs } from '@/app/data/industries';
 
+// Dates are the last time the page's copy materially changed. Update the date
+// when you edit a page; do not stamp everything with "now" on every build, or
+// crawlers learn to ignore the field.
+const SITE_UPDATED = '2026-09-15';
+
+type Entry = {
+  url: string;
+  priority: number;
+  changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
+  lastModified?: string;
+};
+
+const CORE: Entry[] = [
+  { url: '/', priority: 1, changeFrequency: 'weekly' },
+  { url: '/loan-officer-marketing', priority: 0.95, changeFrequency: 'weekly' },
+  { url: '/loan-officer-marketing-agencies', priority: 0.9, changeFrequency: 'monthly' },
+  { url: '/real-estate-marketing', priority: 0.8, changeFrequency: 'monthly' },
+  { url: '/locations', priority: 0.7, changeFrequency: 'monthly' },
+  { url: '/articles', priority: 0.7, changeFrequency: 'monthly' },
+  { url: '/llms.txt', priority: 0.3, changeFrequency: 'monthly' },
+];
+
+const GUIDES: Entry[] = [
+  '/best-marketing-agencies-miami',
+  '/best-marketing-agencies-tampa',
+  '/best-marketing-agencies-sarasota',
+  '/best-marketing-agencies-naples',
+  '/best-marketing-agencies-chicago',
+  '/best-marketing-agencies-new-york',
+  '/best-marketing-agencies-los-angeles',
+  '/best-marketing-agencies-dallas',
+  '/marketing-agency-miami',
+  '/digital-marketing-miami',
+  '/top-marketing-agencies',
+  '/ppc-digital-marketing-agency',
+  '/seo-optimization-miami-fl',
+  '/orlando-seo-company',
+  '/social-media-marketing-agency-near-me',
+  '/social-media-marketing-dallas-tx',
+  '/lead-generation-for-real-estate-agents',
+].map((url) => ({
+  url,
+  priority: 0.6,
+  changeFrequency: 'monthly' as const,
+  lastModified: '2025-12-29',
+}));
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = seoConfig.siteUrl;
-  const entries: MetadataRoute.Sitemap = [];
 
-  // Add homepage
-  entries.push({
-    url: baseUrl,
-    lastModified: new Date(),
-    changeFrequency: 'daily',
-    priority: 1,
-  });
+  const entries: MetadataRoute.Sitemap = [...CORE, ...GUIDES].map((page) => ({
+    url: `${baseUrl}${page.url === '/' ? '' : page.url}`,
+    lastModified: new Date(page.lastModified ?? SITE_UPDATED),
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
+  }));
 
-  // Add static pages
-  const staticPages = [
-    { url: '/dashboard', priority: 0.8, changeFrequency: 'daily' as const },
-    { url: '/articles', priority: 0.7, changeFrequency: 'weekly' as const },
-    { url: '/locations', priority: 0.7, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-miami', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-tampa', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-sarasota', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-naples', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-chicago', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-new-york', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-los-angeles', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/best-marketing-agencies-dallas', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/marketing-agency-miami', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/digital-marketing-miami', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/top-marketing-agencies', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/ppc-digital-marketing-agency', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/seo-optimization-miami-fl', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/orlando-seo-company', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/social-media-marketing-agency-near-me', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/social-media-marketing-dallas-tx', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/lead-generation-for-real-estate-agents', priority: 0.8, changeFrequency: 'weekly' as const },
-  ];
-
-  for (const page of staticPages) {
-    entries.push({
-      url: `${baseUrl}${page.url}`,
-      lastModified: new Date(),
-      changeFrequency: page.changeFrequency,
-      priority: page.priority,
-    });
-  }
-
-  // Add all industry/city combination pages
-  const cities = getAllCitySlugs();
-  const industries = getAllIndustrySlugs();
-
-  for (const industry of industries) {
-    for (const city of cities) {
+  // Industry × city pages.
+  for (const industry of getAllIndustrySlugs()) {
+    for (const city of getAllCitySlugs()) {
       entries.push({
         url: `${baseUrl}/${industry}/${city}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.9, // High priority for local service pages
+        lastModified: new Date('2025-12-29'),
+        changeFrequency: 'monthly',
+        priority: industry === 'loan-officer-marketing' ? 0.8 : 0.7,
       });
     }
   }
 
-  // Add all generated SEO pages
-  const templateIds = DataSourceManager.getTemplateIds();
-
-  for (const templateId of templateIds) {
-    const template = seoTemplates[templateId];
-    const data = DataSourceManager.getData(templateId);
-
-    if (template && data) {
-      const pages = ContentGenerator.generatePages(template, data);
-
-      for (const page of pages) {
-        entries.push({
-          url: `${baseUrl}/seo/${page.slug}`,
-          lastModified: page.lastModified || new Date(),
-          changeFrequency: 'weekly',
-          priority: 0.7,
-        });
-      }
-    }
-  }
+  // The /seo/[slug] template pages are sample content and are noindex until
+  // they carry real copy, so they are deliberately not listed here.
 
   return entries;
 }

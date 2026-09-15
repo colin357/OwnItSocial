@@ -22,7 +22,7 @@ import {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, smsOptIn, emailOptIn } = body;
+    const { name, email, phone, smsOptIn, emailOptIn, heardFrom, aiSource } = body;
 
     if (!name || !email || !phone) {
       return NextResponse.json(
@@ -62,6 +62,8 @@ export async function POST(request: Request) {
         emailOptIn: true,
         emailConsentText: EMAIL_CONSENT,
         source: '/keepplaying',
+        heardFrom: heardFrom || null,
+        aiSource: aiSource || null,
       }),
     );
 
@@ -88,6 +90,8 @@ export async function POST(request: Request) {
       `Email: ${email}\n` +
       `Phone: ${phone}\n` +
       `Opt-in: SMS + email (v${CONSENT_VERSION})\n` +
+      (heardFrom ? `Heard from: ${heardFrom}\n` : '') +
+      (aiSource ? `Arrived via: ${aiSource}\n` : '') +
       `Time: ${submittedAt}`;
 
     const twilioResponse = await fetch(

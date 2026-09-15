@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, company, phone, email, revenue } = body;
+    const { name, company, phone, email, revenue, heardFrom, aiSource } = body;
 
     // Validate required fields
     if (!name || !company || !phone || !email || !revenue) {
@@ -32,7 +32,15 @@ export async function POST(request: Request) {
     }
 
     // Create SMS message with lead info
-    const message = `🚀 New Lead from OwnItSocial.com!\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nRevenue: ${revenue}`;
+    // Attribution: the visitor's own answer, plus the AI assistant the browser
+    // arrived from when the referrer survived. Either one means an AI lead.
+    const sourceLine =
+      [heardFrom && `Heard from: ${heardFrom}`, aiSource && `Arrived via: ${aiSource}`]
+        .filter(Boolean)
+        .join('\n') || 'Source: not stated';
+    console.log('contact lead', JSON.stringify({ name, company, email, heardFrom, aiSource }));
+
+    const message = `🚀 New Lead from OwnItSocial.com!\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nRevenue: ${revenue}\n${sourceLine}`;
 
     console.log('Sending SMS via Twilio...');
 

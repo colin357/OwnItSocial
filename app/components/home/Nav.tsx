@@ -13,7 +13,7 @@ const LINKS = [
   { label: 'Work', href: '#work' },
   { label: 'Portal', href: '#portal' },
   { label: 'Results', href: '#results' },
-  { label: 'Articles', href: '/articles' },
+  { label: 'Loan officers', href: '/loan-officer-marketing' },
 ];
 
 type Props = {
