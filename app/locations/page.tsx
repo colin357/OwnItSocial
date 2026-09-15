@@ -5,6 +5,7 @@ import { cities } from '@/app/data/cities';
 import { industries } from '@/app/data/industries';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/locations' },
   title: 'Service Areas - Florida Marketing Agency | Own It Social',
   description: 'We provide real estate and loan officer marketing services across Florida. Find your city and learn how we can help you dominate your local market.',
   keywords: 'marketing services Florida, real estate marketing, loan officer marketing, service areas',

@@ -9,6 +9,7 @@ import {
 import ContactForm from '@/app/components/ContactForm';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/social-media-marketing-dallas-tx' },
   title: 'Social Media Marketing Dallas TX | Content Marketing Dallas | Social Media Dallas Guide 2026',
   description:
     'Expert social media marketing in Dallas TX. Comprehensive content marketing Dallas guide covering strategy, paid social, and industry-specific approaches for the DFW metroplex. Social media marketing Texas businesses trust.',

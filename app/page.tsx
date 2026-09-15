@@ -9,9 +9,14 @@ import PortalPreview from './components/home/PortalPreview';
 import Reveal from './components/home/Reveal';
 import ServiceRail from './components/home/ServiceRail';
 import WorkGallery from './components/home/WorkGallery';
+import FaqSection from './components/home/FaqSection';
+import Footer from './components/home/Footer';
+import { HOMEPAGE_FAQS } from './data/loan-officer-faqs';
 import {
+  generateFAQSchema,
   generateOrganizationSchema,
   generateLocalBusinessSchema,
+  generateReviewSchema,
   getStructuredDataScript,
 } from '@/lib/seo/structured-data';
 
@@ -74,34 +79,26 @@ const ROLES = [
   { role: 'Designer', work: 'Flyers and co-branded material' },
 ];
 
-const FOOTER_LINKS = [
-  { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
-  { label: 'Portal', href: '#portal' },
-  { label: 'Results', href: '#results' },
-  { label: 'Articles', href: '/articles' },
-  { label: 'Locations', href: '/locations' },
-];
-
 export default function Home() {
-  const organizationSchema = generateOrganizationSchema({
-    name: 'Own It Social',
-    url: 'https://ownitsocial.com',
-    logo: 'https://ownitsocial.com/OWN IT SOCIAL.png',
-    sameAs: ['https://twitter.com/ownitsocial'],
-  });
+  // Entity data for search engines and AI assistants. Defaults (description,
+  // founder, contact, sameAs, knowsAbout) live in lib/seo/config.ts.
+  const organizationSchema = generateOrganizationSchema();
 
   const localBusinessSchema = generateLocalBusinessSchema({
     name: 'Own It Social',
-    address: {
-      street: '',
-      city: 'Miami',
-      state: 'FL',
-      postalCode: '',
-      country: 'US',
-    },
+    address: { city: 'Miami', state: 'FL', country: 'US' },
     priceRange: '$$',
   });
+
+  const faqSchema = generateFAQSchema(HOMEPAGE_FAQS);
+
+  // The three verbatim Google reviews above, as Review markup.
+  const reviewSchemas = generateReviewSchema(
+    TESTIMONIALS.filter((t) => t.quote).map((t) => ({
+      author: t.name,
+      body: t.quote,
+    })),
+  );
 
   return (
     <BookingProvider>
@@ -113,6 +110,17 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: getStructuredDataScript(localBusinessSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: getStructuredDataScript(faqSchema) }}
+      />
+      {reviewSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: getStructuredDataScript(schema) }}
+        />
+      ))}
       {/* Arms the scroll reveal only when JS is available, before first paint. */}
       <script
         dangerouslySetInnerHTML={{
@@ -299,7 +307,7 @@ export default function Home() {
                     Get your free strategy session
                   </BookButton>
                   <Link
-                    href="/cmo"
+                    href="/loan-officer-marketing"
                     className="font-display text-[13px] font-bold uppercase tracking-[0.12em] text-white underline decoration-white/40 underline-offset-8 transition-colors hover:text-brand-light"
                   >
                     See everything included
@@ -406,6 +414,19 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── FAQ. The same copy is emitted as FAQPage JSON-LD above. ── */}
+        <FaqSection
+          heading={
+            <>
+              Common
+              <br />
+              questions
+            </>
+          }
+          intro="The short version. The full list of what loan officers ask us is on the loan officer marketing page."
+          faqs={HOMEPAGE_FAQS}
+        />
+
         {/* ── Closing CTA ── */}
         <section className="bg-brand px-5 py-24 text-white sm:px-8 sm:py-32">
           <div className="mx-auto max-w-[1400px]">
@@ -426,42 +447,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Footer ── */}
-        <footer className="bg-ink px-5 pb-12 pt-20 text-white sm:px-8">
-          <div className="mx-auto max-w-[1400px]">
-            <div className="flex flex-col gap-12 border-b border-white/15 pb-12 lg:flex-row lg:items-start lg:justify-between">
-              <span className="font-display text-[46px] uppercase leading-none tracking-[-0.03em] sm:text-[72px] lg:text-[96px]">
-                <span className="font-black">Own It</span>{' '}
-                <span className="font-semibold text-white/55">Social</span>
-              </span>
-              <nav
-                className="grid grid-cols-2 gap-x-12 gap-y-3 sm:grid-cols-3"
-                aria-label="Footer"
-              >
-                {FOOTER_LINKS.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="font-display text-[13px] font-bold uppercase tracking-[0.1em] text-white/65 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
-            <div className="flex flex-col gap-3 pt-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-[13px] text-white/50">
-                &copy; {new Date().getFullYear()} Own It Social
-              </p>
-              <a
-                href="mailto:colin@ownitsocial.com"
-                className="text-[13px] text-white/50 transition-colors hover:text-white"
-              >
-                colin@ownitsocial.com
-              </a>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </BookingProvider>
   );

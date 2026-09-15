@@ -79,10 +79,8 @@ export default async function IndustryCityPage({ params }: PageProps) {
   const localBusinessSchema = generateLocalBusinessSchema({
     name: `Own It Social - ${industry.title} in ${city.name}`,
     address: {
-      street: '',
       city: city.name,
       state: city.state,
-      postalCode: '',
       country: 'US',
     },
     priceRange: '$$',

@@ -10,6 +10,7 @@ import {
 import ContactForm from '@/app/components/ContactForm';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/seo-optimization-miami-fl' },
   title: 'SEO Optimization Miami FL | Florida Search Engine Optimization Company',
   description:
     'Comprehensive guide to SEO optimization in Miami, FL. Learn how a Florida search engine optimization company approaches local SEO, technical audits, content strategy, and link building for Miami businesses.',

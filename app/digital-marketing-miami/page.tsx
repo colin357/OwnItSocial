@@ -6,6 +6,7 @@ import { miamiMarketData, getServiceBySlug } from '@/app/data/miami-services';
 const service = getServiceBySlug('digital-marketing')!;
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/digital-marketing-miami' },
   title: service.metaTitle,
   description: service.metaDescription,
   keywords: 'digital marketing miami, miami digital marketing, digital marketing agency miami, online marketing miami, internet marketing miami',

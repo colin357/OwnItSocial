@@ -111,22 +111,11 @@ const ROLES = [
 ];
 
 export default function KeepPlayingPage() {
-  const organizationSchema = generateOrganizationSchema({
-    name: 'Own It Social',
-    url: 'https://ownitsocial.com',
-    logo: 'https://ownitsocial.com/OWN IT SOCIAL.png',
-    sameAs: ['https://twitter.com/ownitsocial'],
-  });
+  const organizationSchema = generateOrganizationSchema();
 
   const localBusinessSchema = generateLocalBusinessSchema({
     name: 'Own It Social — marketing for Fairway loan officers',
-    address: {
-      street: '',
-      city: 'Miami',
-      state: 'FL',
-      postalCode: '',
-      country: 'US',
-    },
+    address: { city: 'Miami', state: 'FL', country: 'US' },
     priceRange: '$$',
   });
 

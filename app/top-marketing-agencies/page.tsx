@@ -9,6 +9,7 @@ import {
 } from '@/lib/seo/structured-data';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/top-marketing-agencies' },
   title:
     'Top Marketing Agencies & Firms (2026 Buyer\'s Guide) | PPC, NYC & National',
   description:

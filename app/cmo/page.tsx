@@ -3,8 +3,9 @@ import Image from 'next/image';
 import CtaButton from './CtaButton';
 import { BookingProvider } from './BookingModal';
 
-// Paid-traffic campaign page — must NOT be indexed. This overrides the
-// site-wide `index: true` / canonical set in app/layout.tsx.
+// Paid-traffic campaign page — must NOT be indexed. The public, indexable
+// version of this offer lives at /loan-officer-marketing, which is why the
+// canonical points there.
 export const metadata: Metadata = {
   title: 'Your New CMO — More Buyers in Your Pipeline, Consistently | Own It Social',
   description:
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     nocache: true,
     googleBot: { index: false, follow: false },
   },
-  alternates: { canonical: 'https://ownitsocial.com/cmo' },
+  alternates: { canonical: 'https://ownitsocial.com/loan-officer-marketing' },
   openGraph: {
     title: 'Your New CMO — More Buyers in Your Pipeline, Consistently',
     description:

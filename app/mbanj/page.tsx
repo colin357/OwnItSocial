@@ -10,6 +10,7 @@ import {
 } from '@/lib/seo/structured-data';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/mbanj' },
   title: 'NJMBA Regional Conference Special - Own It Social | $995/mo Marketing for Loan Officers',
   description: 'Exclusive NJMBA Regional Conference offer: Complete done-for-you marketing for loan officers at $995/mo (normally $1,500/mo). Content, CRM follow-ups, and lead generation.',
   keywords: [

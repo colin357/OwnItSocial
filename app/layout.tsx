@@ -4,6 +4,7 @@ import { Archivo, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import AiReferralTracker from "./components/AiReferralTracker";
 
 // One family for the whole site. The variable is set on <html> and globals.css
 // points `body` at it, so every page picks it up — `font-montserrat` in
@@ -91,11 +92,18 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: 'https://ownitsocial.com',
-  },
+  // No site-wide canonical: each page sets its own. A shared one here made
+  // every page without an override claim to be a copy of the homepage.
+  //
+  // NOTE FOR COLIN: paste the verification tokens below. Google Search Console
+  // → Settings → Ownership verification → HTML tag (the `content` value only).
+  // Bing Webmaster Tools → Settings → Verify ownership → Meta tag. ChatGPT
+  // search is built on Bing's index, so Bing matters as much as Google here.
   verification: {
-    google: '', // Add your Google Search Console verification code
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
   },
 };
 
@@ -132,7 +140,7 @@ export default function RootLayout({
           fbq('track', 'PageView');`}
         </Script>
         <Script id="openai-pixel" strategy="afterInteractive">
-          {`!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Q3EEHmNNmitscStzPbzSGs",debug:true});`}
+          {`!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Q3EEHmNNmitscStzPbzSGs",debug:false});`}
         </Script>
       </head>
       <body>
@@ -144,6 +152,7 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <AiReferralTracker />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -9,6 +9,7 @@ import {
 } from '@/lib/seo/structured-data';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/lead-generation-for-real-estate-agents' },
   title: 'Lead Generation for Real Estate Agents: The Complete System (2026)',
   description:
     'Comprehensive lead generation guide for real estate agents. Covers lead sources with cost benchmarks, nurture sequences, conversion frameworks, CRM setup, and the math behind building a predictable pipeline.',

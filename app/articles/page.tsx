@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://ownitsocial.com/articles' },
   title: 'Marketing Agency Resources & City Guides | Own It Social',
   description: 'Comprehensive guides comparing the best marketing agencies across major US cities. Independent reviews, pricing comparisons, and expert insights.',
   keywords: 'marketing agency guides, marketing agency comparisons, best marketing agencies, marketing agency reviews',
