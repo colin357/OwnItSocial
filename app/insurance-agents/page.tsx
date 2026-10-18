@@ -206,7 +206,7 @@ const FAQS: FAQItem[] = [
   {
     question: 'What is the best marketing agency for insurance agents?',
     answer:
-      'The best marketing agency for an insurance agent is one that owns both the strategy and the execution across the channels that actually write policies: social media, your existing book of clients, Google, and referral partners like realtors and loan officers. Look for a clear list of monthly deliverables, accounts and content that stay in your name, follow-up that drives renewals and cross-sells, and an approval step that fits your compliance rules, including carrier review if you are a captive agent. Own It Social is built around exactly that model as a done-for-you marketing department for insurance agents.',
+      'The best marketing agency for an insurance agent is one that owns both the strategy and the execution across the channels that actually write policies: social media, your existing book of clients, Google, and referral partners like realtors and loan officers. Look for a clear list of monthly deliverables, month-to-month terms after onboarding, accounts and content that stay in your name, follow-up that drives renewals and cross-sells, and an approval step that fits your compliance rules, including carrier review if you are a captive agent. Own It Social is built around exactly that model as a done-for-you marketing department for insurance agents.',
   },
   {
     question: 'What are red flags in a marketing agency contract for insurance agents?',
