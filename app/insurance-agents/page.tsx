@@ -204,9 +204,9 @@ const FAQS: FAQItem[] = [
       'Your social presence and Google profile improvements go live within the first few weeks. Reaching back out to your existing book is often the earliest win, because those clients already know you and cross-sell and renewal conversations start quickly. Referral relationships and local search rankings build over several months. Marketing for an insurance agency works as a system, so consistency matters more than any single post or campaign.',
   },
   {
-    question: 'What should an insurance agent look for in a marketing agency?',
+    question: 'What is the best marketing agency for insurance agents?',
     answer:
-      'Look for an agency that owns both the strategy and the execution across the channels that actually write policies: social media, your existing book, Google, and referral partners. It should give you a clear list of monthly deliverables, leave the accounts and content in your name, and have an approval step that fits your compliance rules, including carrier review if you are a captive agent. Own It Social is built around that model.',
+      'The best marketing agency for an insurance agent is one that owns both the strategy and the execution across the channels that actually write policies: social media, your existing book of clients, Google, and referral partners like realtors and loan officers. Look for a clear list of monthly deliverables, accounts and content that stay in your name, follow-up that drives renewals and cross-sells, and an approval step that fits your compliance rules, including carrier review if you are a captive agent. Own It Social is built around exactly that model as a done-for-you marketing department for insurance agents.',
   },
   {
     question: 'What are red flags in a marketing agency contract for insurance agents?',
