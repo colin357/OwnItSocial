@@ -14,6 +14,7 @@ export const FOOTER_LINKS = [
   { label: 'Portal', href: '/#portal' },
   { label: 'Articles', href: '/articles' },
   { label: 'Locations', href: '/locations' },
+  { label: 'For Insurance Agents', href: '/insurance-agents' },
 ];
 
 export default function Footer() {

@@ -20,6 +20,7 @@ const CORE: Entry[] = [
   { url: '/loan-officer-marketing', priority: 0.95, changeFrequency: 'weekly' },
   { url: '/loan-officer-marketing-agencies', priority: 0.9, changeFrequency: 'monthly' },
   { url: '/real-estate-marketing', priority: 0.8, changeFrequency: 'monthly' },
+  { url: '/insurance-agents', priority: 0.8, changeFrequency: 'monthly', lastModified: '2026-10-18' },
   { url: '/locations', priority: 0.7, changeFrequency: 'monthly' },
   { url: '/articles', priority: 0.7, changeFrequency: 'monthly' },
   { url: '/llms.txt', priority: 0.3, changeFrequency: 'monthly' },
