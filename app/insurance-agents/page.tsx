@@ -3,6 +3,7 @@ import { BookingProvider } from '../components/home/Booking';
 import BookButton from '../components/home/BookButton';
 import Hero from '../components/home/Hero';
 import Nav from '../components/home/Nav';
+import PortalPreview from '../components/home/PortalPreview';
 import Reveal from '../components/home/Reveal';
 import ServiceRail, { type Service } from '../components/home/ServiceRail';
 import FaqSection from '../components/home/FaqSection';
@@ -24,7 +25,6 @@ import {
 // Deliberately left out:
 //   - Client logos, testimonials, and the work rail. Those are loan officer
 //     clients and loan officer content, so none of it is reused here.
-//   - The portal preview. Its screenshots show a mortgage content calendar.
 //   - Organization and LocalBusiness schema. The only JSON-LD on this page is
 //     the FAQPage markup for the FAQ section.
 //   - Named CRMs and named carriers.
@@ -64,6 +64,7 @@ export const metadata: Metadata = {
 const NAV_LINKS = [
   { label: 'Why us', href: '#why' },
   { label: 'Services', href: '#services' },
+  { label: 'Portal', href: '#portal' },
   { label: 'Compliance', href: '#compliance' },
   { label: 'FAQ', href: '#faq' },
 ];
@@ -313,6 +314,33 @@ export default function InsuranceAgentsPage() {
             <Reveal delay={120} className="mt-14">
               <ServiceRail services={INSURANCE_SERVICES} />
             </Reveal>
+          </div>
+        </section>
+
+        {/* ── The client portal, same component as the homepage ── */}
+        <section
+          id="portal"
+          className="scroll-mt-24 border-t border-line px-5 py-20 sm:px-8 sm:py-28"
+        >
+          <div className="mx-auto max-w-[1400px]">
+            <Reveal>
+              <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+                <h2 className="max-w-[14ch] font-display text-[42px] font-black uppercase leading-[0.9] tracking-[-0.02em] sm:text-[64px] lg:text-[76px]">
+                  Your marketing,
+                  <br />
+                  at a glance
+                </h2>
+                <p className="max-w-sm text-[17px] leading-[1.6] text-muted sm:text-[18px]">
+                  One portal shows what is drafted, what is scheduled, and what
+                  already went out. Review a full month of content between
+                  appointments.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="mx-auto mt-14 max-w-5xl">
+              <PortalPreview />
+            </div>
           </div>
         </section>
 
