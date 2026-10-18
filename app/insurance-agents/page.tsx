@@ -223,9 +223,9 @@ export default function InsuranceAgentsPage() {
           eyebrow="For insurance agents"
           headline={
             <>
-              You write the policies.
+              You cover them.
               <br />
-              We grow the book.
+              We cover you.
             </>
           }
           body="We create and post your social content, keep your Google Business Profile working, and run automated follow-up on every quote and renewal, so new business keeps coming in while you take care of your clients."
