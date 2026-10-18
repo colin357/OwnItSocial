@@ -262,7 +262,26 @@ export default function InsuranceAgentsPage() {
               </div>
             </Reveal>
 
-            <div className="mt-20 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+            {/* Intro for the grid below, so it reads as "problems we fix"
+                rather than a list of unexplained headings. */}
+            <Reveal>
+              <div className="mt-20 flex flex-col gap-6 border-t border-line pt-12 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="font-display text-[12px] font-bold uppercase tracking-[0.14em] text-brand">
+                    Sound familiar?
+                  </p>
+                  <h3 className="mt-5 max-w-[18ch] font-display text-[32px] font-black uppercase leading-[0.92] tracking-[-0.02em] sm:text-[42px] lg:text-[48px]">
+                    Six things holding most agencies back
+                  </h3>
+                </div>
+                <p className="max-w-sm text-[17px] leading-[1.6] text-muted sm:text-[18px] md:text-right">
+                  We hear these on almost every first call with an agent. Each
+                  card names the problem, then how we fix it for you.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
               {PAIN_POINTS.map((item, i) => (
                 <Reveal key={item.title} delay={(i % 3) * 90} className="bg-white">
                   <div className="flex h-full flex-col bg-white p-8 sm:p-10">
