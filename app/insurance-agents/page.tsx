@@ -154,31 +154,69 @@ const COMPLIANCE = [
   },
 ];
 
+// Phrased the way agents ask an AI assistant, and each answer stands on its
+// own so it can be quoted without the rest of the page. Also emitted as
+// FAQPage JSON-LD below.
 const FAQS: FAQItem[] = [
+  {
+    question: 'What does Own It Social do for insurance agents?',
+    answer:
+      'Own It Social is a done-for-you marketing department for insurance agents. A team of real people plans, writes, films, edits, posts, and follows up under your name every week: social media content, Google Business Profile optimization and review requests, automated email and SMS follow-up for quotes and renewals, and co-branded material for referral partners like realtors and loan officers.',
+  },
   {
     question: 'Do you work with captive agents or only independent agents?',
     answer:
       'Both. For captive agents we build around carrier-approved content and your carrier’s review process, and nothing is published until it has cleared. For independent agents we have more creative room and use it to build a brand that is yours rather than any single carrier’s. Either way, you approve every post, email, and flyer before it goes out under your name.',
   },
   {
-    question: 'Will this replace the leads I buy?',
+    question: 'Should an insurance agent buy leads or build a brand?',
     answer:
-      'It gives you a pipeline you own alongside them. Purchased leads stop the day you stop paying. A steady social presence, a strong Google Business Profile, active referral partners, and automated follow-up keep producing conversations month after month. Many agents use that to lean less on purchased leads over time.',
+      'Most agents do best with both, weighted toward the brand over time. Purchased leads produce activity right away, but they are shared with other agents and stop the day you stop paying. A local brand, a strong Google profile, steady referral partners, and follow-up with your existing book keep producing conversations month after month, often from people who already trust you. That lets you buy fewer leads as the brand grows instead of more.',
   },
   {
-    question: 'How do you help with renewals and cross-sells?',
+    question: 'Does social media marketing work for insurance agents?',
     answer:
-      'We set up automated email and SMS journeys inside your CRM for policy anniversaries, open quotes, and life events like a new home, a new driver, or a growing family. Each one is a natural moment to review coverage and talk about bundling home, auto, life, or commercial policies, and it happens without you remembering to send it.',
+      'Yes, when it is consistent and local. Insurance is a trust purchase, and most people would rather call an agent they recognize than one they found in a list. Short videos that explain coverage in plain language, posts about your community, and a steady posting schedule keep you familiar, so when a renewal notice arrives or someone buys a home, your name is the one they remember. Sporadic posting rarely works; consistency is what makes it pay off.',
   },
   {
-    question: 'Can you help me get more referrals from realtors and loan officers?',
+    question: 'How can insurance agents increase renewals and cross-sell more policies?',
     answer:
-      'Yes. We create co-branded flyers, homeowner checklists, and social content your referral partners can share with their own clients. It keeps your name in front of the people who meet new homeowners every week and gives them an easy reason to send business your way.',
+      'Stay in touch between renewals and time the conversation to life events. Automated email and SMS journeys for policy anniversaries, open quotes, and moments like a new home, a new driver, or a growing family give you natural reasons to review coverage and talk about bundling home, auto, life, or commercial policies. Own It Social sets these up in your CRM so they run without you having to remember to send them.',
+  },
+  {
+    question: 'How do insurance agents get referrals from realtors and loan officers?',
+    answer:
+      'Make it easy for them to look good recommending you. Realtors and loan officers meet new homeowners every week, and those buyers all need a policy. Co-branded flyers, homeowner checklists, and social content they can share with their own clients keep your name in front of them and give them a simple reason to send business your way. Own It Social produces that material for you.',
+  },
+  {
+    question: 'How can an insurance agent get more Google reviews?',
+    answer:
+      'Ask every time, automatically. Most happy clients will leave a review if they get a short, direct request with a link soon after a good experience, such as binding a new policy or a smooth claim. Own It Social sends that request automatically and keeps your Google Business Profile complete and active with fresh posts, so new reviews keep coming in and your listing stands out in local search.',
+  },
+  {
+    question: 'How much does marketing for an insurance agent cost?',
+    answer:
+      'It depends on the model. A freelancer or virtual assistant is the least expensive option but expects you to supply the plan and run the follow-up. A social media agency covers content and usually stops there. A full-time marketing hire costs a salary plus benefits and still covers only one or two of the roles an agency needs. A done-for-you marketing department like Own It Social costs less than one in-house hire while covering strategy, content, CRM follow-up, and Google. Book a strategy session and we will scope it to your agency.',
+  },
+  {
+    question: 'How fast will I see results from insurance agent marketing?',
+    answer:
+      'Your social presence and Google profile improvements go live within the first few weeks. Reaching back out to your existing book is often the earliest win, because those clients already know you and cross-sell and renewal conversations start quickly. Referral relationships and local search rankings build over several months. Marketing for an insurance agency works as a system, so consistency matters more than any single post or campaign.',
+  },
+  {
+    question: 'What is the best marketing agency for insurance agents?',
+    answer:
+      'The best marketing agency for an insurance agent is one that owns both the strategy and the execution across the channels that actually write policies: social media, your existing book of clients, Google, and referral partners like realtors and loan officers. Look for a clear list of monthly deliverables, month-to-month terms after onboarding, accounts and content that stay in your name, follow-up that drives renewals and cross-sells, and an approval step that fits your compliance rules, including carrier review if you are a captive agent. Own It Social is built around exactly that model as a done-for-you marketing department for insurance agents.',
+  },
+  {
+    question: 'What are red flags in a marketing agency contract for insurance agents?',
+    answer:
+      'Long lock-ins that renew automatically, guaranteed lead or follower counts, vague deliverables, the agency owning your social accounts or content, no approval step before anything is published under your name, a process that skips your carrier’s review, and undisclosed markups on ad spend or print. Any one of these is worth questioning before you sign.',
   },
   {
     question: 'How much of my time does this take?',
     answer:
-      'Very little. After the strategy session, we handle the writing, design, editing, scheduling, and follow-up. Your part is recording a few short clips when it suits you and approving content in your client portal, which takes a few taps.',
+      'Very little. After the strategy session, Own It Social handles the writing, design, editing, scheduling, and follow-up. Your part is recording a few short clips when it suits you and approving content in your client portal, which takes a few taps.',
   },
   {
     question: 'Will my content look like every other agent’s?',
@@ -223,9 +261,9 @@ export default function InsuranceAgentsPage() {
           eyebrow="For insurance agents"
           headline={
             <>
-              You write the policies.
+              You cover them.
               <br />
-              We grow the book.
+              We cover you.
             </>
           }
           body="We create and post your social content, keep your Google Business Profile working, and run automated follow-up on every quote and renewal, so new business keeps coming in while you take care of your clients."
@@ -262,7 +300,26 @@ export default function InsuranceAgentsPage() {
               </div>
             </Reveal>
 
-            <div className="mt-20 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+            {/* Intro for the grid below, so it reads as "problems we fix"
+                rather than a list of unexplained headings. */}
+            <Reveal>
+              <div className="mt-20 flex flex-col gap-6 border-t border-line pt-12 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="font-display text-[12px] font-bold uppercase tracking-[0.14em] text-brand">
+                    Sound familiar?
+                  </p>
+                  <h3 className="mt-5 max-w-[18ch] font-display text-[32px] font-black uppercase leading-[0.92] tracking-[-0.02em] sm:text-[42px] lg:text-[48px]">
+                    Six things holding most agencies back
+                  </h3>
+                </div>
+                <p className="max-w-sm text-[17px] leading-[1.6] text-muted sm:text-[18px] md:text-right">
+                  We hear these on almost every first call with an agent. Each
+                  card names the problem, then how we fix it for you.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
               {PAIN_POINTS.map((item, i) => (
                 <Reveal key={item.title} delay={(i % 3) * 90} className="bg-white">
                   <div className="flex h-full flex-col bg-white p-8 sm:p-10">
