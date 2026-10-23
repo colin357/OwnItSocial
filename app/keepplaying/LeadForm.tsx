@@ -18,7 +18,8 @@ import { HEARD_FROM_OPTIONS } from '../components/heardFrom';
 //
 // `source` names the page the lead came from; it is what the SMS alert and the
 // consent log are labelled with. Defaults to keepplaying so this page's own use
-// is unchanged; /calendar passes its own.
+// is unchanged; /calendar passes its own. `emailPlaceholder` lets a page show
+// an address that looks like its audience's.
 // ---------------------------------------------------------------------------
 
 const FIELD =
@@ -26,7 +27,13 @@ const FIELD =
 const LABEL =
   'block font-display text-[11px] font-bold uppercase tracking-[0.12em] text-muted';
 
-export default function LeadForm({ source = 'keepplaying' }: { source?: string }) {
+export default function LeadForm({
+  source = 'keepplaying',
+  emailPlaceholder = 'you@yourbrokerage.com',
+}: {
+  source?: string;
+  emailPlaceholder?: string;
+}) {
   const { close } = useBooking();
   const [form, setForm] = useState({ name: '', email: '', phone: '', heardFrom: '' });
   const [smsOptIn, setSmsOptIn] = useState(false);
@@ -149,7 +156,7 @@ export default function LeadForm({ source = 'keepplaying' }: { source?: string }
           value={form.email}
           onChange={change}
           className={`mt-2 ${FIELD}`}
-          placeholder="you@fairwaymc.com"
+          placeholder={emailPlaceholder}
         />
       </div>
 

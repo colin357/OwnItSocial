@@ -18,7 +18,7 @@ import {
 
 // ---------------------------------------------------------------------------
 // /calendar — the landing page for Fairway loan officers we meet at the
-// Fairway Regional Meeting. It is /keepplaying with the event name swapped.
+// Fairway Regional Meeting. It shares its lead form with /keepplaying.
 //
 // It is deliberately the homepage with a Fairway frame around it: same nav,
 // hero, work rail, service rail, portal, roster, and reviews, re-addressed to
@@ -124,7 +124,7 @@ export default function FairwayRegionalMeetingPage() {
     // lead form instead of the calendar, so we capture the opt-ins before the
     // conversation starts.
     <BookingProvider
-      modal={<LeadForm source="fairway-regional-meeting" />}
+      modal={<LeadForm source="fairway-regional-meeting" emailPlaceholder="you@fairwaymc.com" />}
       title="Request your free strategy session"
       source="fairway-regional-meeting"
     >

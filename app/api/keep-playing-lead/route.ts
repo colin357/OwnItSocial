@@ -23,7 +23,7 @@ import {
 // Known lead sources, keyed by what LeadForm sends. Anything else falls back
 // to keepplaying rather than trusting a free-text label from the browser.
 const SOURCES = {
-  keepplaying: { path: '/keepplaying', label: '🏌️ Keep Playing lead' },
+  keepplaying: { path: '/keepplaying', label: '🏡 Real estate lead (/keepplaying)' },
   'fairway-regional-meeting': {
     path: '/calendar',
     label: '📅 Fairway Regional Meeting lead',
@@ -136,7 +136,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Keep Playing lead form error:', error);
+    console.error('Lead form error:', error);
     return NextResponse.json(
       { error: 'Failed to submit form' },
       { status: 500 },

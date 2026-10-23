@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { BookingProvider } from '../components/home/Booking';
 import BookButton from '../components/home/BookButton';
@@ -17,12 +16,12 @@ import {
 } from '@/lib/seo/structured-data';
 
 // ---------------------------------------------------------------------------
-// /keepplaying — the landing page for Fairway loan officers we meet at Keep
-// Playing, the event Own It Social sponsors.
+// /keepplaying — a landing page for real estate professionals: agents,
+// brokers, loan officers, and teams. The URL is kept so existing links and QR
+// codes still land here.
 //
-// It is deliberately the homepage with a Fairway frame around it: same nav,
-// hero, work rail, service rail, portal, roster, and reviews, re-addressed to
-// one audience. Everything is shared with the homepage components, so a design
+// It is deliberately the homepage re-addressed to that audience: same nav,
+// hero, work rail, service rail, portal, roster, and reviews. Everything is shared with the homepage components, so a design
 // change there lands here too — the only thing this file owns is the copy.
 //
 // No pricing here by design: like the homepage, every button on the page opens
@@ -30,14 +29,14 @@ import {
 // ---------------------------------------------------------------------------
 
 export const metadata: Metadata = {
-  title: 'Own It Social at Keep Playing — marketing for Fairway loan officers',
+  title: 'Own It Social — marketing for real estate professionals',
   description:
-    'Proud sponsors of Keep Playing. Own It Social is the done-for-you marketing department for Fairway loan officers: social content, Total Expert follow-up, and Google presence. Book a free strategy session.',
+    'Own It Social is the done-for-you marketing department for real estate professionals — agents, brokers, and loan officers: social content, CRM follow-up, and Google presence. Book a free strategy session.',
   alternates: { canonical: 'https://ownitsocial.com/keepplaying' },
   openGraph: {
-    title: 'Own It Social at Keep Playing — marketing for Fairway loan officers',
+    title: 'Own It Social — marketing for real estate professionals',
     description:
-      'Done-for-you social content, Total Expert follow-up, and Google presence for Fairway loan officers. Book a free strategy session.',
+      'Done-for-you social content, CRM follow-up, and Google presence for agents, brokers, and loan officers. Book a free strategy session.',
     url: 'https://ownitsocial.com/keepplaying',
     type: 'website',
   },
@@ -51,32 +50,47 @@ const NAV_LINKS = [
   { label: 'Results', href: '#results' },
 ];
 
-// The homepage service cards, with the CRM one re-worded for Fairway: Total
-// Expert is the stack these loan officers already have, and it is the same
-// claim /fairway-annual-meeting already makes.
-const FAIRWAY_SERVICES = SERVICES.map((service) =>
-  service.title === 'CRM'
-    ? {
+// The homepage service cards are written for lenders; these keep the same
+// photos and outcomes but speak to anyone in real estate.
+const REAL_ESTATE_SERVICES = SERVICES.map((service) => {
+  switch (service.title) {
+    case 'CRM':
+      return {
         ...service,
-        body: 'Your past clients are your cheapest pipeline. We build your Total Expert follow-up — email and SMS journeys that keep you in front of everyone you have already closed — and we work with whatever else you use, so the next loan comes from a name you already know.',
-      }
-    : service,
-);
+        body: 'Your past clients are your cheapest pipeline. We set up and clean your CRM, then run automated email and SMS campaigns that keep you connected to everyone you have already worked with — so the next deal comes from a name you know.',
+        alt: 'A real estate professional on a call at their desk, taking notes beside a laptop',
+      };
+    case 'Search':
+      return {
+        ...service,
+        body: 'When someone searches for help buying, selling, or financing a home in your market, you should be the answer. We optimize your Google Business Profile and automate a review request after every closing, so you show up with fresh five-star reviews instead of an empty listing.',
+      };
+    case 'Co-marketing':
+      return {
+        ...service,
+        eyebrow: 'Referral partnerships',
+        body: 'Referral partners stay loyal to the people who make them look good. We produce co-branded flyers, social content, and market updates you and your partners — agents, lenders, title, and more — can put straight in front of your clients, with your name on every one.',
+        alt: 'Two real estate professionals reviewing a document together',
+      };
+    default:
+      return service;
+  }
+});
 
-// Why a Fairway loan officer, specifically, ends up here. Each line maps to
-// work already described on /cmo and /fairway-annual-meeting.
-const FAIRWAY_POINTS = [
+// Why a real estate professional ends up here. Each line maps to work already
+// described on /cmo.
+const AUDIENCE_POINTS = [
   {
-    title: 'We already speak Fairway',
-    body: 'We build inside Total Expert every day, so your follow-up journeys, campaigns, and lists get set up by someone who has done it for Fairway loan officers before.',
+    title: 'We already speak real estate',
+    body: 'Listings, open houses, rate moves, market updates, referral partners. We work with agents, brokers, and loan officers every day, so you are not paying us to learn your business.',
   },
   {
     title: 'Compliance-friendly by default',
     body: 'Every post, email, and flyer comes to you finished and waiting for approval. Nothing goes out under your name until you have seen it.',
   },
   {
-    title: 'Built around your branch',
-    body: 'Your market, your programs, your agent partners. We write for the loans you actually close, not a template pack sold to a thousand originators.',
+    title: 'Built around your market',
+    body: 'Your neighborhoods, your clients, your partners. We write for the deals you actually close, not a template pack sold to a thousand other agents and lenders.',
   },
 ];
 
@@ -106,7 +120,7 @@ const ROLES = [
   { role: 'Copywriter', work: 'Scripts, captions, and emails' },
   { role: 'Social manager', work: 'Posts and schedules every week' },
   { role: 'Video editor', work: 'Cuts your clips into content' },
-  { role: 'CRM specialist', work: 'Runs your Total Expert follow-up' },
+  { role: 'CRM specialist', work: 'Runs your client follow-up' },
   { role: 'Designer', work: 'Flyers and co-branded material' },
 ];
 
@@ -114,7 +128,7 @@ export default function KeepPlayingPage() {
   const organizationSchema = generateOrganizationSchema();
 
   const localBusinessSchema = generateLocalBusinessSchema({
-    name: 'Own It Social — marketing for Fairway loan officers',
+    name: 'Own It Social — marketing for real estate professionals',
     address: { city: 'Miami', state: 'FL', country: 'US' },
     priceRange: '$$',
   });
@@ -148,15 +162,24 @@ export default function KeepPlayingPage() {
           homeHref="#top"
           ctaLabel="Request a call"
           announcement={{
-            message: 'Proud sponsor of Keep Playing. Fairway loan officers:',
+            message: 'Agents, brokers, and loan officers:',
             cta: 'Get your free strategy session',
           }}
         />
 
-        {/* Headline and body are the homepage's, on purpose — only the eyebrow
-            changes. Leaving both props off means this hero keeps tracking the
-            homepage if that copy is ever reworded. */}
-        <Hero eyebrow="Proud sponsor of Keep Playing" />
+        {/* The homepage hero is written for lenders ("You close loans"), so
+            this page passes its own headline and body. */}
+        <Hero
+          eyebrow="Marketing for real estate professionals"
+          headline={
+            <>
+              You close deals.
+              <br />
+              We do the rest.
+            </>
+          }
+          body="We write and post your social content, run the follow-up in your CRM, and keep your Google profile working — so the pipeline stays warm while you stay with your clients."
+        />
 
         {/* ── Who this is for ── */}
         <section
@@ -169,14 +192,14 @@ export default function KeepPlayingPage() {
                 <h2 className="font-display text-[36px] font-black uppercase leading-[0.92] tracking-[-0.02em] sm:text-[46px] lg:text-[54px]">
                   Built for
                   <br />
-                  <span className="text-brand">Fairway</span>
+                  <span className="text-brand">real estate</span>
                   <br />
-                  loan officers
+                  professionals
                 </h2>
                 <div className="lg:pt-3">
                   <p className="max-w-xl text-[18px] leading-[1.6] text-ink sm:text-[21px]">
-                    You have the brand, the programs, and the pricing. What you
-                    do not have is a spare ten hours a week to film, write,
+                    Agent, broker, or loan officer — you have the clients, the
+                    market knowledge, and the reputation. What you do not have is a spare ten hours a week to film, write,
                     post, and follow up. That is the part we own.
                   </p>
                   <div className="mt-9">
@@ -190,7 +213,7 @@ export default function KeepPlayingPage() {
 
             <Reveal delay={120}>
               <div className="mt-16 grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-3">
-                {FAIRWAY_POINTS.map((point) => (
+                {AUDIENCE_POINTS.map((point) => (
                   <div key={point.title} className="bg-white p-8 sm:p-10">
                     <h3 className="font-display text-[20px] font-black uppercase leading-[1.1] tracking-[-0.01em] sm:text-[23px]">
                       {point.title}
@@ -203,24 +226,6 @@ export default function KeepPlayingPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={180}>
-              <div className="mt-16 flex flex-col items-start gap-8 border-t border-line pt-12 sm:flex-row sm:items-center sm:gap-14">
-                <div className="relative h-14 w-[180px] shrink-0">
-                  <Image
-                    src="/images/Fairway.webp"
-                    alt="Fairway Independent Mortgage Corporation"
-                    fill
-                    sizes="180px"
-                    className="object-contain object-left"
-                  />
-                </div>
-                <p className="max-w-xl text-[15px] leading-[1.7] text-muted">
-                  Own It Social is an independent marketing agency and is not
-                  affiliated with or endorsed by Fairway Independent Mortgage
-                  Corporation. We work with Fairway loan officers directly.
-                </p>
-              </div>
-            </Reveal>
           </div>
         </section>
 
@@ -234,8 +239,8 @@ export default function KeepPlayingPage() {
               <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
                 <div className="max-w-md">
                   <p className="text-[17px] font-medium leading-[1.5] text-ink sm:text-[19px]">
-                    Every graphic, script, and caption is made for one loan
-                    officer and one market. Nothing here came out of a template
+                    Every graphic, script, and caption is made for one
+                    professional and one market. Nothing here came out of a template
                     pack.
                   </p>
                   <div className="mt-7">
@@ -282,7 +287,7 @@ export default function KeepPlayingPage() {
             </Reveal>
 
             <Reveal delay={120} className="mt-14">
-              <ServiceRail services={FAIRWAY_SERVICES} />
+              <ServiceRail services={REAL_ESTATE_SERVICES} />
             </Reveal>
           </div>
         </section>
@@ -371,9 +376,9 @@ export default function KeepPlayingPage() {
           <div className="mx-auto max-w-[1400px]">
             <Reveal>
               <h2 className="max-w-[16ch] font-display text-[42px] font-black uppercase leading-[0.9] tracking-[-0.02em] sm:text-[64px] lg:text-[76px]">
-                What loan
+                What our
                 <br />
-                officers say
+                clients say
               </h2>
             </Reveal>
 
@@ -421,7 +426,7 @@ export default function KeepPlayingPage() {
           <div className="mx-auto max-w-[1400px]">
             <Reveal>
               <p className="font-display text-[12px] font-bold uppercase tracking-[0.14em] text-white/70">
-                Fairway loan officers at Keep Playing
+                Agents, brokers, and loan officers
               </p>
               <h2 className="mt-6 max-w-[18ch] font-display text-[44px] font-black uppercase leading-[0.9] tracking-[-0.02em] sm:text-[70px] lg:text-[96px]">
                 Ready to hand off your marketing?
