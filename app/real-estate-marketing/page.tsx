@@ -108,7 +108,7 @@ export default function RealEstateMarketingPage() {
           links={[
             { label: 'Services', href: '#services' },
             { label: 'FAQ', href: '#faq' },
-            { label: 'Loan officer marketing', href: '/loan-officer-marketing' },
+            { label: 'Compare agencies', href: '/best-marketing-agencies-for-real-estate-agents' },
           ]}
           homeHref="/"
         />

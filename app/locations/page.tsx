@@ -204,7 +204,7 @@ export default function LocationsPage() {
             </div>
           </div>
           <div className="text-center text-sm border-t border-gray-800 pt-8">
-            <p>© 2025 OwnItSocial.com | Serving All of Florida | All rights reserved.</p>
+            <p>© 2026 OwnItSocial.com | Serving All of Florida | All rights reserved.</p>
           </div>
         </div>
       </footer>
