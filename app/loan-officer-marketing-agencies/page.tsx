@@ -226,7 +226,7 @@ export default function LoanOfficerMarketingAgenciesPage() {
               <Reveal delay={120}>
                 <dl className="border-t border-white/15">
                   {[
-                    ['Deliverables', 'Weekly social content across Instagram, Facebook, and LinkedIn; CRM email and SMS follow-up; Google Business Profile and review requests; handwritten cards; co-branded realtor material. Quantities are scoped to your book and written into the agreement.'],
+                    ['Deliverables', 'Weekly social content across Instagram, Facebook, and LinkedIn; CRM email and SMS follow-up; Google Business Profile and review requests; AI search optimization (AEO); co-branded realtor material. Quantities are scoped to your book and written into the agreement.'],
                     ['Ownership', 'Your accounts, your CRM, your content. Everything we make for you is yours, during and after.'],
                     ['Term', 'An onboarding period, then month to month. No auto-renewing annual lock-in.'],
                     ['Reporting', 'A weekly check-in with reach, engagement, database activity, reviews collected, and agent touches, plus a portal that shows what was written, scheduled, and published.'],

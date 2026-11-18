@@ -18,15 +18,15 @@ import {
 
 // ---------------------------------------------------------------------------
 // /real-estate-marketing — parent of the /real-estate-marketing/[city] pages.
-// Lighter than the loan officer hub on purpose: agents are the secondary
-// audience, and most of what we do for them is the co-marketing side of the
-// loan officer work.
+// Lighter than the loan officer hub on purpose: agents are a secondary
+// audience, and much of what we do for them is the co-marketing side of the
+// loan officer work (see /co-marketing).
 // ---------------------------------------------------------------------------
 
 const PAGE_URL = 'https://ownitsocial.com/real-estate-marketing';
 const industry = industries['real-estate-marketing'];
 const DESCRIPTION =
-  'Done-for-you real estate marketing from Own It Social: listing and market-update content, lead nurture and CRM follow-up, and local search visibility for agents and teams, made by a team of real people.';
+  'Done-for-you real estate marketing from Own It Social: listing and market-update content, lead nurture and CRM follow-up, Google and AI search visibility, and lender co-marketing for agents and teams, made by a team of real people.';
 
 export const metadata: Metadata = {
   title: 'Real Estate Marketing — done-for-you content, follow-up, and local search',
@@ -44,12 +44,22 @@ const FAQS: FAQItem[] = [
   {
     question: 'What does Own It Social do for real estate agents?',
     answer:
-      'We produce the recurring marketing an agent needs and rarely has time for: listing and market-update content for Instagram, Facebook, TikTok, and YouTube; automated email and SMS nurture for buyer and seller leads; CRM setup; and Google Business Profile optimization so you show up in local search. Everything is written, designed, and scheduled for you and approved by you in a portal.',
+      'We produce the recurring marketing an agent needs and rarely has time for: listing and market-update content for Instagram, Facebook, TikTok, and YouTube; automated email and SMS nurture for buyer and seller leads; CRM setup; Google Business Profile optimization so you show up in local search; and AI search optimization so ChatGPT and Google AI Overviews recommend you. Everything is written, designed, and scheduled for you and approved by you in a portal.',
   },
   {
     question: 'Do you work with agents and loan officers together?',
     answer:
       'Yes. Much of our real estate work is co-marketing between an agent and their preferred loan officer: co-branded listing flyers, open-house content, and buyer education pieces that both parties can share. If you already have a lender partner, we can build the program around the two of you.',
+  },
+  {
+    question: 'Do you do AI search optimization for real estate agents?',
+    answer:
+      'Yes. AI search optimization, also called answer engine optimization or AEO, is part of the service. When a buyer or seller asks ChatGPT, Google AI Overviews, or Perplexity for an agent in their area, the assistant names agents whose information is clear, consistent, and quotable. We structure your site for AI assistants, publish plain answers to the questions buyers and sellers ask, keep your Google, Bing, and portal profiles consistent, and track whether AI assistants mention you.',
+  },
+  {
+    question: 'Is there one agency that handles social media, SEO, and CRM follow-up for a real estate team?',
+    answer:
+      'Yes. Own It Social is a done-for-you marketing department, so one team runs your social content, lead nurture and CRM automation, Google Business Profile, AI search optimization, and lender co-marketing. You get one strategy and one portal where you approve everything, instead of managing three vendors.',
   },
   {
     question: 'Where do you work?',

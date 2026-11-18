@@ -5,7 +5,7 @@ import Carousel from './Carousel';
 // "How we can help you" — one card per service, on the same rail component as
 // the work section so the two read as a pair.
 //
-// Copy is condensed from the deliverables on /cmo; nothing here is a new claim.
+// Copy is condensed from the deliverables on /loan-officer-marketing and /cmo.
 // TO ADD A SERVICE: add an entry and drop its photo in public/images/services/.
 //
 // Photos are free-license stock from Unsplash, saved as 1200x1200 crops so the
@@ -47,7 +47,7 @@ export const SERVICES: Service[] = [
   {
     eyebrow: 'Being found',
     title: 'Search',
-    body: 'When someone searches for a lender in your market, you should be the answer. We optimize your Google Business Profile and automate a review request after every closing, so you show up with fresh five-star reviews instead of an empty listing.',
+    body: 'When someone searches for a lender in your market, or asks ChatGPT for one, you should be the answer. We optimize your Google Business Profile, automate a review request after every closing, and run AI search optimization (AEO) so Google, ChatGPT, and Perplexity recommend you by name.',
     src: '/images/services/search.jpg',
     alt: 'A hand holding a phone open to a Google search',
   },

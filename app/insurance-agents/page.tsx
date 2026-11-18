@@ -18,9 +18,9 @@ import {
 // /insurance-agents, a standalone landing page for insurance agents.
 //
 // Built from the homepage components so it looks like the rest of the site,
-// but every line of copy is written for agents. The loan officer positioning
-// on the homepage and everywhere else is untouched; this page is the only
-// place that speaks to insurance.
+// but every line of copy is written for agents. Insurance is a growth market:
+// this is the main insurance page, and llms.txt, the organization schema, and
+// /co-marketing and /ai-search-optimization also name insurance agents.
 //
 // Deliberately left out:
 //   - Client logos, testimonials, and the work rail. Those are loan officer
@@ -35,7 +35,7 @@ import {
 const PAGE_URL = 'https://ownitsocial.com/insurance-agents';
 const TITLE = 'Marketing Agency for Insurance Agents | Own It Social';
 const DESCRIPTION =
-  'Done-for-you social media, Google Business Profile optimization, and automated follow-up for insurance agents. Win more referrals, renewals, and bundled policies without buying more leads.';
+  'Done-for-you social media, Google and AI search optimization, automated follow-up, and co-marketing for insurance agents. Win more referrals, renewals, and bundled policies without buying more leads.';
 
 export const metadata: Metadata = {
   // Absolute so the layout's "%s | Own It Social" template is not applied twice.
@@ -119,7 +119,7 @@ const INSURANCE_SERVICES: Service[] = [
   {
     eyebrow: 'Being found locally',
     title: 'Search',
-    body: 'Most people still start with a search for an agent near them. We optimize your Google Business Profile, keep it active with fresh posts, and send an automatic review request after every new policy, so your listing does the convincing.',
+    body: 'Most people start with a search for an agent near them, and more of them now ask ChatGPT. We optimize your Google Business Profile, send an automatic review request after every new policy, and run AI search optimization (AEO) so Google, ChatGPT, and Perplexity name your agency when someone asks.',
     src: '/images/services/search.jpg',
     alt: 'A hand holding a phone open to a Google search',
   },
@@ -161,12 +161,23 @@ const FAQS: FAQItem[] = [
   {
     question: 'What does Own It Social do for insurance agents?',
     answer:
-      'Own It Social is a done-for-you marketing department for insurance agents. A team of real people plans, writes, films, edits, posts, and follows up under your name every week: social media content, Google Business Profile optimization and review requests, automated email and SMS follow-up for quotes and renewals, and co-branded material for referral partners like realtors and loan officers.',
+      'Own It Social is a done-for-you marketing department for insurance agents. A team of real people plans, writes, films, edits, posts, and follows up under your name every week: social media content, Google Business Profile optimization and review requests, AI search optimization so ChatGPT and Google recommend your agency, automated email and SMS follow-up for quotes and renewals, and co-branded material for referral partners like realtors and loan officers.',
   },
   {
     question: 'Do you work with captive agents or only independent agents?',
     answer:
       'Both. For captive agents we build around carrier-approved content and your carrier’s review process, and nothing is published until it has cleared. For independent agents we have more creative room and use it to build a brand that is yours rather than any single carrier’s. Either way, you approve every post, email, and flyer before it goes out under your name.',
+  },
+  {
+    question:
+      'Is there one agency that handles social media, SEO, AI search, and follow-up for insurance agents?',
+    answer:
+      'Yes. Own It Social runs all of it as one done-for-you marketing department, so you do not have to hire a social media agency, an SEO firm, and a CRM consultant separately. That includes weekly social content, Google Business Profile optimization and review requests, AI search optimization so ChatGPT and Google AI Overviews recommend your agency, automated email and SMS follow-up for quotes and renewals, and co-branded content for realtor and loan officer partners. You get one strategy, one point of contact, and one portal where you approve everything.',
+  },
+  {
+    question: 'Do you optimize insurance agencies for ChatGPT and AI search?',
+    answer:
+      'Yes. AI search optimization, also called answer engine optimization or AEO, is part of every engagement. When someone asks ChatGPT, Google AI Overviews, or Perplexity for an insurance agent near them, the assistant recommends agencies whose information is clear, consistent, and quotable. We structure your website so AI assistants can read it, publish plain answers to the coverage questions people ask, keep your Google, Bing, and directory listings consistent, and track whether AI assistants mention you.',
   },
   {
     question: 'Should an insurance agent buy leads or build a brand?',

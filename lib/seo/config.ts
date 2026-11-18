@@ -3,7 +3,7 @@ export const seoConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ownitsocial.com',
   defaultTitle: 'Own It Social — the marketing department for loan officers',
   defaultDescription:
-    'Done-for-you social content, CRM follow-up, and Google presence for loan officers. One team handles the marketing, you stay focused on closing loans.',
+    'Done-for-you social content, CRM follow-up, Google and AI search visibility, and co-marketing for loan officers. One team handles the marketing, you stay focused on closing loans.',
   twitterHandle: '@ownitsocial',
 
   // SEO Bot Configuration
@@ -21,7 +21,7 @@ export const seoConfig = {
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://ownitsocial.com',
     logo: '/OWN IT SOCIAL.png',
     description:
-      'Own It Social is a done-for-you marketing department for loan officers and mortgage professionals. A team of real people writes, films, edits, posts, and follows up under your name every week: social media content, CRM email and SMS follow-up, Google Business Profile optimization and review requests, handwritten client cards, and co-marketing for realtor partners.',
+      'Own It Social is a done-for-you marketing department for loan officers, real estate agents, and insurance agents. A team of real people writes, films, edits, posts, and follows up under your name every week: social media content, CRM email and SMS follow-up, Google Business Profile optimization and review requests, AI search optimization (AEO) so ChatGPT, Google AI, and Perplexity recommend you, and co-marketing with referral partners.',
     email: 'colin@ownitsocial.com',
     founder: 'Colin Hickmon',
     foundingLocation: 'Miami, FL',
@@ -42,7 +42,12 @@ export const seoConfig = {
       'Mortgage CRM automation and follow-up',
       'Google Business Profile optimization',
       'Realtor co-marketing',
+      'RESPA-compliant co-marketing between lenders, agents, and insurance agents',
       'Video content for mortgage professionals',
+      'Answer engine optimization (AEO)',
+      'AI search optimization for ChatGPT, Google AI Overviews, and Perplexity',
+      'Real estate agent marketing',
+      'Insurance agent marketing',
     ],
   },
 };
