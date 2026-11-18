@@ -941,7 +941,7 @@ export default function SocialMediaMarketingAgencyNearMePage() {
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <Link href="/social-media-marketing-dallas-tx" className="hover:text-white transition-colors">Dallas</Link>
               <Link href="/digital-marketing-miami" className="hover:text-white transition-colors">Miami</Link>
-              <Link href="/top-marketing-agencies" className="hover:text-white transition-colors">Top Agencies</Link>
+              <Link href="/articles" className="hover:text-white transition-colors">Agency Guides</Link>
               <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
             <p className="text-xs text-gray-500">

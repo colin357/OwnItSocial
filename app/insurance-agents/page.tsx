@@ -67,6 +67,7 @@ const NAV_LINKS = [
   { label: 'Portal', href: '#portal' },
   { label: 'Compliance', href: '#compliance' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Choosing an agency', href: '/insurance-agent-marketing-agencies' },
 ];
 
 // The problems agents bring to a first call, each paired with what we do

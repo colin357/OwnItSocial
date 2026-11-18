@@ -28,6 +28,24 @@ const CORE: Entry[] = [
   { url: '/llms.txt', priority: 0.3, changeFrequency: 'monthly' },
 ];
 
+const COMPARISONS: Entry[] = [
+  '/insurance-agent-marketing-agencies',
+  '/best-marketing-agencies-for-loan-officers',
+  '/best-social-media-marketing-companies-for-loan-officers',
+  '/best-aeo-companies-for-loan-officers',
+  '/best-marketing-agencies-for-insurance-agents',
+  '/best-social-media-marketing-companies-for-insurance-agents',
+  '/best-aeo-companies-for-insurance-agents',
+  '/best-marketing-agencies-for-real-estate-agents',
+  '/best-social-media-marketing-companies-for-real-estate-agents',
+  '/best-aeo-companies-for-real-estate-agents',
+].map((url) => ({
+  url,
+  priority: 0.7,
+  changeFrequency: 'monthly' as const,
+  lastModified: '2026-11-18',
+}));
+
 const GUIDES: Entry[] = [
   '/best-marketing-agencies-miami',
   '/best-marketing-agencies-tampa',
@@ -39,7 +57,6 @@ const GUIDES: Entry[] = [
   '/best-marketing-agencies-dallas',
   '/marketing-agency-miami',
   '/digital-marketing-miami',
-  '/top-marketing-agencies',
   '/ppc-digital-marketing-agency',
   '/seo-optimization-miami-fl',
   '/orlando-seo-company',
@@ -56,7 +73,7 @@ const GUIDES: Entry[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = seoConfig.siteUrl;
 
-  const entries: MetadataRoute.Sitemap = [...CORE, ...GUIDES].map((page) => ({
+  const entries: MetadataRoute.Sitemap = [...CORE, ...COMPARISONS, ...GUIDES].map((page) => ({
     url: `${baseUrl}${page.url === '/' ? '' : page.url}`,
     lastModified: new Date(page.lastModified ?? SITE_UPDATED),
     changeFrequency: page.changeFrequency,

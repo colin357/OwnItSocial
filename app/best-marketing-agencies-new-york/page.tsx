@@ -10,8 +10,8 @@ import { newYorkCompetitors, ownItSocial } from '@/app/data/competitors';
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://ownitsocial.com/best-marketing-agencies-new-york' },
-  title: 'Best Marketing Agencies in New York 2025 | Independent Comparison',
-  description: 'Unbiased comparison of the top marketing agencies in New York, NY. Compare pricing, services, and reviews to find the perfect fit for your business.',
+  title: 'Best Marketing Agencies in New York 2026',
+  description: 'A comparison of the top marketing agencies in New York, NY. Compare pricing, services, and reviews to find the perfect fit for your business.',
   keywords: 'best marketing agencies new york, top marketing agencies nyc, new york marketing companies, marketing firms new york',
 };
 
@@ -19,16 +19,17 @@ export default function BestMarketingAgenciesNewYorkPage() {
   const allAgencies = [ownItSocial, ...newYorkCompetitors];
 
   const articleSchema = generateArticleSchema({
-    headline: 'Best Marketing Agencies in New York 2025',
-    description: 'Unbiased comparison of the top marketing agencies in New York, NY. Compare pricing, services, and reviews to find the perfect fit for your business.',
+    headline: 'Best Marketing Agencies in New York 2026',
+    description: 'A comparison of the top marketing agencies in New York, NY. Compare pricing, services, and reviews to find the perfect fit for your business.',
     author: 'Colin Hickmon',
     datePublished: '2025-12-29',
+    dateModified: '2026-11-18',
     image: '/og-image.png',
   });
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Articles', url: '/articles' },
-    { name: 'Best Marketing Agencies in New York 2025', url: '/best-marketing-agencies-new-york' },
+    { name: 'Best Marketing Agencies in New York 2026', url: '/best-marketing-agencies-new-york' },
   ]);
 
   return (
@@ -67,7 +68,7 @@ export default function BestMarketingAgenciesNewYorkPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-block mb-6 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-            🏆 Independent Comparison • Updated 2025
+            🏆 Updated 2026
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
             <span className="text-black">Best Marketing Agencies</span>
@@ -77,7 +78,7 @@ export default function BestMarketingAgenciesNewYorkPage() {
             </span>
           </h1>
           <p className="text-xl mb-8 text-gray-700 leading-relaxed">
-            An honest, unbiased comparison of New York&apos;s top marketing agencies to help you make the right choice for your business.
+            An honest comparison of New York&apos;s top marketing agencies to help you make the right choice for your business.
           </p>
         </div>
       </section>
@@ -382,7 +383,7 @@ export default function BestMarketingAgenciesNewYorkPage() {
             </div>
           </div>
           <div className="text-center text-sm border-t border-gray-800 pt-8">
-            <p>© 2025 OwnItSocial.com | Serving New York, NY | All rights reserved.</p>
+            <p>© 2026 OwnItSocial.com | Serving New York, NY | All rights reserved.</p>
           </div>
         </div>
       </footer>

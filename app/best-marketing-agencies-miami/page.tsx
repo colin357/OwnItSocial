@@ -9,8 +9,8 @@ import {
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://ownitsocial.com/best-marketing-agencies-miami' },
-  title: 'Best Marketing Agencies in Miami 2025 | Independent Comparison',
-  description: 'Unbiased comparison of the top marketing agencies in Miami, FL. Compare pricing, services, and reviews to find the perfect fit for your business.',
+  title: 'Best Marketing Agencies in Miami 2026',
+  description: 'A comparison of the top marketing agencies in Miami, FL. Compare pricing, services, and reviews to find the perfect fit for your business.',
   keywords: 'best marketing agencies miami, top marketing agencies miami, miami marketing companies, marketing firms miami',
 };
 
@@ -54,7 +54,7 @@ export default function BestMarketingAgenciesMiamiPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-block mb-6 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">
-            🏆 Independent Comparison • Updated 2025
+            🏆 Updated 2026
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
             <span className="text-black">Best Marketing Agencies</span>
@@ -64,7 +64,7 @@ export default function BestMarketingAgenciesMiamiPage() {
             </span>
           </h1>
           <p className="text-xl mb-8 text-gray-700 leading-relaxed">
-            An honest, unbiased comparison of Miami&apos;s top marketing agencies to help you make the right choice for your business.
+            An honest comparison of Miami&apos;s top marketing agencies to help you make the right choice for your business.
           </p>
         </div>
       </section>
@@ -368,7 +368,7 @@ export default function BestMarketingAgenciesMiamiPage() {
             </div>
           </div>
           <div className="text-center text-sm border-t border-gray-800 pt-8">
-            <p>© 2025 OwnItSocial.com | Serving Miami, FL | All rights reserved.</p>
+            <p>© 2026 OwnItSocial.com | Serving Miami, FL | All rights reserved.</p>
           </div>
         </div>
       </footer>

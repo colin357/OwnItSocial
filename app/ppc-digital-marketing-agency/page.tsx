@@ -859,7 +859,7 @@ export default function PPCDigitalMarketingAgencyPage() {
                 <ul className="space-y-2">
                   <li><Link href="/articles" className="hover:text-white transition">Articles</Link></li>
                   <li><Link href="/locations" className="hover:text-white transition">Service Areas</Link></li>
-                  <li><Link href="/top-marketing-agencies" className="hover:text-white transition">Top Agencies</Link></li>
+                  <li><Link href="/articles" className="hover:text-white transition">Agency Guides</Link></li>
                 </ul>
               </div>
               <div>

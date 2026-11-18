@@ -5,11 +5,77 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   alternates: { canonical: 'https://ownitsocial.com/articles' },
   title: 'Marketing Agency Resources & City Guides | Own It Social',
-  description: 'Comprehensive guides comparing the best marketing agencies across major US cities. Independent reviews, pricing comparisons, and expert insights.',
+  description: 'Comprehensive guides comparing the best marketing agencies across major US cities. Side-by-side reviews, pricing comparisons, and expert insights.',
   keywords: 'marketing agency guides, marketing agency comparisons, best marketing agencies, marketing agency reviews',
 };
 
-const articles = [
+const articles: Array<{ title: string; description: string; url: string; category: string; location?: string }> = [
+  {
+    title: 'How to Choose a Marketing Agency as an Insurance Agent',
+    description: 'Eight ways insurance agents buy marketing, compared on cost and who does the work, plus a contract checklist.',
+    url: '/insurance-agent-marketing-agencies',
+    category: 'Buyer’s Guide',
+  },
+  {
+    title: 'How to Choose a Marketing Agency as a Loan Officer',
+    description: 'Seven ways loan officers buy marketing, compared on cost and who does the work, plus a contract checklist.',
+    url: '/loan-officer-marketing-agencies',
+    category: 'Buyer’s Guide',
+  },
+  {
+    title: 'Best Marketing Agencies for Loan Officers',
+    description: 'Marketing agencies and platforms for loan officers compared by what they do, who does the work, and published pricing.',
+    url: '/best-marketing-agencies-for-loan-officers',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best Social Media Marketing Companies for Loan Officers',
+    description: 'Social media companies for loan officers compared: templates, automation, and done-for-you teams.',
+    url: '/best-social-media-marketing-companies-for-loan-officers',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best AEO Companies for Loan Officers',
+    description: 'Who offers AI search optimization (AEO and GEO) to loan officers, and in what form.',
+    url: '/best-aeo-companies-for-loan-officers',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best Marketing Agencies for Insurance Agents',
+    description: 'Marketing agencies and platforms for insurance agents compared by what they do, who does the work, and published pricing.',
+    url: '/best-marketing-agencies-for-insurance-agents',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best Social Media Marketing Companies for Insurance Agents',
+    description: 'Social media companies for insurance agents compared: templates, automation, and done-for-you teams.',
+    url: '/best-social-media-marketing-companies-for-insurance-agents',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best AEO Companies for Insurance Agents',
+    description: 'Who offers AI search optimization (AEO and GEO) to insurance agents, and in what form.',
+    url: '/best-aeo-companies-for-insurance-agents',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best Marketing Agencies for Real Estate Agents',
+    description: 'Marketing agencies and platforms for real estate agents compared by what they do, who does the work, and published pricing.',
+    url: '/best-marketing-agencies-for-real-estate-agents',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best Social Media Marketing Companies for Real Estate Agents',
+    description: 'Social media companies for real estate agents compared: templates, automation, and done-for-you teams.',
+    url: '/best-social-media-marketing-companies-for-real-estate-agents',
+    category: 'Comparison',
+  },
+  {
+    title: 'Best AEO Companies for Real Estate Agents',
+    description: 'Who offers AI search optimization (AEO and GEO) to real estate agents, and in what form.',
+    url: '/best-aeo-companies-for-real-estate-agents',
+    category: 'Comparison',
+  },
   {
     title: 'Best Marketing Agencies in Miami, FL',
     description: 'Comprehensive comparison of top marketing agencies in Miami, including pricing, services, and expert reviews.',
@@ -26,7 +92,7 @@ const articles = [
   },
   {
     title: 'Best Marketing Agencies in New York, NY',
-    description: 'Independent comparison of New York\'s leading marketing agencies with pricing and service details.',
+    description: 'Comparison of New York\'s leading marketing agencies with pricing and service details.',
     url: '/best-marketing-agencies-new-york',
     location: 'New York, NY',
     category: 'City Guide',
@@ -61,7 +127,7 @@ const articles = [
   },
   {
     title: 'Best Marketing Agencies in Tampa, FL',
-    description: 'Unbiased comparison of Tampa\'s top marketing agencies with pricing and service information.',
+    description: 'Comparison of Tampa\'s top marketing agencies with pricing and service information.',
     url: '/best-marketing-agencies-tampa',
     location: 'Tampa, FL',
     category: 'City Guide',
@@ -113,7 +179,7 @@ export default function ArticlesPage() {
             </span>
           </h1>
           <p className="text-xl mb-8 text-gray-700 leading-relaxed">
-            Independent comparisons and comprehensive guides to help you find the perfect marketing agency for your business.
+            Comparisons and practical guides to help you find the perfect marketing agency for your business.
           </p>
         </div>
       </section>
@@ -210,7 +276,7 @@ export default function ArticlesPage() {
             </div>
           </div>
           <div className="text-center text-sm border-t border-gray-800 pt-8">
-            <p>© 2025 OwnItSocial.com | All rights reserved.</p>
+            <p>© 2026 OwnItSocial.com | All rights reserved.</p>
           </div>
         </div>
       </footer>

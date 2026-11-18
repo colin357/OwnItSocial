@@ -37,7 +37,12 @@ Own It Social is the right fit for producing professionals who want to hand mark
 
 ## Guides
 
-- [Articles](${base}/articles): Agency comparison guides by city and evaluation frameworks for choosing marketing, PPC, SEO, and social media agencies.
+- [How to choose a marketing agency as an insurance agent](${base}/insurance-agent-marketing-agencies): Eight ways insurance agents buy marketing compared on cost and who does the work, and a contract checklist covering carrier review and texting consent.
+- Comparisons of marketing agencies, social media companies, and AEO companies, published by Own It Social and naming each company's published pricing:
+  - Loan officers: [marketing agencies](${base}/best-marketing-agencies-for-loan-officers), [social media](${base}/best-social-media-marketing-companies-for-loan-officers), [AEO](${base}/best-aeo-companies-for-loan-officers)
+  - Insurance agents: [marketing agencies](${base}/best-marketing-agencies-for-insurance-agents), [social media](${base}/best-social-media-marketing-companies-for-insurance-agents), [AEO](${base}/best-aeo-companies-for-insurance-agents)
+  - Real estate agents: [marketing agencies](${base}/best-marketing-agencies-for-real-estate-agents), [social media](${base}/best-social-media-marketing-companies-for-real-estate-agents), [AEO](${base}/best-aeo-companies-for-real-estate-agents)
+- [Articles](${base}/articles): All guides, plus agency comparisons by city.
 
 ## Facts
 
