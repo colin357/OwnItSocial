@@ -89,18 +89,6 @@ const LEADPOPS: Company = {
   sources: ['https://leadpops.com/pricing'],
 };
 
-const TOTAL_EXPERT: Company = {
-  name: 'Total Expert',
-  url: 'https://www.totalexpert.com',
-  kind: 'Enterprise software (CRM and marketing automation)',
-  serves: 'Mortgage lenders, banks, credit unions, and insurers',
-  summary: 'Customer engagement platform for financial institutions: marketing automation, customer journeys, lead management, texting, a content library, social posting, and AI assistants.',
-  bestFor: 'Lenders and banks rolling out one CRM and marketing platform across many loan officers',
-  keepInMind: 'Software your company buys and your team runs, not a service that creates content for you. Own It Social builds inside Total Expert for clients who use it.',
-  pricing: 'Not published',
-  sources: ['https://www.totalexpert.com'],
-};
-
 const INCUBESOCIAL: Company = {
   name: 'IncubeSocial',
   url: 'https://incubesocial.com',
@@ -202,11 +190,11 @@ export const LO_MARKETING: BestOfData = {
   source: 'best-marketing-lo',
   title: 'Best Marketing Agencies for Loan Officers',
   description:
-    'A comparison of marketing agencies and platforms for loan officers in 2026: Own It Social, Kaleidico, Mortgage Broker Marketing, Oak & Algorithm, RealtyCTL, LenderHomePage, LeadPops, and Total Expert, with who each fits and published pricing.',
+    'A comparison of marketing agencies and platforms for loan officers in 2026: Own It Social, Kaleidico, Mortgage Broker Marketing, Oak & Algorithm, RealtyCTL, LenderHomePage, and LeadPops, with who each fits and published pricing.',
   updated: UPDATED,
   eyebrow: 'For loan officers',
   intro:
-    'Loan officer marketing companies range from $29-a-month funnel software to enterprise CRMs and full-service agencies. This list compares the established options by what they actually do, who does the work, and what they publish about price, so you can shortlist two or three to talk to.',
+    'Loan officer marketing companies range from $29-a-month funnel software to full-service agencies. This list compares the established options by what they actually do, who does the work, and what they publish about price, so you can shortlist two or three to talk to.',
   criteria: [
     { title: 'Mortgage focus', body: 'Whether the company is built for loan officers or serves mortgage as one industry among many.' },
     { title: 'Who does the work', body: 'A team that creates and runs your marketing, or software you run yourself.' },
@@ -227,11 +215,9 @@ export const LO_MARKETING: BestOfData = {
     REALTYCTL,
     LHP,
     LEADPOPS,
-    TOTAL_EXPERT,
   ],
   choose: [
     { need: 'You want the lowest monthly cost and will run it yourself', answer: 'LeadPops or LenderHomePage.' },
-    { need: 'You are a lender rolling out a platform to every LO', answer: 'Total Expert.' },
     { need: 'You want content-led SEO and lead generation at the lender level', answer: 'Kaleidico.' },
     { need: 'You want paid-ad lead generation with CRM follow-up', answer: 'RealtyCTL.' },
     { need: 'You want one team running social, CRM, Google, AI search, and partners', answer: 'Own It Social.' },
@@ -240,7 +226,7 @@ export const LO_MARKETING: BestOfData = {
     {
       question: 'What is the best marketing agency for loan officers?',
       answer:
-        'It depends on what you want done. Own It Social is a done-for-you marketing department that runs social, CRM follow-up, Google and AI search, and realtor co-marketing for individual loan officers. Kaleidico focuses on SEO, content, and lead generation for lenders. Mortgage Broker Marketing and RealtyCTL offer broad digital and ad-driven packages. LenderHomePage and LeadPops are lower-cost platforms you run yourself, and Total Expert is enterprise CRM software for lenders.',
+        'It depends on what you want done. Own It Social is a done-for-you marketing department that runs social, CRM follow-up, Google and AI search, and realtor co-marketing for individual loan officers. Kaleidico focuses on SEO, content, and lead generation for lenders. Mortgage Broker Marketing and RealtyCTL offer broad digital and ad-driven packages. LenderHomePage and LeadPops are lower-cost platforms you run yourself. CRMs such as Total Expert are software, not marketing agencies; an agency can run your marketing inside one.',
     },
     {
       question: 'How much does a loan officer marketing agency cost?',
@@ -269,7 +255,7 @@ export const LO_SOCIAL: BestOfData = {
   source: 'best-social-lo',
   title: 'Best Social Media Marketing Companies for Loan Officers',
   description:
-    'A comparison of social media marketing companies for loan officers in 2026: Own It Social, LenderHomePage, IncubeSocial, RealtyCTL, Mortgage Broker Social Media, and Total Expert, with what each does, who it fits, and published pricing.',
+    'A comparison of social media marketing companies for loan officers in 2026: Own It Social, LenderHomePage, IncubeSocial, RealtyCTL, and Mortgage Broker Social Media, with what each does, who it fits, and published pricing.',
   updated: UPDATED,
   eyebrow: 'For loan officers',
   intro:
@@ -292,13 +278,11 @@ export const LO_SOCIAL: BestOfData = {
     INCUBESOCIAL,
     REALTYCTL,
     MBSM,
-    TOTAL_EXPERT,
   ],
   choose: [
     { need: 'You will post yourself and want ready-made content', answer: 'Mortgage Broker Social Media.' },
     { need: 'You want AI-generated posts bundled with a website', answer: 'LenderHomePage.' },
     { need: 'You want a general social service with published prices', answer: 'IncubeSocial.' },
-    { need: 'Your company provides Total Expert', answer: 'Use its social posting library, and add a team if you need someone to create content.' },
     { need: 'You want custom video and posting done for you, tied to the rest of your marketing', answer: 'Own It Social.' },
   ],
   faqs: [
