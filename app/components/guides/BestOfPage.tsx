@@ -174,7 +174,6 @@ export default function BestOfPage({ data }: { data: BestOfData }) {
                       <div>
                         <span className="font-display text-[12px] font-bold uppercase tracking-[0.14em] text-brand">
                           {String(i + 1).padStart(2, '0')}
-                          {c.ours ? ' · Our own service' : ''}
                         </span>
                         <h3 className="mt-3 text-[26px] font-semibold leading-[1.2] text-ink sm:text-[30px]">
                           {c.name}
