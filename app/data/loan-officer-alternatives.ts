@@ -66,7 +66,7 @@ export const LOAN_OFFICER_ALTERNATIVES: Alternative[] = [
     channels: 'Advises on all',
     bestFor: 'Branches and teams that already have marketers to direct',
     watchOutFor:
-      'You get a plan, not the posts, the emails, or the cards. Execution is a second budget line.',
+      'You get a plan, not the posts, the emails, or the flyers. Execution is a second budget line.',
   },
   {
     name: 'In-house marketing hire',
@@ -83,7 +83,7 @@ export const LOAN_OFFICER_ALTERNATIVES: Alternative[] = [
     typicalCost: 'One monthly retainer, scoped to your book',
     whoRunsStrategy: 'Our team, approved by you',
     whoExecutes: 'Strategist, copywriter, social manager, video editor, CRM specialist, designer',
-    channels: 'Social, CRM email and SMS, Google Business Profile, handwritten cards, realtor co-marketing',
+    channels: 'Social, CRM email and SMS, Google Business Profile, AI search optimization (AEO), realtor co-marketing',
     bestFor: 'Producing loan officers who want to hand marketing off entirely',
     watchOutFor:
       'Not the cheapest option, and not for people who want to approve every comma. You still film the occasional clip if you want video of yourself.',
@@ -98,7 +98,7 @@ export const CONTRACT_CHECKLIST = [
   {
     item: 'Deliverables with numbers',
     detail:
-      'How many posts, emails, videos, cards, and flyers per month, on which channels. "Brand awareness" and "ongoing support" are not deliverables.',
+      'How many posts, emails, videos, and flyers per month, on which channels. "Brand awareness" and "ongoing support" are not deliverables.',
   },
   {
     item: 'Ownership of accounts and content',

@@ -9,12 +9,14 @@ export const FOOTER_LINKS = [
   { label: 'Loan officer marketing', href: '/loan-officer-marketing' },
   { label: 'Choosing an agency', href: '/loan-officer-marketing-agencies' },
   { label: 'Real estate marketing', href: '/real-estate-marketing' },
+  { label: 'For Insurance Agents', href: '/insurance-agents' },
+  { label: 'AI search optimization', href: '/ai-search-optimization' },
+  { label: 'Co-marketing', href: '/co-marketing' },
   { label: 'Services', href: '/#services' },
   { label: 'Work', href: '/#work' },
   { label: 'Portal', href: '/#portal' },
   { label: 'Articles', href: '/articles' },
   { label: 'Locations', href: '/locations' },
-  { label: 'For Insurance Agents', href: '/insurance-agents' },
 ];
 
 export default function Footer() {
@@ -44,7 +46,7 @@ export default function Footer() {
         <div className="flex flex-col gap-3 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[13px] text-white/50">
             &copy; {new Date().getFullYear()} Own It Social &middot; Miami, FL
-            &middot; Marketing for loan officers across the United States
+            &middot; Marketing for loan officers, real estate agents, and insurance agents across the United States
           </p>
           <a
             href="mailto:colin@ownitsocial.com"

@@ -18,7 +18,18 @@ export const LOAN_OFFICER_FAQS: FAQItem[] = [
   {
     question: 'What does a loan officer marketing agency actually do?',
     answer:
-      'A full-service loan officer marketing agency handles the recurring work that keeps a pipeline full: weekly social media content across Instagram, Facebook, and LinkedIn; CRM setup and automated email and SMS follow-up to past clients and leads; Google Business Profile optimization and review requests after closings; handwritten thank-you cards; and co-branded marketing for realtor partners. The difference between an agency and a freelancer is that the agency owns both the strategy and the execution across every channel.',
+      'A full-service loan officer marketing agency handles the recurring work that keeps a pipeline full: weekly social media content across Instagram, Facebook, and LinkedIn; CRM setup and automated email and SMS follow-up to past clients and leads; Google Business Profile optimization and review requests after closings; AI search optimization so ChatGPT, Google AI Overviews, and Perplexity recommend you; and co-branded marketing for realtor partners. The difference between an agency and a freelancer is that the agency owns both the strategy and the execution across every channel.',
+  },
+  {
+    question:
+      'Is there one agency that handles social media, SEO, AI search, and CRM follow-up for loan officers?',
+    answer:
+      'Yes. Own It Social is a done-for-you marketing department, so one team runs every channel instead of you hiring a social media agency, an SEO firm, and a CRM consultant separately. That covers weekly social content, automated email and SMS follow-up in your CRM, Google Business Profile optimization and review requests, AI search optimization so ChatGPT and Google AI Overviews recommend you, and co-branded content for your realtor partners. You get one strategy, one point of contact, and one portal where you approve everything.',
+  },
+  {
+    question: 'Do you optimize loan officers for ChatGPT and AI search?',
+    answer:
+      'Yes. AI search optimization, also called answer engine optimization or AEO, is part of every Own It Social engagement. More borrowers now ask ChatGPT, Google AI Overviews, Perplexity, and Copilot to recommend a loan officer, and those assistants name the professionals whose information is clear, consistent, and quotable across the web. We structure your website and profiles so AI assistants can read them, publish plain answers to the questions borrowers ask, keep your Google Business Profile, Bing listing, and directory profiles consistent, and track whether AI assistants mention you. See ownitsocial.com/ai-search-optimization for details.',
   },
   {
     question: 'How much does marketing for a loan officer cost?',
@@ -63,7 +74,7 @@ export const HOMEPAGE_FAQS: FAQItem[] = [
   {
     question: 'What does Own It Social do?',
     answer:
-      'Own It Social is a done-for-you marketing department for loan officers. A team of real people writes, films, edits, posts, and follows up under your name every week: social media content, CRM email and SMS follow-up, Google Business Profile optimization, handwritten client cards, and co-marketing for your realtor partners.',
+      'Own It Social is a done-for-you marketing department for loan officers. A team of real people writes, films, edits, posts, and follows up under your name every week: social media content, CRM email and SMS follow-up, Google Business Profile optimization, AI search optimization (AEO) so ChatGPT and Google recommend you, and co-marketing for your realtor partners. We also work with real estate agents and insurance agents.',
   },
   {
     question: 'Who is Own It Social for?',
@@ -73,7 +84,7 @@ export const HOMEPAGE_FAQS: FAQItem[] = [
   {
     question: 'What is included?',
     answer:
-      'Strategy, scripts and captions, a weekly posting calendar published for you, video editing, CRM setup and automated follow-up, Google profile optimization and review requests, handwritten cards, and co-branded material for agents. You review and approve everything in your own client portal.',
+      'Strategy, scripts and captions, a weekly posting calendar published for you, video editing, CRM setup and automated follow-up, Google profile optimization and review requests, AI search optimization (AEO), and co-branded material for agents. You review and approve everything in your own client portal.',
   },
   {
     question: 'How do I get started?',

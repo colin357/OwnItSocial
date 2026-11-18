@@ -23,12 +23,12 @@ import {
 export const metadata: Metadata = {
   title: 'Own It Social — the marketing department for loan officers',
   description:
-    'Done-for-you social content, CRM follow-up, and Google presence for loan officers. One team handles the marketing, you stay focused on closing loans. Book a free strategy session.',
+    'Done-for-you social content, CRM follow-up, Google and AI search visibility, and co-marketing for loan officers. One team handles the marketing, you stay focused on closing loans. Book a free strategy session.',
   alternates: { canonical: 'https://ownitsocial.com' },
   openGraph: {
     title: 'Own It Social — the marketing department for loan officers',
     description:
-      'Done-for-you social content, CRM follow-up, and Google presence for loan officers. Book a free strategy session.',
+      'Done-for-you social content, CRM follow-up, Google and AI search visibility, and co-marketing for loan officers. Book a free strategy session.',
     url: 'https://ownitsocial.com',
     type: 'website',
   },

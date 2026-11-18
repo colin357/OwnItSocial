@@ -34,7 +34,7 @@ import {
 
 const PAGE_URL = 'https://ownitsocial.com/loan-officer-marketing';
 const DESCRIPTION =
-  'Own It Social is the marketing department for loan officers: weekly social content, CRM email and SMS follow-up, Google Business Profile, handwritten cards, and realtor co-marketing, all done for you. See what is included and what loan officers ask before hiring us.';
+  'Own It Social is the marketing department for loan officers: weekly social content, CRM email and SMS follow-up, Google Business Profile, AI search optimization, and realtor co-marketing, all done for you. See what is included and what loan officers ask before hiring us.';
 
 export const metadata: Metadata = {
   title: 'Loan Officer Marketing — a done-for-you marketing department',
@@ -82,11 +82,11 @@ const DEPARTMENT = [
       'Google Business Profile optimization and an automated review-request system after every closing.',
   },
   {
-    role: 'Handwritten cards that make you unforgettable',
+    role: 'The loan officer ChatGPT recommends',
     outcome:
-      'Clients remember you at the closing table and refer you at dinner parties because you showed up in their mailbox.',
+      'When a borrower asks ChatGPT, Google, or Perplexity for a loan officer in their area, your name is in the answer.',
     deliverable:
-      'Real handwritten thank-you cards sent to clients and partners at the moments that matter.',
+      'AI search optimization (AEO): structured data, quotable answers to the questions borrowers ask, and consistent listings AI assistants trust.',
   },
   {
     role: 'Co-marketing that makes agents want to send you deals',
@@ -237,8 +237,9 @@ export default function LoanOfficerMarketingPage() {
                     loan officers and mortgage teams. One team writes, films,
                     edits, posts, and follows up under your name every week:
                     social media content, CRM email and SMS follow-up, Google
-                    Business Profile and reviews, handwritten client cards, and
-                    co-marketing for your realtor partners. You approve the
+                    Business Profile and reviews, AI search optimization so
+                    ChatGPT and Google recommend you, and co-marketing for your
+                    realtor partners. You approve the
                     work in your own portal. We are based in Miami and work with
                     loan officers across the United States.
                   </p>

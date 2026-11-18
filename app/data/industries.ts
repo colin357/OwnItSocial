@@ -55,7 +55,7 @@ export const industries: Record<string, Industry> = {
         benefits: [
           'Optimize your Google Business Profile',
           'Get found on Google Maps searches',
-          'Build authority with AI-optimized content',
+          'Get recommended by ChatGPT, Google AI Overviews, and Perplexity',
           'Dominate local search results'
         ]
       }

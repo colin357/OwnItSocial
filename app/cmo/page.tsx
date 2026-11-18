@@ -49,11 +49,11 @@ const DEPARTMENT = [
       'Google Business Profile optimization and an automated review-request system after every closing.',
   },
   {
-    role: 'Handwritten cards that make you unforgettable',
+    role: 'The loan officer ChatGPT recommends',
     outcome:
-      'Clients remember you at the closing table and refer you at dinner parties — because you showed up in their mailbox.',
+      'When a borrower asks ChatGPT, Google, or Perplexity for a loan officer in their area, your name is in the answer.',
     deliverable:
-      'Real handwritten thank-you cards sent to clients and partners at the moments that matter.',
+      'AI search optimization (AEO): structured data, quotable answers to the questions borrowers ask, and consistent listings AI assistants trust.',
   },
   {
     role: 'Co-marketing that makes agents want to send you deals',
@@ -104,7 +104,7 @@ const FAQS = [
   },
   {
     q: 'Do I actually have to do anything?',
-    a: 'Almost nothing. We handle strategy, content, your CRM, your Google profile, the cards, the co-marketing — all of it. You approve what you want to approve, send us the occasional selfie video if you like being on camera, and close loans. That&apos;s the entire job.',
+    a: 'Almost nothing. We handle strategy, content, your CRM, your Google profile, AI search, the co-marketing — all of it. You approve what you want to approve, send us the occasional selfie video if you like being on camera, and close loans. That&apos;s the entire job.',
   },
   {
     q: 'How fast will I see results?',
