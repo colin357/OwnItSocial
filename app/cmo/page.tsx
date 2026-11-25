@@ -32,7 +32,7 @@ const DEPARTMENT = [
     outcome:
       'You stay in front of buyers and agents every week, so new conversations keep starting — without you ever opening the app.',
     deliverable:
-      'Done-for-you content: scripts, captions, and a posting calendar across Instagram, Facebook, and LinkedIn, published for you.',
+      'Done-for-you content: scripts, captions, and five posts a week across Instagram, Facebook, and LinkedIn, published for you, plus managed Facebook, Instagram, and Google ads.',
   },
   {
     role: 'Past clients who come back to you',

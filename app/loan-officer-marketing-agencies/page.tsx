@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 const FIT: Array<[string, string]> = [
-  ['Deliverables', 'Weekly social content across Instagram, Facebook, and LinkedIn; CRM email and SMS follow-up; Google Business Profile and review requests; AI search optimization (AEO); co-branded realtor material. Quantities are scoped to your book and written into the agreement.'],
+  ['Deliverables', 'Typically five social posts a week across Instagram, Facebook, and LinkedIn; weekly email to past borrowers, realtor partners, and prospects; three Google Business Profile and blog updates a week with review requests; managed Facebook, Instagram, and Google ads; AI search optimization (AEO); co-branded realtor material. Quantities are scoped to your book and written into the agreement.'],
   ['Ownership', 'Your accounts, your CRM, your content. Everything we make for you is yours, during and after.'],
   ['Term', 'An onboarding period, then month to month. No auto-renewing annual lock-in.'],
   ['Reporting', 'A weekly check-in with reach, engagement, database activity, reviews collected, and agent touches, plus a portal that shows what was written, scheduled, and published.'],

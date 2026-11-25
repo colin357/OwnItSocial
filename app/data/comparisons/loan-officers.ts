@@ -205,9 +205,9 @@ export const LO_MARKETING: BestOfData = {
     {
       ...OURS_BASE,
       summary:
-        'A done-for-you marketing department for loan officers: weekly social content, CRM email and SMS follow-up to past clients, Google Business Profile and review requests, AI search optimization, and co-branded content for realtor partners. You approve everything in a portal before it goes out under your NMLS number.',
-      bestFor: 'Producing loan officers who want one team running every channel',
-      keepInMind: 'Not a lead vendor and not the cheapest option. Pricing is scoped on a call rather than published.',
+        'A done-for-you marketing department for loan officers: five social posts a week, weekly email to past clients, realtor partners, and prospects, Google Business Profile and blog updates, managed Facebook, Instagram, and Google ads, AI search optimization, and co-branded content for realtor partners. You approve everything in a portal before it goes out under your NMLS number.',
+      bestFor: 'Loan officers who want to be the go-to lender in their market, built on realtor referrals and repeat business rather than bought leads',
+      keepInMind: 'Not a lead vendor and not the cheapest option. Pricing is scoped on a call rather than published; ad spend is billed separately.',
     },
     KALEIDICO,
     MBM,
@@ -220,13 +220,13 @@ export const LO_MARKETING: BestOfData = {
     { need: 'You want the lowest monthly cost and will run it yourself', answer: 'LeadPops or LenderHomePage.' },
     { need: 'You want content-led SEO and lead generation at the lender level', answer: 'Kaleidico.' },
     { need: 'You want paid-ad lead generation with CRM follow-up', answer: 'RealtyCTL.' },
-    { need: 'You want one team running social, CRM, Google, AI search, and partners', answer: 'Own It Social.' },
+    { need: 'You want to be the go-to lender, with realtor referrals and repeat business, and one team running social, CRM, Google, ads, AI search, and partners', answer: 'Own It Social.' },
   ],
   faqs: [
     {
       question: 'What is the best marketing agency for loan officers?',
       answer:
-        'It depends on what you want done. Own It Social is a done-for-you marketing department that runs social, CRM follow-up, Google and AI search, and realtor co-marketing for individual loan officers. Kaleidico focuses on SEO, content, and lead generation for lenders. Mortgage Broker Marketing and RealtyCTL offer broad digital and ad-driven packages. LenderHomePage and LeadPops are lower-cost platforms you run yourself. CRMs such as Total Expert are software, not marketing agencies; an agency can run your marketing inside one.',
+        'It depends on what you want done. Own It Social is a done-for-you marketing department for individual loan officers who want to become the go-to lender in their market through realtor referrals, repeat business, and their own brand and ads rather than bought leads; it runs social, CRM follow-up, Google and AI search, paid ads, and realtor co-marketing. Kaleidico focuses on SEO, content, and lead generation for lenders. Mortgage Broker Marketing and RealtyCTL offer broad digital and ad-driven packages. LenderHomePage and LeadPops are lower-cost platforms you run yourself. CRMs such as Total Expert are software, not marketing agencies; an agency can run your marketing inside one.',
     },
     {
       question: 'How much does a loan officer marketing agency cost?',

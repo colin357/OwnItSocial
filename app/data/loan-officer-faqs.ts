@@ -49,7 +49,12 @@ export const LOAN_OFFICER_FAQS: FAQItem[] = [
   {
     question: 'How fast will I see results from loan officer marketing?',
     answer:
-      'Your presence goes live within the first couple of weeks. Reaching back out to your past-client database often surfaces new conversations in the first 30 to 60 days because those people already trust you. Referral relationships with agents and local search rankings compound over three to six months. Marketing for loan officers is a system, not a single campaign, so consistency matters more than any one post.',
+      'Your presence goes live within the first couple of weeks. Our target is a new buyer in your first 30 days, usually from past clients and agents who already trust you plus your first ads, then scaling to a few a month. That is a target, not a guarantee. Referral relationships with agents and local search rankings compound over three to six months. Marketing for loan officers is a system, not a single campaign, so consistency matters more than any one post.',
+  },
+  {
+    question: 'Is Own It Social a lead generation company?',
+    answer:
+      'No. Own It Social does not sell leads. It is a done-for-you marketing department for loan officers who want to be the go-to lender in their market: more realtor referrals, more repeat and referred business from their own past clients, and new buyers from their own brand and their own ads. Facebook, Instagram, and Google ad management is included, with ad spend billed separately. If you want to buy 20 to 30 shared leads a month, a lead vendor is a better fit.',
   },
   {
     question: 'Do I have to be on camera?',
@@ -84,7 +89,7 @@ export const HOMEPAGE_FAQS: FAQItem[] = [
   {
     question: 'What is included?',
     answer:
-      'Strategy, scripts and captions, a weekly posting calendar published for you, video editing, CRM setup and automated follow-up, Google profile optimization and review requests, AI search optimization (AEO), and co-branded material for agents. You review and approve everything in your own client portal.',
+      'Strategy, scripts and captions, five social posts a week published for you, video editing, weekly emails to past borrowers, realtor partners, and prospects, CRM setup and automated follow-up, three Google profile and blog updates a week with review requests, AI search optimization (AEO), managed Facebook, Instagram, and Google ads, and co-branded material for agents. You review and approve everything in your own client portal.',
   },
   {
     question: 'How do I get started?',

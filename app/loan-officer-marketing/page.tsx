@@ -34,7 +34,7 @@ import {
 
 const PAGE_URL = 'https://ownitsocial.com/loan-officer-marketing';
 const DESCRIPTION =
-  'Own It Social is the marketing department for loan officers: weekly social content, CRM email and SMS follow-up, Google Business Profile, AI search optimization, and realtor co-marketing, all done for you. See what is included and what loan officers ask before hiring us.';
+  'Own It Social is the marketing department for loan officers who want to be the go-to lender in their market: weekly social content, CRM email and SMS follow-up, Google Business Profile, AI search optimization, managed paid ads, and realtor co-marketing, all done for you. Built for referrals and repeat business, not bought leads.';
 
 export const metadata: Metadata = {
   title: 'Loan Officer Marketing — a done-for-you marketing department',
@@ -54,6 +54,7 @@ const NAV_LINKS = [
   { label: 'Fit', href: '#fit' },
   { label: 'Compare', href: '#compare' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'What you get', href: '/what-loan-officers-get' },
   { label: 'Choosing an agency', href: '/loan-officer-marketing-agencies' },
 ];
 
@@ -65,7 +66,7 @@ const DEPARTMENT = [
     outcome:
       'You stay in front of buyers and agents every week, so new conversations keep starting without you opening the app.',
     deliverable:
-      'Done-for-you content: scripts, captions, and a posting calendar across Instagram, Facebook, and LinkedIn, published for you.',
+      'Done-for-you content: scripts, captions, and five posts a week across Instagram, Facebook, and LinkedIn, published for you, plus managed Facebook, Instagram, and Google ads.',
   },
   {
     role: 'Past clients who come back to you',
@@ -100,12 +101,14 @@ const DEPARTMENT = [
 const FOR = [
   'Loan officers who treat their book like a business, not a side hustle',
   'Owner-operators who want to grow purchase volume and referral partners',
+  'Loan officers who want new buyers from their own brand and ads, not shared leads',
   'People who would rather delegate marketing to a team than white-knuckle it alone',
   'Anyone tired of being the bottleneck in their own growth',
 ];
 
 const NOT_FOR = [
   'Anyone shopping for the cheapest post-a-day service',
+  'Loan officers who want to buy 20 to 30 leads a month (a lead vendor fits that better)',
   'People who want to micromanage every caption and comma',
   'Someone looking for a quick hack instead of a real system',
   'Anyone not ready to invest in steady, long-term growth',
@@ -234,22 +237,25 @@ export default function LoanOfficerMarketingPage() {
                 <div className="lg:pt-3">
                   <p className="max-w-xl text-[18px] leading-[1.6] text-ink sm:text-[21px]">
                     Own It Social is a done-for-you marketing department for
-                    loan officers and mortgage teams. One team writes, films,
-                    edits, posts, and follows up under your name every week:
-                    social media content, CRM email and SMS follow-up, Google
-                    Business Profile and reviews, AI search optimization so
-                    ChatGPT and Google recommend you, and co-marketing for your
-                    realtor partners. You approve the
-                    work in your own portal. We are based in Miami and work with
-                    loan officers across the United States.
+                    loan officers who want to be the go-to lender in their
+                    market: more realtor referrals, more repeat business from
+                    past clients, and new buyers from their own brand instead of
+                    bought leads. One team writes, films, edits, posts, and
+                    follows up under your name every week: social media content,
+                    CRM email and SMS follow-up, Google Business Profile and
+                    reviews, AI search optimization so ChatGPT and Google
+                    recommend you, managed paid ads, and co-marketing for your
+                    realtor partners. You approve the work in your own portal.
+                    We are based in Miami and work with loan officers across the
+                    United States.
                   </p>
                   <div className="mt-9 flex flex-wrap items-center gap-6">
                     <BookButton size="md">Get your free strategy session</BookButton>
                     <Link
-                      href="/loan-officer-marketing-agencies"
+                      href="/what-loan-officers-get"
                       className="font-display text-[13px] font-bold uppercase tracking-[0.12em] text-ink underline decoration-ink/30 underline-offset-8 transition-colors hover:text-brand"
                     >
-                      How to choose an agency
+                      What you get each month
                     </Link>
                   </div>
                 </div>
