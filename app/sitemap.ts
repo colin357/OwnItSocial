@@ -17,8 +17,9 @@ type Entry = {
 
 const CORE: Entry[] = [
   { url: '/', priority: 1, changeFrequency: 'weekly' },
-  { url: '/loan-officer-marketing', priority: 0.95, changeFrequency: 'weekly', lastModified: '2026-11-18' },
-  { url: '/loan-officer-marketing-agencies', priority: 0.9, changeFrequency: 'monthly' },
+  { url: '/loan-officer-marketing', priority: 0.95, changeFrequency: 'weekly', lastModified: '2026-11-25' },
+  { url: '/what-loan-officers-get', priority: 0.9, changeFrequency: 'monthly', lastModified: '2026-11-25' },
+  { url: '/loan-officer-marketing-agencies', priority: 0.9, changeFrequency: 'monthly', lastModified: '2026-11-25' },
   { url: '/real-estate-marketing', priority: 0.8, changeFrequency: 'monthly', lastModified: '2026-11-18' },
   { url: '/insurance-agents', priority: 0.8, changeFrequency: 'monthly', lastModified: '2026-11-18' },
   { url: '/ai-search-optimization', priority: 0.8, changeFrequency: 'monthly', lastModified: '2026-11-18' },

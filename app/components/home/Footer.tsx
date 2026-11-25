@@ -7,6 +7,7 @@ import Link from 'next/link';
 // ---------------------------------------------------------------------------
 export const FOOTER_LINKS = [
   { label: 'Loan officer marketing', href: '/loan-officer-marketing' },
+  { label: 'What loan officers get', href: '/what-loan-officers-get' },
   { label: 'Choosing an agency', href: '/loan-officer-marketing-agencies' },
   { label: 'Real estate marketing', href: '/real-estate-marketing' },
   { label: 'For Insurance Agents', href: '/insurance-agents' },
